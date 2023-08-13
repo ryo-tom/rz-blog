@@ -1,0 +1,81 @@
+@use '../global' as *;
+
+.btn-group {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Button
+-------------------------*/
+.btn,
+.btn-sm,
+.btn-block {
+  background-color: var(--gray-light);
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  padding: 4px 16px;
+  white-space: nowrap;
+
+  &:focus,
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.btn-sm {
+  font-size: 0.9rem;
+  padding: 0 4px;
+}
+
+.btn-block {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.btn,
+.btn-sm,
+.btn-block {
+
+  &.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+  }
+
+  &.btn-secondary {
+    background-color: var(--secondary);
+    color: var(--white);
+  }
+
+  &.btn-success {
+    background-color: var(--success);
+    color: var(--white);
+  }
+
+  &.btn-create {
+    background-color: var(--create-color);
+    color: var(--white);
+  }
+
+  &.btn-store {
+    background-color: var(--store-color);
+    color: var(--white);
+  }
+
+  &.btn-edit {
+    background-color: var(--edit-color);
+    color: var(--white);
+  }
+
+  &.btn-update {
+    background-color: var(--update-color);
+    color: var(--white);
+  }
+
+  &.btn-delete {
+    background-color: var(--delete-color);
+    color: var(--white);
+  }
+}
