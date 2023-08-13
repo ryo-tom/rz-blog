@@ -1,14 +1,9 @@
 @extends('layouts.admin')
 
+@section('title', 'Dashboard')
+
 @section('content')
 
-<h1>ダッシュボード</h1>
-{{ Auth::user()->name }}でログイン中。
-<hr>
-
-<form method="POST" action="{{ route('logout')}}">
-    @csrf
-    <button class="btn">Logout</button>
-</form>
+<h1 class="admin-page-title">Dashboard</h1>
 
 @endsection

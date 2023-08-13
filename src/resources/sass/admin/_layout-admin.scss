@@ -1,0 +1,33 @@
+@use '../global' as *;
+
+// Variables
+$left-width: 184px;
+
+.layout-admin {
+  display: flex;
+}
+
+.left-column {
+  background-color: var(--navy);
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  width: $left-width;
+}
+
+.right-column {
+  background-color: var(--gray-light);
+  margin-left: $left-width;
+  width: calc(100% - $left-width);
+  overflow: auto;
+}
+
+.right-header {
+  padding: 16px 24px;
+}
+
+.right-body {
+  padding: 8px 24px;
+}

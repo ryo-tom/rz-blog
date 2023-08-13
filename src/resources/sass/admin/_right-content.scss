@@ -1,0 +1,10 @@
+@use '../global' as *;
+
+.admin-page-title {
+  border-bottom: 1px solid var(--gray);
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+
+

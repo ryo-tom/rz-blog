@@ -8,18 +8,19 @@
 
 /* Button
 -------------------------*/
-.btn,
-.btn-sm,
-.btn-block {
-  background-color: var(--gray-light);
+.btn {
+  border: none;
   border-radius: 4px;
-  cursor: pointer;
+  color: var(--white);
   display: inline-block;
-  padding: 4px 16px;
-  white-space: nowrap;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
 
-  &:focus,
   &:hover {
+    cursor: pointer;
     opacity: 0.8;
   }
 }
@@ -35,9 +36,7 @@
   width: 100%;
 }
 
-.btn,
-.btn-sm,
-.btn-block {
+.btn {
 
   &.btn-primary {
     background-color: var(--primary);

@@ -10,7 +10,19 @@
 </head>
 <body>
 
-    @yield('content')
+    <main class="layout-admin">
+        <div class="left-column">
+            @include('admin._layout.left-sidebar')
+        </div>
+        <div class="right-column">
+            <div class="right-header">
+                Signed in as {{ Auth::user()->name }}
+            </div>
+            <div class="right-body">
+                @yield('content')
+            </div>
+        </div>
+    </main>
 
 </body>
 </html>
