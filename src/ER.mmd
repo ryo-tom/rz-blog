@@ -1,0 +1,55 @@
+erDiagram
+    users ||--o{ posts : ""
+    users {
+        bigint id PK
+        varchar name
+        varchar email UK
+        timestamp email_verified_at
+        varchar password
+        varchar remember_token
+        datetime created_at
+        datetime updated_at
+    }
+
+    posts |o--o{ post_tag : ""
+    posts {
+        bigint id PK
+        bigint user_id FK
+        bigint category_id FK
+        varchar title UK
+        varchar slug UK
+        longtext content
+        boolean is_published
+        datetime published_at
+        datetime created_at
+        datetime updated_at
+    }
+
+    categories ||--o{ posts : ""
+    categories {
+        bigint id PK
+        varchar name UK
+        varchar slug UK
+        int sort_order
+        datetime created_at
+        datetime updated_at
+    }
+
+    tags |o--o{ post_tag : ""
+    tags {
+        bigint id PK
+        varchar name UK
+        varchar slug UK
+        int sort_order
+        datetime created_at
+        datetime updated_at
+    }
+
+    post_tag  {
+        bigint id PK
+        bigint post_id FK
+        bigint tag_id FK
+        datetime created_at
+        datetime updated_at
+    }
+
