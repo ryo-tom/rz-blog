@@ -2,6 +2,7 @@
     <ul class="menu-list">
         <li class="menu-item"><a href="{{ route('home') }}" class="menu-link">Front</a></li>
         <li class="menu-item {{ Route::is('admin.dashboard') ? 'active' : '' }}"><a href="{{ route('admin.dashboard') }}" class="menu-link">Dashboard</a></li>
+        <li class="menu-item {{ Route::is('admin.category.*') ? 'active' : '' }}"><a href="{{ route('admin.category.index') }}" class="menu-link">Category</a></li>
     </ul>
 
     <div class="logout-block">
