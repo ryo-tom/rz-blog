@@ -1,0 +1,31 @@
+
+.admin-scrollable-table {
+  background-color: var(--white);
+  border-collapse: collapse;
+  width: 100%;
+
+  .admin-tbody-row:nth-child(even) {
+    background-color: var(--gray-light);
+  }
+
+  .admin-th,
+  .admin-td {
+    border: 1px solid var(--gray);
+    max-width: 240px;
+    overflow: hidden;
+    padding: 8px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &.wrap {
+      text-overflow: unset;
+      white-space: normal;
+    }
+  }
+
+  .admin-th {
+    background-color: var(--gray);
+    position: sticky;
+    top: 0;
+  }
+}

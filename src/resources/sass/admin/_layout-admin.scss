@@ -19,6 +19,7 @@ $left-width: 184px;
 
 .right-column {
   background-color: var(--gray-light);
+  height: 100vh;
   margin-left: $left-width;
   width: calc(100% - $left-width);
   overflow: auto;
