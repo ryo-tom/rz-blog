@@ -12,34 +12,34 @@
 
 <div class="content-block">
     <div class="content-inner">
-        <table class="admin-scrollable-table">
-            <thead class="admin-thead">
-                <tr class="admin-thead-row">
-                    <th class="admin-th">操作</th>
-                    <th class="admin-th">操作</th>
-                    <th class="admin-th">id</th>
-                    <th class="admin-th">name</th>
-                    <th class="admin-th">slug</th>
-                    <th class="admin-th">sort_order</th>
-                    <th class="admin-th">created_at</th>
-                    <th class="admin-th">updated_at</th>
+        <table class="table">
+            <thead class="table-header">
+                <tr class="thead-row">
+                    <th class="th-cell">操作</th>
+                    <th class="th-cell">操作</th>
+                    <th class="th-cell">id</th>
+                    <th class="th-cell">name</th>
+                    <th class="th-cell">slug</th>
+                    <th class="th-cell">sort_order</th>
+                    <th class="th-cell">created_at</th>
+                    <th class="th-cell">updated_at</th>
                 </tr>
             </thead>
-            <tbody class="admin-tbody">
+            <tbody class="tbody">
                 @for ($i = 0; $i < 30; $i++)
-                <tr class="admin-tbody-row">
-                    <td class="admin-td">
+                <tr class="tbody-row">
+                    <td class="td-cell">
                         <a href="" class="btn btn-edit">Edit</a>
                     </td>
-                    <td class="admin-td">
+                    <td class="td-cell">
                         <button class="btn btn-delete">Delete</button>
                     </td>
-                    <td class="admin-td"></td>
-                    <td class="admin-td"></td>
-                    <td class="admin-td"></td>
-                    <td class="admin-td"></td>
-                    <td class="admin-td"></td>
-                    <td class="admin-td"></td>
+                    <td class="td-cell"></td>
+                    <td class="td-cell"></td>
+                    <td class="td-cell"></td>
+                    <td class="td-cell"></td>
+                    <td class="td-cell"></td>
+                    <td class="td-cell"></td>
                 </tr>
                 @endfor
             </tbody>
