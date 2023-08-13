@@ -15,4 +15,9 @@ class CategoryController extends Controller
             'categories' => Category::orderByRaw('ISNULL(`sort_order`), `sort_order` ASC')->get(),
         ]);
     }
+
+    public function create()
+    {
+        return view('admin.category.create');
+    }
 }

@@ -7,7 +7,7 @@
 <h1 class="admin-page-title">Category List</h1>
 
 <div class="operation-bar">
-    <a href="" class="btn btn-create">Create</a>
+    <a href="{{ route('admin.category.create') }}" class="btn btn-create">Create</a>
 </div>
 
 <div class="content-block">
