@@ -1,0 +1,30 @@
+.table {
+  background-color: var(--white);
+  border-collapse: collapse;
+  width: 100%;
+
+  .tbody-row:nth-child(even) {
+    background-color: var(--gray-light);
+  }
+
+  .table-header {
+    background-color: var(--gray);
+    position: sticky;
+    top: 0;
+  }
+
+  .th-cell,
+  .td-cell {
+    border: 1px solid var(--gray);
+    max-width: 240px;
+    overflow: hidden;
+    padding: 8px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &.wrap {
+      text-overflow: unset;
+      white-space: normal;
+    }
+  }
+}

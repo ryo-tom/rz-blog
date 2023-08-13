@@ -1,43 +1,16 @@
-@use '../global' as *;
-
-.btn-group {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/* Button
--------------------------*/
-.btn,
-.btn-sm,
-.btn-block {
-  background-color: var(--gray-light);
+.btn {
+  border: none;
   border-radius: 4px;
-  cursor: pointer;
   display: inline-block;
-  padding: 4px 16px;
-  white-space: nowrap;
+  font-size: 0.875rem;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
 
-  &:focus,
   &:hover {
+    cursor: pointer;
     opacity: 0.8;
   }
-}
-
-.btn-sm {
-  font-size: 0.9rem;
-  padding: 0 4px;
-}
-
-.btn-block {
-  display: block;
-  text-align: center;
-  width: 100%;
-}
-
-.btn,
-.btn-sm,
-.btn-block {
 
   &.btn-primary {
     background-color: var(--primary);

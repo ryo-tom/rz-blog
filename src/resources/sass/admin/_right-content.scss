@@ -1,0 +1,22 @@
+@use '../global' as *;
+
+.admin-page-title {
+  border-bottom: 1px solid var(--gray);
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+
+.operation-bar {
+  padding: 8px 0;
+}
+
+.content-block {
+  padding: 8px 0;
+  width: 100%;
+}
+
+.content-inner {
+  height: calc(100vh - 56px - 45px - 53px - 32px);
+  overflow-y: scroll;
+}

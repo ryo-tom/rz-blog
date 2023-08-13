@@ -4,26 +4,28 @@
   --black: #333;
   --white: #fff;
   --gray: #ccc;
-  --gray-light: #ecf0f1;
+  --gray-light: #eee;
   --gray-medium: #ddd;
   --gray-deep: #808080;
   --gray-dark: #343a40;
-  --navy: #2c3e50;
-  --red: #ff0000;
+  --navy: #212A3E;
+  --red: #F9322C;
   --red-light: #f8d7da;
   --red-deep: #721c24;
-  --blue: #0000ff;
+  --blue: #5468FF;
   --blue-light: #0080ff;
   --blue-sky: #86b4ff;
-  --green: #2ecc71;
+  --green: #28a745;
 
   --primary: var(--blue-light);
   --secondary: var(--gray-deep);
 
+  /* Modal */
+  --modal-gray: rgba(101, 108, 133, .8);
+
   /* Buttons */
   --create-color: var(--green);
   --store-color: var(--green);
-  --login-color: var(--blue-light);
   --edit-color: var(--blue-light);
   --update-color: var(--blue-light);
   --delete-color: var(--red-deep);
