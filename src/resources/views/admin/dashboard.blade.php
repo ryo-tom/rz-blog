@@ -1,3 +1,7 @@
+@extends('layouts.admin')
+
+@section('content')
+
 <h1>ダッシュボード</h1>
 {{ Auth::user()->name }}でログイン中。
 <hr>
@@ -7,3 +11,4 @@
     <button>Logout</button>
 </form>
 
+@endsection
