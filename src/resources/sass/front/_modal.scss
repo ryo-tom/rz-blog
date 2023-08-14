@@ -1,5 +1,12 @@
 @use '../global' as *;
 
+// Prevent the page from scrolling when the modal window is open
+body {
+  &.modal-open {
+    overflow: hidden;
+  }
+}
+
 .modal {
   background-color: var(--modal-gray);
   height: 100vh;

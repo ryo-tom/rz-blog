@@ -14,8 +14,10 @@ navBtn.addEventListener('click', () => {
 */
 function toggleSearchModal() {
   searchModal.classList.toggle('disable');
+  htmlBody.classList.toggle('modal-open');
 }
 
+const htmlBody           = document.body;
 const searchModalTrigger = document.getElementById('searchModalTrigger');
 const searchModal        = document.getElementById('searchModal');
 
