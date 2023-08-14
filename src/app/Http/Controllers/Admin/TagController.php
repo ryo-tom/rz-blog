@@ -30,8 +30,8 @@ class TagController extends Controller
         return redirect()
             ->route('admin.tag.index')
             ->with([
-                'tag_id' => "タグID:{$tag->id}",
-                'stored' => 'を登録しました。',
+                'action'    => 'success',
+                'message'   => "タグID:{$tag->id}を登録しました。",
             ]);
     }
 
@@ -49,8 +49,8 @@ class TagController extends Controller
         return redirect()
             ->route('admin.tag.index')
             ->with([
-                'tag_id'  => "タグID:{$tag->id}",
-                'updated' => 'を更新しました。',
+                'action'    => 'updated',
+                'message'   => "タグID:{$tag->id}を更新しました。",
             ]);
     }
 
@@ -67,8 +67,8 @@ class TagController extends Controller
         return redirect()
             ->route('admin.tag.index')
             ->with([
-                'tag_id'  => "タグID:{$tag->id}",
-                'deleted' => 'を削除しました。',
+                'action'    => 'deleted',
+                'message'   => "タグID:{$tag->id}を削除しました。",
             ]);
     }
 }

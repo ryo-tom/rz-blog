@@ -30,8 +30,8 @@ class CategoryController extends Controller
         return redirect()
             ->route('admin.category.index')
             ->with([
-                'category_id' => "カテゴリーID:{$category->id}",
-                'stored'      => 'を登録しました。',
+                'action'    => 'success',
+                'message'   => "カテゴリーID:{$category->id}を登録しました。",
             ]);
     }
 
@@ -49,8 +49,8 @@ class CategoryController extends Controller
         return redirect()
             ->route('admin.category.index')
             ->with([
-                'category_id' => "カテゴリーID:{$category->id}",
-                'updated'     => 'を更新しました。',
+                'action'    => 'updated',
+                'message'   => "カテゴリーID:{$category->id}を更新しました。",
             ]);
     }
 
@@ -67,8 +67,8 @@ class CategoryController extends Controller
         return redirect()
             ->route('admin.category.index')
             ->with([
-                'category_id' => "カテゴリID:{$category->id}",
-                'deleted'     => 'を削除しました。',
+                'action'    => 'deleted',
+                'message'   => "カテゴリーID:{$category->id}を削除しました。",
             ]);
     }
 }

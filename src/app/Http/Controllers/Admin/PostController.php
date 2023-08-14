@@ -44,8 +44,8 @@ class PostController extends Controller
 
         return redirect()->route('admin.post.index')
             ->with([
-                'post_id' => "投稿ID:{$post->id}",
-                'stored'  => 'を登録しました。',
+                'action'    => 'success',
+                'message'   => "記事ID:{$post->id}を登録しました。",
             ]);
     }
 
@@ -75,8 +75,8 @@ class PostController extends Controller
         return redirect()
             ->route('admin.post.index')
             ->with([
-                'post_id' => "カテゴリーID:{$post->id}",
-                'updated' => 'を更新しました。',
+                'action'    => 'updated',
+                'message'   => "記事ID:{$post->id}を更新しました。",
             ]);
     }
 
@@ -86,8 +86,8 @@ class PostController extends Controller
 
         return redirect()->route('admin.post.index')
             ->with([
-                'post_id' => "投稿ID:{$post->id}",
-                'deleted' => 'を削除しました。',
+                'action'    => 'deleted',
+                'message'   => "記事ID:{$post->id}を削除しました。",
             ]);
     }
 }

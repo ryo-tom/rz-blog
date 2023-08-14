@@ -10,21 +10,9 @@
     <a href="{{ route('admin.post.create') }}" class="btn btn-create">Create</a>
 </div>
 
-@if (session('stored'))
-    <div class="alert alert-success">
-        {{ session('post_id') }} {{ session('stored') }}
-    </div>
-@endif
-
-@if (session('updated'))
-    <div class="alert alert-updated">
-        {{ session('post_id') }} {{ session('updated') }}
-    </div>
-@endif
-
-@if (session('deleted'))
-    <div class="alert alert-deleted">
-        {{ session('post_id') }} {{ session('deleted') }}
+@if (session('action'))
+    <div class="alert alert-{{ session('action') }}">
+        {{ session('message') }}
     </div>
 @endif
 

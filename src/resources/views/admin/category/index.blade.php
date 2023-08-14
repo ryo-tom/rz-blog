@@ -10,21 +10,9 @@
     <a href="{{ route('admin.category.create') }}" class="btn btn-create">Create</a>
 </div>
 
-@if (session('stored'))
-    <div class="alert alert-success">
-        {{ session('category_id') }} {{ session('stored') }}
-    </div>
-@endif
-
-@if (session('updated'))
-    <div class="alert alert-updated">
-        {{ session('category_id') }} {{ session('updated') }}
-    </div>
-@endif
-
-@if (session('deleted'))
-    <div class="alert alert-deleted">
-        {{ session('category_id') }} {{ session('deleted') }}
+@if (session('action'))
+    <div class="alert alert-{{ session('action') }}">
+        {{ session('message') }}
     </div>
 @endif
 
