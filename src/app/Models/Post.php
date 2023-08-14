@@ -4,16 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Category extends Model
+class Post extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
+        'user_id',
+        'category_id',
+        'title',
         'slug',
-        'sort_order',
+        'content',
+        'is_published',
+        'published_at',
     ];
 
     /*
@@ -21,8 +25,12 @@ class Category extends Model
     | Defining Relationships
     |--------------------------------------------------------------------------
     */
-    public function posts(): HasMany
+    public function user(): BelongsTo
     {
-        return $this->hasMany(Post::class);
+        return $this->belongsTo(User::class);
+    }
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
     }
 }
