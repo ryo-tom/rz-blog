@@ -11,14 +11,10 @@ body {
   background-color: var(--modal-gray);
   height: 100vh;
   left: 0;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100vw;
   z-index: 200;
-
-  @include pc-screen() {
-    position: fixed;
-  }
 
   &.disable {
     display: none;
@@ -31,9 +27,9 @@ body {
 
 .modal-container {
   background-color: var(--white);
+  height: 100vh;
   margin: 0;
   max-width: 100%;
-  position: relative;
   width: 100%;
 
   @include pc-screen() {
