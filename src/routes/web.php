@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\TagController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,6 +42,8 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/post/{post}/edit', [PostController::class, 'edit'])->name('admin.post.edit');
     Route::patch('admin/post/{post}', [PostController::class, 'update'])->name('admin.post.update');
     Route::delete('admin/post/{post}', [PostController::class, 'destroy'])->name('admin.post.destroy');
+
+    Route::get('admin/tag', [TagController::class, 'index'])->name('admin.tag.index');
 });
 
 require __DIR__.'/auth.php';
