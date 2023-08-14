@@ -10,6 +10,7 @@
               </label>
               <input type="search" id="search-input" placeholder="search" class="search-input">
           </form>
+          <div id="searchClose" class="search-close">Close</div>
       </div>
       {{-- Suggestion Words --}}
       <div class="suggestion">

@@ -20,6 +20,7 @@ function toggleSearchModal() {
 const htmlBody           = document.body;
 const searchModalTrigger = document.getElementById('searchModalTrigger');
 const searchModal        = document.getElementById('searchModal');
+const searchClose        = document.getElementById('searchClose');
 
 searchModalTrigger.addEventListener('click', () => {
   toggleSearchModal();
@@ -29,4 +30,7 @@ searchModal.addEventListener('click', e => {
   if (target.classList.contains('modal') && !target.classList.contains('modal-container')) {
       toggleSearchModal();
   }
+});
+searchClose.addEventListener('click', () => {
+  toggleSearchModal();
 });
