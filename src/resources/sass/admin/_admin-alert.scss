@@ -1,0 +1,20 @@
+ .alert {
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 8px;
+
+    &.alert-success {
+      background-color: var(--success-bg-color);
+      color: var(--success-txt-color);
+    }
+
+    &.alert-updated {
+      background-color: var(--updated-bg-color);
+      color: var(--updated-txt-color);
+    }
+
+    &.alert-deleted {
+      background-color: var(--deleted-bg-color);
+      color: var(--deleted-txt-color);
+    }
+  }
