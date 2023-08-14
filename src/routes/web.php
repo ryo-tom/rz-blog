@@ -46,6 +46,8 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/tag', [TagController::class, 'index'])->name('admin.tag.index');
     Route::get('admin/tag/create', [TagController::class, 'create'])->name('admin.tag.create');
     Route::post('admin/tag', [TagController::class, 'store'])->name('admin.tag.store');
+    Route::get('admin/tag/{tag}/edit', [TagController::class, 'edit'])->name('admin.tag.edit');
+    Route::patch('admin/tag/{tag}', [TagController::class, 'update'])->name('admin.tag.update');
 });
 
 require __DIR__.'/auth.php';

@@ -22,11 +22,11 @@
     </div>
 @endif --}}
 
-{{-- @if (session('updated'))
+@if (session('updated'))
     <div class="alert alert-updated">
         {{ session('tag_id') }} {{ session('updated') }}
     </div>
-@endif --}}
+@endif
 
 <div class="content-block">
     <div class="content-inner">
@@ -47,7 +47,7 @@
                 @foreach ($tags as $tag)
                 <tr class="tbody-row">
                     <td class="td-cell">
-                        {{-- <a href="{{ route('admin.tag.edit', ['tag' => $tag->id]) }}" class="btn edit-btn">Edit</a> --}}
+                        <a href="{{ route('admin.tag.edit', ['tag' => $tag]) }}" class="btn btn-edit">Edit</a>
                     </td>
                     <td class="td-cell">
                         {{-- <form action="{{ route('admin.tag.destroy', ['tag' => $tag->id]) }}" method="POST">
