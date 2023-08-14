@@ -5,7 +5,7 @@
 @section('content')
     <h1 class="admin-page-title">Category > Edit</h1>
 
-    <form action="{{ route('admin.category.update', ['category' => $category->id]) }}" method="POST">
+    <form action="{{ route('admin.category.update', ['category' => $category]) }}" method="POST">
         @method('PATCH')
         @csrf
         <div class="form-block">
