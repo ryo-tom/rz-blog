@@ -1,0 +1,19 @@
+@use '../global' as *;
+
+.layout-header {
+  background-color: var(--navy);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  color: var(--white);
+  padding: 16px 4%;
+
+  @include pc-screen() {
+    margin: 0 auto;
+    max-width: var(--max-width-pc);
+    padding: 16px 24px;
+  }
+}
