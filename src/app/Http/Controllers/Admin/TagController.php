@@ -51,4 +51,22 @@ class TagController extends Controller
                 'updated' => 'を更新しました。',
             ]);
     }
+
+    public function destroy(Tag $tag)
+    {
+        // TODO:  Postデータ存在チェック処理を追加
+        if (false) {
+            // code ...
+            return;
+        }
+
+        $tag->delete();
+
+        return redirect()
+            ->route('admin.tag.index')
+            ->with([
+                'tag_id'  => "タグID:{$tag->id}",
+                'deleted' => 'を削除しました。',
+            ]);
+    }
 }

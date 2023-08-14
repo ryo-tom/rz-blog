@@ -16,11 +16,11 @@
     </div>
 @endif
 
-{{-- @if (session('deleted'))
+@if (session('deleted'))
     <div class="alert alert-deleted">
         {{ session('tag_id') }} {{ session('deleted') }}
     </div>
-@endif --}}
+@endif
 
 @if (session('updated'))
     <div class="alert alert-updated">
@@ -50,11 +50,11 @@
                         <a href="{{ route('admin.tag.edit', ['tag' => $tag]) }}" class="btn btn-edit">Edit</a>
                     </td>
                     <td class="td-cell">
-                        {{-- <form action="{{ route('admin.tag.destroy', ['tag' => $tag->id]) }}" method="POST">
+                        <form action="{{ route('admin.tag.destroy', ['tag' => $tag]) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button class="btn delete-btn">Delete</button>
-                        </form> --}}
+                            <button class="btn btn-delete">Delete</button>
+                        </form>
                     </td>
                     <td class="td-cell">{{ $tag->id }}</td>
                     <td class="td-cell">{{ $tag->name }}</td>
