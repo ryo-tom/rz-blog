@@ -16,6 +16,12 @@
     </div>
 @endif
 
+@if (session('updated'))
+    <div class="alert alert-updated">
+        {{ session('category_id') }} {{ session('updated') }}
+    </div>
+@endif
+
 <div class="content-block">
     <div class="content-inner">
         <table class="table">
@@ -35,7 +41,7 @@
                 @foreach ($categories as $category)
                 <tr class="tbody-row">
                     <td class="td-cell">
-                        {{-- edit --}}
+                        <a href="{{ route('admin.category.edit', ['category' => $category->id]) }}" class="btn btn-edit">Edit</a>
                     </td>
                     <td class="td-cell">
                         {{-- delete --}}

@@ -7,4 +7,9 @@
       background-color: var(--success-bg-color);
       color: var(--success-txt-color);
     }
+
+    &.alert-updated {
+      background-color: var(--updated-bg-color);
+      color: var(--updated-txt-color);
+    }
   }

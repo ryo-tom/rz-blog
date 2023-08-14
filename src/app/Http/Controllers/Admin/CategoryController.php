@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreCategoryRequest;
+use App\Http\Requests\Admin\UpdateCategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -33,6 +34,25 @@ class CategoryController extends Controller
             ->with([
                 'category_id' => "カテゴリーID:{$category->id}",
                 'stored'      => 'を登録しました。',
+            ]);
+    }
+
+    public function edit(Category $category)
+    {
+        return view('admin.category.edit', ['category' => $category]);
+    }
+
+    public function update(UpdateCategoryRequest $request, Category $category)
+    {
+        $inputs = $request->only(['name', 'slug', 'sort_order']);
+
+        $category->update($inputs);
+
+        return redirect()
+            ->route('admin.category.index')
+            ->with([
+                'category_id' => "カテゴリーID:{$category->id}",
+                'updated'     => 'を更新しました。',
             ]);
     }
 }
