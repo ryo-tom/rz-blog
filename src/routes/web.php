@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,8 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/category/{category}/edit', [CategoryController::class, 'edit'])->name('admin.category.edit');
     Route::patch('admin/category/{category}', [CategoryController::class, 'update'])->name('admin.category.update');
     Route::delete('admin/category/{category}', [CategoryController::class, 'destroy'])->name('admin.category.destroy');
+
+    Route::get('admin/post', [PostController::class, 'index'])->name('admin.post.index');
 });
 
 require __DIR__.'/auth.php';
