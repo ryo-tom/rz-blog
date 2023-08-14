@@ -25,7 +25,7 @@ class StorePostRequest extends FormRequest
             'title'         => ['required', 'max:255', 'unique:posts'],
             'slug'          => ['required', 'max:255', 'unique:posts'],
             'category_id'   => ['required', 'integer'],
-            // 'tag_id.*'      => ['integer'],
+            'tag_id.*'      => ['integer'],
             'published_at'  => ['nullable', 'date'],
             'content'       => ['required', 'max:16384'],
             'is_published'  => ['required', 'in:0,1'],

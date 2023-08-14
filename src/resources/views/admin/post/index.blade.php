@@ -64,9 +64,9 @@
                     <td class="td-cell">{{ $post->user->name }}</td>
                     <td class="td-cell">{{ $post->category->name }}</td>
                     <td class="td-cell wrap">
-                        {{-- @foreach ($post->tags as $tag)
+                        @foreach ($post->tags as $tag)
                         {{ $tag->name }},
-                        @endforeach --}}
+                        @endforeach
                     </td>
                     <td class="td-cell">{{ $post->title }}</td>
                     <td class="td-cell">{{ $post->slug }}</td>

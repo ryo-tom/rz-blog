@@ -26,7 +26,7 @@ class UpdatePostRequest extends FormRequest
             'title'         => ['required', 'max:255', $this->uniqueRule()],
             'slug'          => ['required', 'max:255', $this->uniqueRule()],
             'category_id'   => ['required', 'integer'],
-            // 'tag_id.*'      => ['integer'],
+            'tag_id.*'      => ['integer'],
             'published_at'  => ['nullable', 'date'],
             'content'       => ['required', 'max:16384'],
             'is_published'  => ['required', 'in:0,1'],
