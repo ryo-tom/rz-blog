@@ -61,7 +61,7 @@
                 </div>
                 <div class="input-box">
                     <label for="postContent">記事内容<span class="required-mark">*</span></label>
-                    <textarea id="postContent" name="content" cols="30" rows="10" placeholder="content">{{ old('content') }}</textarea>
+                    <textarea id="postContent" name="content" cols="30" rows="30" placeholder="content">{{ old('content') }}</textarea>
                     @error('content')
                     <div class="validation-message">{{ $message }}</div>
                     @enderror
