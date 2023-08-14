@@ -10,7 +10,7 @@
             </div>
 
             {{-- Search Form --}}
-            <div id="blog-search" class="search-box">
+            <div id="searchModalTrigger" class="search-box">
                 <span class="material-symbols-outlined">
                     search
                 </span>
