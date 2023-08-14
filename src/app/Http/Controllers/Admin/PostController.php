@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\StorePostRequest;
 use App\Http\Requests\Admin\UpdatePostRequest;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
@@ -22,6 +23,7 @@ class PostController extends Controller
     {
         return view('admin.post.create', [
             'categories' => Category::all(),
+            'tags'       => Tag::all(),
         ]);
     }
 
@@ -37,7 +39,8 @@ class PostController extends Controller
             'is_published'  => $request->input('is_published'),
         ]);
 
-        // TODO: tag作成後に紐付け処理を追加する
+        $tagIds = $request->input('tag_id');
+        $post->tags()->attach($tagIds);
 
         return redirect()->route('admin.post.index')
             ->with([
