@@ -36,6 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('admin/category/{category}', [CategoryController::class, 'destroy'])->name('admin.category.destroy');
 
     Route::get('admin/post', [PostController::class, 'index'])->name('admin.post.index');
+    Route::get('admin/post/create', [PostController::class, 'create'])->name('admin.post.create');
 });
 
 require __DIR__.'/auth.php';

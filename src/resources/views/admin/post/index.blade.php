@@ -7,7 +7,7 @@
 <h1 class="admin-page-title">Post List</h1>
 
 <div class="operation-bar">
-    {{-- <a href="{{ route('admin.post.create') }}" class="btn btn-create">Create</a> --}}
+    <a href="{{ route('admin.post.create') }}" class="btn btn-create">Create</a>
 </div>
 
 <div class="content-block">
