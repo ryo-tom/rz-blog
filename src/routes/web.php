@@ -44,6 +44,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('admin/post/{post}', [PostController::class, 'destroy'])->name('admin.post.destroy');
 
     Route::get('admin/tag', [TagController::class, 'index'])->name('admin.tag.index');
+    Route::get('admin/tag/create', [TagController::class, 'create'])->name('admin.tag.create');
+    Route::post('admin/tag', [TagController::class, 'store'])->name('admin.tag.store');
 });
 
 require __DIR__.'/auth.php';

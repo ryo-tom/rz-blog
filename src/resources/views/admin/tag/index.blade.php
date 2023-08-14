@@ -7,14 +7,14 @@
 <h1 class="admin-page-title">Tag List</h1>
 
 <div class="operation-bar">
-    {{-- <a href="{{ route('admin.tag.create') }}" class="btn create-btn">Create</a> --}}
+    <a href="{{ route('admin.tag.create') }}" class="btn btn-create">Create</a>
 </div>
 
-{{-- @if (session('stored'))
+@if (session('stored'))
     <div class="alert alert-success">
         {{ session('tag_id') }} {{ session('stored') }}
     </div>
-@endif --}}
+@endif
 
 {{-- @if (session('deleted'))
     <div class="alert alert-deleted">
