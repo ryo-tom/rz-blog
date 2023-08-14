@@ -16,6 +16,12 @@
     </div>
 @endif
 
+@if (session('updated'))
+    <div class="alert alert-updated">
+        {{ session('post_id') }} {{ session('updated') }}
+    </div>
+@endif
+
 <div class="content-block">
     <div class="content-inner">
         <table class="table">
@@ -39,7 +45,7 @@
                 @foreach ($posts as $post)
                 <tr class="tbody-row">
                     <td class="td-cell">
-                        {{-- <a href="{{ route('admin.post.edit', ['post' => $post]) }}" class="btn edit-btn">Edit</a> --}}
+                        <a href="{{ route('admin.post.edit', ['post' => $post]) }}" class="btn btn-edit">Edit</a>
                     </td>
                     <td class="td-cell">
                         {{-- <form action="{{ route('admin.post.destroy', ['post' => $post]) }}" method="POST">
