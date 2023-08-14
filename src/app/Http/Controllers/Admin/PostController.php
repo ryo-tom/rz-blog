@@ -72,4 +72,15 @@ class PostController extends Controller
                 'updated' => 'を更新しました。',
             ]);
     }
+
+    public function destroy(Post $post)
+    {
+        $post->delete();
+
+        return redirect()->route('admin.post.index')
+            ->with([
+                'post_id' => "投稿ID:{$post->id}",
+                'deleted' => 'を削除しました。',
+            ]);
+    }
 }

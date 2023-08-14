@@ -22,6 +22,12 @@
     </div>
 @endif
 
+@if (session('deleted'))
+    <div class="alert alert-deleted">
+        {{ session('post_id') }} {{ session('deleted') }}
+    </div>
+@endif
+
 <div class="content-block">
     <div class="content-inner">
         <table class="table">
@@ -48,11 +54,11 @@
                         <a href="{{ route('admin.post.edit', ['post' => $post]) }}" class="btn btn-edit">Edit</a>
                     </td>
                     <td class="td-cell">
-                        {{-- <form action="{{ route('admin.post.destroy', ['post' => $post]) }}" method="POST">
+                        <form action="{{ route('admin.post.destroy', ['post' => $post]) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-delete">Delete</button>
-                        </form> --}}
+                        </form>
                     </td>
                     <td class="td-cell">{{ $post->id }}</td>
                     <td class="td-cell">{{ $post->user->name }}</td>
