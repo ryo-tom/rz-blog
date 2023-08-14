@@ -14,7 +14,7 @@ class PostController extends Controller
     public function index()
     {
         return view('admin.post.index', [
-            'posts' => Post::where('is_published', true)->orderBy('created_at', 'DESC')->get(),
+            'posts' => Post::orderBy('created_at', 'DESC')->get(),
         ]);
     }
 
@@ -34,6 +34,7 @@ class PostController extends Controller
             'category_id'   => $request->input('category_id'),
             'slug'          => $request->input('slug'),
             'published_at'  => $request->input('published_at'),
+            'is_published'  => $request->input('is_published'),
         ]);
 
         // TODO: tag作成後に紐付け処理を追加する
@@ -61,6 +62,7 @@ class PostController extends Controller
             'category_id'   => $request->input('category_id'),
             'slug'          => $request->input('slug'),
             'published_at'  => $request->input('published_at'),
+            'is_published'  => $request->input('is_published'),
         ]);
 
         // TODO: tag作成後に紐付け処理を追加する

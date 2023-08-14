@@ -28,6 +28,7 @@ class StorePostRequest extends FormRequest
             // 'tag_id.*'      => ['integer'],
             'published_at'  => ['nullable', 'date'],
             'content'       => ['required', 'max:16384'],
+            'is_published'  => ['required', 'in:0,1'],
         ];
     }
 }
