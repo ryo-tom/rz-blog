@@ -5,8 +5,8 @@
 @section('content')
     <h1 class="admin-page-title">Post > Create</h1>
 
-    {{-- <form action="{{ route('admin.post.store') }}" method="POST"> --}}
-        {{-- @csrf --}}
+    <form action="{{ route('admin.post.store') }}" method="POST">
+        @csrf
         <div class="form-block">
             <div class="operation-bar">
                 <button class="btn btn-store">Store</button>
@@ -59,6 +59,6 @@
 
             </div>
         </div>
-    {{-- </form> --}}
+    </form>
 @endsection
 
