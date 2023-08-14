@@ -17,4 +17,9 @@
       background-color: var(--deleted-bg-color);
       color: var(--deleted-txt-color);
     }
+
+    &.alert-error {
+      background-color: var(--deleted-bg-color);
+      color: var(--deleted-txt-color);
+    }
   }

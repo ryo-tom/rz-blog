@@ -56,10 +56,13 @@ class CategoryController extends Controller
 
     public function destroy(Category $category)
     {
-        // TODO: postテーブル作成後、子テーブル存在チェック処理を追加
-        if (false) {
-            // code ...
-            return;
+        if ($category->posts->count() > 0) {
+            return redirect()
+                ->route('admin.category.index')
+                ->with([
+                    'action'  => 'error',
+                    'message' => 'カテゴリに関連する投稿が存在するため、削除できません。'
+                ]);
         }
 
         $category->delete();
