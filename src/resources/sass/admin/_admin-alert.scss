@@ -12,4 +12,9 @@
       background-color: var(--updated-bg-color);
       color: var(--updated-txt-color);
     }
+
+    &.alert-deleted {
+      background-color: var(--deleted-bg-color);
+      color: var(--deleted-txt-color);
+    }
   }

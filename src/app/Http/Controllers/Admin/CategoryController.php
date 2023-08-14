@@ -55,4 +55,22 @@ class CategoryController extends Controller
                 'updated'     => 'を更新しました。',
             ]);
     }
+
+    public function destroy(Category $category)
+    {
+        // TODO: postテーブル作成後、子テーブル存在チェック処理を追加
+        if (false) {
+            // code ...
+            return;
+        }
+
+        $category->delete();
+
+        return redirect()
+            ->route('admin.category.index')
+            ->with([
+                'category_id' => "カテゴリID:{$category->id}",
+                'deleted'     => 'を削除しました。',
+            ]);
+    }
 }

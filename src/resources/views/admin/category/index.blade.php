@@ -22,6 +22,12 @@
     </div>
 @endif
 
+@if (session('deleted'))
+    <div class="alert alert-deleted">
+        {{ session('category_id') }} {{ session('deleted') }}
+    </div>
+@endif
+
 <div class="content-block">
     <div class="content-inner">
         <table class="table">
@@ -44,7 +50,11 @@
                         <a href="{{ route('admin.category.edit', ['category' => $category->id]) }}" class="btn btn-edit">Edit</a>
                     </td>
                     <td class="td-cell">
-                        {{-- delete --}}
+                        <form action="{{ route('admin.category.destroy', ['category' => $category->id]) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-delete">Delete</button>
+                        </form>
                     </td>
                     <td class="td-cell">{{ $category->id }}</td>
                     <td class="td-cell">{{ $category->name }}</td>

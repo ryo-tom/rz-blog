@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::post('admin/category', [CategoryController::class, 'store'])->name('admin.category.store');
     Route::get('admin/{category}/edit', [CategoryController::class, 'edit'])->name('admin.category.edit');
     Route::patch('admin/category/{category}', [CategoryController::class, 'update'])->name('admin.category.update');
+    Route::delete('admin/category/{category}', [CategoryController::class, 'destroy'])->name('admin.category.destroy');
 });
 
 require __DIR__.'/auth.php';
