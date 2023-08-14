@@ -54,6 +54,7 @@ class PostController extends Controller
         return view('admin.post.edit', [
             'post'       => $post,
             'categories' => Category::all(),
+            'tags'       => Tag::all(),
         ]);
     }
 
@@ -68,7 +69,8 @@ class PostController extends Controller
             'is_published'  => $request->input('is_published'),
         ]);
 
-        // TODO: tag作成後に紐付け処理を追加する
+        $tagIds = $request->input('tag_id');
+        $post->tags()->sync($tagIds);
 
         return redirect()
             ->route('admin.post.index')

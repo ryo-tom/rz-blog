@@ -41,7 +41,18 @@
                     @enderror
                 </div>
                 <div class="input-box">
-                    {{-- tag --}}
+                    <label for="tagIds">タグ</label>
+                    <select name="tag_id[]" id="tagIds" size="3" multiple>
+                        <option hidden value=""></option>
+                        @foreach ($tags as $tag)
+                        <option value="{{ $tag->id }}" @selected(in_array($tag->id, old('tag_id', $post->tag_ids)))>
+                            {{ $tag->name }}
+                        </option>
+                        @endforeach
+                    </select>
+                    @error('tag_id.*')
+                    <div class="validation-message">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="input-box">
                     <label for="published_at">公開日<span class="required-mark">*</span></label>

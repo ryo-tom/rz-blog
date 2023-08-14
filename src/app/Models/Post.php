@@ -38,4 +38,24 @@ class Post extends Model
     {
         return $this->belongsToMany(Tag::class);
     }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Defining Accessors
+    |--------------------------------------------------------------------------
+    */
+
+    /**
+     * Get the array of tag IDs associated with the Post.
+     *
+     * @return array $tagIds
+     */
+    public function getTagIdsAttribute(): array
+    {
+        $tagIds = [];
+        foreach ($this->tags as $tag) {
+            $tagIds[] = $tag->id;
+        }
+        return $tagIds;
+    }
 }
