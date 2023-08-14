@@ -64,8 +64,8 @@
                 <div class="input-box">
                     <label for="postIsPublished">公開設定<span class="required-mark">*</span></label>
                     <select id="postIsPublished" name="is_published">
-                        <option value="1" @selected(old('is_published', $post->is_published) == 1)>公開</option>
-                        <option value="0" @selected(old('is_published', $post->is_published) == 0)>非公開</option>
+                        <option value="1" @selected(old('is_published', $post->is_published) == "1")>公開</option>
+                        <option value="0" @selected(old('is_published', $post->is_published) == "0")>非公開</option>
                     </select>
                     @error('is_published')
                     <div class="validation-message">{{ $message }}</div>
