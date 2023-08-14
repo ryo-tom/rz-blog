@@ -17,3 +17,130 @@
     padding: 16px 24px;
   }
 }
+
+.header-block {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Site Title
+-------------------------*/
+.site-title-box {
+  .site-title {
+    color: var(--white);
+
+    .main-title {
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+    }
+
+    .sub-title {
+      font-size: 0.9rem;
+
+      span {
+        color: var(--red);
+      }
+    }
+  }
+}
+
+/* Search Form
+-------------------------*/
+.search-box {
+  align-items: center;
+  border: 1px solid var(--white);
+  border-radius: 4px;
+  display: flex;
+  padding: 4px 16px;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+
+  .placeholder {
+    padding: 0 16px;
+  }
+}
+
+/* Mobile Navigation Button
+-------------------------*/
+.navbtn {
+  -webkit-mask-image: url(../../../public/images/icon-mobile-menu-open.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  display: block;
+  background-color: var(--white);
+  height: 48px;
+  width: 48px;
+
+  @include pc-screen() {
+    display: none;
+  }
+
+  &.close {
+    -webkit-mask-image: url(../../../public/images/icon-mobile-menu-close.svg);
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: .8;
+  }
+}
+
+/* PC Navigation
+-------------------------*/
+.pc-nav {
+  display: none;
+
+  @include pc-screen() {
+    display: block;
+  }
+
+  .nav-list {
+    display: flex;
+  }
+
+  .nav-item {
+    padding: 0 16px;
+  }
+
+  .nav-link {
+    color: var(--white);
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+
+/* Mobile Navigation
+-------------------------*/
+.mobile-nav {
+  background-color: var(--navy);
+  padding: 40px 4%;
+
+  @include pc-screen() {
+    display: none;
+  }
+
+  .nav-item {
+    .nav-link {
+      border-top: 1px solid rgba(255, 255, 255, .15);
+      color: var(--white);
+      display: block;
+      font-weight: bold;
+      padding: 16px;
+    }
+
+    &:last-child .nav-link {
+      border-bottom: 1px solid rgba(255, 255, 255, .15);
+    }
+  }
+
+  &.collapse {
+    display: none;
+  }
+}
