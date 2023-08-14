@@ -1,0 +1,10 @@
+ .alert {
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 8px;
+
+    &.alert-success {
+      background-color: var(--success-bg-color);
+      color: var(--success-txt-color);
+    }
+  }

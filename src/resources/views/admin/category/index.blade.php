@@ -10,6 +10,12 @@
     <a href="{{ route('admin.category.create') }}" class="btn btn-create">Create</a>
 </div>
 
+@if (session('stored'))
+    <div class="alert alert-success">
+        {{ session('category_id') }} {{ session('stored') }}
+    </div>
+@endif
+
 <div class="content-block">
     <div class="content-inner">
         <table class="table">
