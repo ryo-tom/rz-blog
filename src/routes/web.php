@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Visitor\PostController as VisitorPostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('front.home');
 })->name('home');
+
+Route::get('/', [VisitorPostController::class, 'index'])->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('admin', function () {

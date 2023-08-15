@@ -4,9 +4,14 @@
     <main class="layout-main">
         <div class="main-container">
 
-            @for ($i = 0; $i < 100; $i++)
-            <p>sample row {{$i}}</p>
-            @endfor
+            <div class="columns">
+                <div class="main-column">
+                    {{-- main contents --}}
+                </div>
+                <div class="side-column">
+                    {{-- side menu --}}
+                </div>
+            </div>
 
         </div>
     </main>
