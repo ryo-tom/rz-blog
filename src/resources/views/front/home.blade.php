@@ -9,7 +9,7 @@
                     @include('front._block.posts')
                 </div>
                 <div class="side-column">
-                    {{-- side menu --}}
+                    @include('front._block.filter')
                 </div>
             </div>
 

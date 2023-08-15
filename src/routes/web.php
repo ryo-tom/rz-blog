@@ -22,6 +22,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/', [VisitorPostController::class, 'index'])->name('home');
+Route::get('/filter', [VisitorPostController::class, 'filter'])->name('home.filter');
 
 Route::middleware('auth')->group(function () {
     Route::get('admin', function () {
