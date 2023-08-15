@@ -27,16 +27,11 @@
       </div>
       <div class="search-body">
           検索結果:
-          <ul>
-              <li><a href="#">記事タイトル</a></li>
-              <li><a href="#">記事タイトル</a></li>
-              <li><a href="#">記事タイトル</a></li>
-              <li><a href="#">記事タイトル</a></li>
+          <ul class="search-results">
+            @for ($i = 0; $i < 30; $i++)
+            <li class="search-result"><a href="">記事タイトル{{$i}}</a></li>
+            @endfor
           </ul>
-      </div>
-      {{-- Search Footer --}}
-      <div class="search-footer">
-
       </div>
     </div>
   </div>
