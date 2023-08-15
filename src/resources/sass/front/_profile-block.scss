@@ -1,0 +1,68 @@
+.profile-container {
+  background-color: var(--white);
+  border-radius: 4px;
+  padding: 16px;
+}
+
+/* -----------------------
+Profile Header
+----------------------- */
+.profile-header {
+  column-gap: 24px;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+}
+
+.profile-icon {
+  grid-row: 1/3;
+  height: 80px;
+}
+
+.img-profile-icon {
+  border-radius: 50%;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.nickname {
+  align-self: center;
+  font-weight: bold;
+}
+
+/* SNS icon
+-------------------------*/
+.sns-icons {
+  align-items: center;
+  column-gap: 18px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icon-twitter,
+.icon-github {
+  height: 24px;
+  width: 24px;
+  vertical-align: bottom;
+}
+
+/* -----------------------
+Profile Content
+----------------------- */
+.profile-content {
+  padding: 16px 0;
+}
+
+/* -----------------------
+Profile Footer
+----------------------- */
+.profile-footer {
+  .list-item {
+    color: var(--link-color);
+    padding: 8px 0;
+  }
+
+  .list-link {
+    border-bottom: 1px solid var(--link-color);
+  }
+}

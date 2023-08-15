@@ -10,6 +10,7 @@
                 </div>
                 <div class="side-column">
                     @include('front._block.filter')
+                    @include('front._block.profile')
                 </div>
             </div>
 
