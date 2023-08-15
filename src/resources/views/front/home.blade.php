@@ -6,7 +6,7 @@
 
             <div class="columns">
                 <div class="main-column">
-                    {{-- main contents --}}
+                    @include('front._block.posts')
                 </div>
                 <div class="side-column">
                     {{-- side menu --}}

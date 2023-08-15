@@ -1,0 +1,32 @@
+.post-block {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 16px;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 1px 4px var(--shadow-color);
+  }
+}
+
+.post-link {
+  color: inherit;
+}
+
+.post-published-at {
+  color: var(--main-gray);
+  font-size: 0.9rem;
+}
+
+.post-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 16px 0;
+}
+
+.post-row-num {
+  color: var(--gray);
+  font-size: 0.6rem;
+  text-align: end;
+}
