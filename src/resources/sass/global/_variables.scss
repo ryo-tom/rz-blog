@@ -1,27 +1,30 @@
 :root {
+  /* Width
+  -------------------------*/
+  --max-width-pc: 1040px;
+
   /* Colors
   -------------------------*/
   --black: #333;
   --white: #fff;
   --gray: #ccc;
   --gray-light: #eee;
-  --gray-medium: #ddd;
-  --gray-deep: #808080;
-  --gray-dark: #343a40;
+  --main-gray: #545454;
+  --mist-gray: rgba(101, 108, 133, .8);
   --navy: #212A3E;
   --red: #F9322C;
   --red-light: #f8d7da;
   --red-deep: #721c24;
   --blue: #5468FF;
   --blue-light: #0080ff;
-  --blue-sky: #86b4ff;
   --green: #28a745;
 
-  --primary: var(--blue-light);
-  --secondary: var(--gray-deep);
+  /* Skin color */
+  --body-color: #f1f6f9;
+  --modal-color: var(--mist-gray);
 
-  /* Modal */
-  --modal-gray: rgba(101, 108, 133, .8);
+  /* Shadow color */
+  --shadow-color: rgba(0, 0, 0, 0.2);
 
   /* Buttons */
   --create-color: var(--green);

@@ -1,0 +1,15 @@
+@use '../global' as *;
+
+.layout-main {
+  background-color: var(--body-color);
+}
+
+.main-container {
+  padding: 16px 4%;
+
+  @include pc-screen() {
+    max-width: var(--max-width-pc);
+    margin: 0 auto;
+    padding: 16px 24px;
+  }
+}
