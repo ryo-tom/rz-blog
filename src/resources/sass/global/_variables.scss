@@ -26,6 +26,10 @@
   /* Shadow color */
   --shadow-color: rgba(0, 0, 0, 0.2);
 
+  --tag-color: #85cdfd;
+
+  --link-color: #362fd9;
+
   /* Buttons */
   --create-color: var(--green);
   --store-color: var(--green);
@@ -40,4 +44,6 @@
   --updated-txt-color: #086DDD;
   --deleted-bg-color: #E931471A;
   --deleted-txt-color: #E93147;
+  --error-bg-color: #E931471A;
+  --error-txt-color: #E93147;
 }

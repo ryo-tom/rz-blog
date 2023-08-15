@@ -2,3 +2,9 @@
 @use 'header';
 @use 'main';
 @use 'footer';
+
+// blocks
+@use 'post-block';
+@use 'tags-list';
+@use 'filter-block';
+@use 'profile-block';

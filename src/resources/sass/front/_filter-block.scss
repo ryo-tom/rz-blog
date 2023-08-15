@@ -1,0 +1,47 @@
+@use '../global' as *;
+
+.filter-block {
+  background-color: var(--white);
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.filter-header {
+  background-color: var(--main-gray);
+  border-radius: 8px 8px 0 0;
+  color: var(--white);
+  padding: 8px 16px;
+}
+
+.filter-invalid-feedback {
+  background-color: var(--error-bg-color);
+  color: var(--error-txt-color);
+  padding: 8px 16px;
+}
+
+.filter-label {
+  color: var(--blue);
+  font-weight: bold;
+  padding: 8px 0;
+}
+
+.filter-form-select {
+  border-radius: 4px;
+  color: var(--main-gray);
+  font-size: 1rem;
+  padding: 4px 8px;
+
+  &:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
+  }
+}
+
+.category-section {
+  padding: 16px;
+}
+
+.tag-section {
+  padding: 16px 8px 32px 16px;
+}

@@ -20,5 +20,6 @@
     @include('front._layout.footer')
 
     <script src="{{ asset('js/common.js') }}"></script>
+    @stack('scripts')
 </body>
 </html>

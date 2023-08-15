@@ -13,3 +13,25 @@
     padding: 16px 24px;
   }
 }
+
+.columns {
+  @include pc-screen() {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+  }
+}
+
+.main-column {
+  @include pc-screen() {
+    height: 100vh;
+    overflow: scroll;
+    padding-right: 24px;
+  }
+}
+
+.side-column {
+  @include pc-screen() {
+    height: 100vh;
+    overflow: scroll;
+  }
+}
