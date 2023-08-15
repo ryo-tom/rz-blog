@@ -19,6 +19,13 @@ class PostController extends Controller
         ]);
     }
 
+    public function show(string $slug)
+    {
+        return view('front.post', [
+            'post' => Post::where('slug', $slug)->first(),
+        ]);
+    }
+
     public function filter(FilterRequest $request)
     {
         $categorySlug  = $request->input('category_slug');

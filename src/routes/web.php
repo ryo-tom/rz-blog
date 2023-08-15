@@ -23,6 +23,7 @@ Route::get('/', function () {
 
 Route::get('/', [VisitorPostController::class, 'index'])->name('home');
 Route::get('/filter', [VisitorPostController::class, 'filter'])->name('home.filter');
+Route::get('/post/{slug}', [VisitorPostController::class, 'show'])->name('post.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('admin', function () {
