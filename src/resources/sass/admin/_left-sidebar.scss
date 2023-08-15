@@ -2,7 +2,7 @@
 
 .left-sidebar {
   padding-top: 48px;
-  
+
   .menu-list {
     .menu-item {
       &.active {
@@ -10,7 +10,7 @@
       }
 
       &:hover {
-        background-color: var(--modal-gray);
+        background-color: var(--mist-gray);
         cursor: pointer;
         opacity: 0.8;
       }
@@ -40,7 +40,7 @@
       width: 100%;
 
       &:hover {
-        background-color: var(--modal-gray);
+        background-color: var(--mist-gray);
       }
     }
   }
