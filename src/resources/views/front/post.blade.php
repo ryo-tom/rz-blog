@@ -11,7 +11,7 @@
                     @include('front._block.post-content')
                 </div>
                 <div class="side-column">
-                    {{-- TOC --}}
+                    @include('front._block.post-toc')
                     @include('front._block.profile')
                 </div>
             </div>
