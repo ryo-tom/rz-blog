@@ -1,6 +1,5 @@
 <header class="layout-header">
     <div class="header-container">
-        <div class="header-block">
             {{-- Site Title --}}
             <div class="site-title-box">
                 <a href="{{ route('home') }}" class="site-title">
@@ -30,7 +29,6 @@
                     <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
-        </div>
     </div>
 
     {{-- Mobile Navigation --}}

@@ -8,7 +8,10 @@
 }
 
 .header-container {
+  align-items: center;
   color: var(--white);
+  display: flex;
+  justify-content: space-between;
   padding: 16px 4%;
 
   @include pc-screen() {
@@ -16,12 +19,6 @@
     max-width: var(--max-width-pc);
     padding: 16px 24px;
   }
-}
-
-.header-block {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
 }
 
 /* Site Title
