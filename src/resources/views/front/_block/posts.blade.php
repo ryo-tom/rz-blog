@@ -1,6 +1,6 @@
 @foreach ($posts as $post)
 <div class="post-block">
-    <a href="" class="post-link">
+    <a href="{{ route('post.show', ['slug' => $post->slug]) }}" class="post-link">
         {{-- published_at --}}
         <div class="post-published-at">
             {{ $post->published_at }}

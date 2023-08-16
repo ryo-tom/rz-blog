@@ -1,0 +1,108 @@
+.post-content {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+// TEMP）color variables
+$code-bg-color: #f4f4f4;
+$code-color: #ca473f;
+$blockquote-bg-color: #f9f9f9;
+$border-left-color: #ddd;
+$table-border-color: #ddd;
+$table-bg-color: #f5f5f5;
+
+/* -----------------------
+Styles for post content converted Markdown to HTML
+----------------------- */
+.post-content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 16px 0;
+    padding: 4px 0;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  h2 {
+    border-bottom: 1px solid var(--gray);
+    color: var(--blue);
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  h3 {
+    color: var(--blue);
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  ul {
+    list-style: inside;
+  }
+
+  ol {
+    list-style: decimal;
+    list-style-position: inside;
+  }
+
+  li {
+    padding: 4px 0;
+  }
+
+  pre {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    background-color: $code-bg-color;
+    padding: 16px 8px;
+    border-radius: 4px;
+    font-size: 16px;
+
+    code {
+      color: var(--main-gray);
+      line-height: 1.5;
+    }
+  }
+
+  code {
+    background-color: $code-bg-color;
+    border-radius: 4px;
+    color: $code-color;
+    display: inline-block;
+    padding: 1px 4px;
+  }
+
+  blockquote {
+    margin: 0 0 16px;
+    padding: 4px;
+    border-left: 4px solid $border-left-color;
+    background-color: $blockquote-bg-color;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+
+    th,
+    td {
+      padding: 12px 16px;
+      text-align: left;
+      border: 1px solid $table-border-color;
+    }
+
+    th {
+      background-color: $table-bg-color;
+      font-weight: bold;
+    }
+  }
+}

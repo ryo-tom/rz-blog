@@ -1,0 +1,48 @@
+.toc-container {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+
+  .toc-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  a {
+    border-radius: 4px;
+    color: var(--main-gray);
+    display: inline-block;
+    line-height: 1.8;
+    width: 100%;
+
+    &:hover {
+      background-color: var(--gray-light);
+      color: var(--black);
+    }
+  }
+}
+
+.toc-level-1 {
+  padding-left: 0px;
+}
+
+.toc-level-2 {
+  padding-left: 0px;
+}
+
+.toc-level-3 {
+  padding-left: 16px;
+}
+
+.toc-level-4 {
+  padding-left: 32px;
+}
+
+.toc-level-5 {
+  padding-left: 48px;
+}
+
+.toc-level-6 {
+  padding-left: 64px;
+}
