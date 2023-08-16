@@ -1,4 +1,10 @@
 :root {
+
+  /* Height
+  -------------------------*/
+  --header-height: 64px;
+  scroll-padding-top: calc(var(--header-height) + 32px);
+
   /* Width
   -------------------------*/
   --max-width-pc: 1040px;

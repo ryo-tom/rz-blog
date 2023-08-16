@@ -2,13 +2,19 @@
 
 .layout-header {
   background-color: var(--navy);
-  position: sticky;
+  height: var(--header-height);
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: 100;
 }
 
 .header-container {
+  align-items: center;
   color: var(--white);
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
   padding: 16px 4%;
 
   @include pc-screen() {
@@ -16,12 +22,6 @@
     max-width: var(--max-width-pc);
     padding: 16px 24px;
   }
-}
-
-.header-block {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
 }
 
 /* Site Title
@@ -66,7 +66,7 @@
 
 /* Mobile Navigation Button
 -------------------------*/
-.navbtn {
+.mobile-nav-btn {
   -webkit-mask-image: url(../../../public/images/icon-mobile-menu-open.svg);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
