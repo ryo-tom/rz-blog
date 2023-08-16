@@ -3,8 +3,9 @@
 .layout-header {
   background-color: var(--navy);
   height: var(--header-height);
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: 100;
 }
 
