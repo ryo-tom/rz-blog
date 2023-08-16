@@ -19,7 +19,7 @@
         </div>
 
         {{-- Mobile Navigation Button --}}
-        <div id="navBtn" class="navbtn"></div>
+        <div id="mobileNavTrigger" class="mobile-nav-btn"></div>
 
         {{-- PC Navigation --}}
         <nav class="pc-nav">
