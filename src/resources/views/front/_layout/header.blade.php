@@ -1,34 +1,34 @@
 <header class="layout-header">
     <div class="header-container">
-            {{-- Site Title --}}
-            <div class="site-title-box">
-                <a href="{{ route('home') }}" class="site-title">
-                    <div class="main-title">Rz Note</div>
-                    <div class="sub-title">with <span>Laravel</span></div>
-                </a>
+        {{-- Site Title --}}
+        <div class="site-title-box">
+            <a href="{{ route('home') }}" class="site-title">
+                <div class="main-title">Rz Note</div>
+                <div class="sub-title">with <span>Laravel</span></div>
+            </a>
+        </div>
+
+        {{-- Search Form --}}
+        <div id="searchModalTrigger" class="search-box">
+            <span class="material-symbols-outlined">
+                search
+            </span>
+            <div class="placeholder">
+                Search
             </div>
+        </div>
 
-            {{-- Search Form --}}
-            <div id="searchModalTrigger" class="search-box">
-                <span class="material-symbols-outlined">
-                    search
-                </span>
-                <div class="placeholder">
-                    Search
-                </div>
-            </div>
+        {{-- Mobile Navigation Button --}}
+        <div id="navBtn" class="navbtn"></div>
 
-            {{-- Mobile Navigation Button --}}
-            <div id="navBtn" class="navbtn"></div>
-
-            {{-- PC Navigation --}}
-            <nav class="pc-nav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="{{ route('home') }}" class="nav-link">HOME</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
+        {{-- PC Navigation --}}
+        <nav class="pc-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="{{ route('home') }}" class="nav-link">HOME</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
     </div>
 
     {{-- Mobile Navigation --}}
