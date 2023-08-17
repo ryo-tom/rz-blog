@@ -13,7 +13,7 @@ class PostController extends Controller
     public function index()
     {
         return view('front.home', [
-            'posts'      => Post::where('is_published', true)->orderBy('created_at', 'DESC')->get(),
+            'posts'      => Post::where('is_published', true)->orderBy('created_at', 'DESC')->simplePaginate(30)->withQueryString(),
             'categories' => Category::orderByRaw('ISNULL(`sort_order`), `sort_order` ASC')->get(),
             'tags'       => Tag::orderByRaw('ISNULL(`sort_order`), `sort_order` ASC')->get(),
         ]);
@@ -55,7 +55,7 @@ class PostController extends Controller
         return view('front.home', [
             'categories'    => Category::orderByRaw('ISNULL(`sort_order`), `sort_order` ASC')->get(),
             'tags'          => Tag::orderByRaw('ISNULL(`sort_order`), `sort_order` ASC')->get(),
-            'posts'         => $posts->where('is_published', true)->orderBy('created_at', 'DESC')->get(),
+            'posts'         => $posts->where('is_published', true)->orderBy('created_at', 'DESC')->simplePaginate(30)->withQueryString(),
             'queries'       => $request->query(),
             'result'        => $posts->count(),
         ]);

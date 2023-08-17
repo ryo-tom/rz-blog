@@ -1,0 +1,35 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 1em 0;
+  list-style-type: none;
+}
+
+/* Pagination Items */
+.pagination li {
+  margin: 0 0.5em;
+}
+
+/* Links */
+.pagination a {
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: #333;
+  background-color: #eee;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s;
+}
+
+/* Disabled state */
+.pagination .disabled span {
+  padding: 0.5em 1em;
+  color: #aaa;
+  background-color: #eee;
+  border-radius: 0.25rem;
+}
+
+/* Hover state */
+.pagination a:hover {
+  background-color: #ccc;
+  color: #333;
+}
