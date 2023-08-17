@@ -1,5 +1,7 @@
 @extends('layouts.front')
 
+@section('title', config('app.name'))
+
 @section('content')
     <main class="layout-main">
         <div class="main-container">
