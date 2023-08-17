@@ -32,5 +32,5 @@ window.onload = () => {
         toc += (new Array(level + 1)).join("</ul>");
     }
 
-    document.getElementById("table-of-content").innerHTML += toc;
+    document.getElementById("tableOfContent").innerHTML += toc;
 };
