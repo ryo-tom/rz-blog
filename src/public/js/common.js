@@ -31,7 +31,7 @@ searchModalTrigger.addEventListener('click', () => {
 });
 searchModal.addEventListener('click', e => {
   const target = e.target;
-  if (target.classList.contains('modal') && !target.classList.contains('modal-container')) {
+  if (target.classList.contains('layout-modal') && !target.classList.contains('modal-container')) {
       toggleSearchModal();
   }
 });
