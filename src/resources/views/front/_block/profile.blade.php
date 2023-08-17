@@ -1,4 +1,4 @@
-<div class="profile-container">
+<div class="profile-block">
     <div class="profile-header">
         <div class="profile-icon">
             <img src="{{ asset('images/profile-icon.png') }}" alt="" class="img-profile-icon">
