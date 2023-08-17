@@ -7,7 +7,7 @@ body {
   }
 }
 
-.modal {
+.layout-modal {
   background-color: var(--modal-color);
   height: 100vh;
   left: 0;
@@ -38,101 +38,5 @@ body {
     height: 600px;
     margin: 60px auto;
     max-width: 600px;
-  }
-
-  .search-header {
-    align-items: center;
-    display: flex;
-    padding: 16px;
-
-    @include pc-screen() {
-      display: block;
-    }
-
-    .search-form {
-      align-items: center;
-      background-color: var(--white);
-      border: 2px solid var(--blue);
-      border-radius: 4px;
-      display: flex;
-      padding: 8px 0;
-      width: 100%;
-
-      .label-search {
-        display: block;
-        height: 24px;
-        width: 24px;
-
-        .material-symbols-outlined {
-          color: var(--blue);
-        }
-      }
-
-      .search-input {
-        border: none;
-        border-radius: 4px;
-        color: var(--main-gray);
-        padding: 8px 4px;
-        width: 100%;
-        font-size: 1rem;
-
-        &:focus {
-          outline: none;
-        }
-      }
-    }
-
-    .search-close {
-      color: var(--main-gray);
-      font-weight: bold;
-      margin-left: 16px;
-      padding: 8px 0;
-      @include pc-screen() {
-        display: none;
-      }
-    }
-  }
-
-  .suggestion {
-    display: flex;
-    padding: 4px 16px;
-    .suggestion-list {
-      display: flex;
-
-      .suggestion-item {
-        padding: 0 4px;
-      }
-    }
-  }
-
-  .search-mode {
-    padding: 8px 16px;
-  }
-
-  .search-body {
-    height: 100%;
-    overflow-y: auto;
-    padding: 8px 16px;
-    padding-bottom: 159px; // headerの高さに合わせる
-    @include pc-screen() {
-      min-height: 320px;
-      max-height: calc(600px - 159px);
-      padding-bottom: 0;
-    }
-  }
-
-  .search-result {
-    background-color: var(--white);
-    border-radius: 4px;
-    box-shadow: 1px 1px 2px var(--shadow-color);
-    padding: 16px 8px;
-    margin-bottom: 8px;
-    &:last-child {
-      margin-bottom: 24px;
-    }
-    &:hover {
-      background-color: var(--blue-light);
-      color: var(--white);
-    }
   }
 }
