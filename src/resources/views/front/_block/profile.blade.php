@@ -1,17 +1,17 @@
 <div class="profile-block">
     <div class="profile-header">
         <div class="profile-icon">
-            <img src="{{ asset('images/profile-icon.png') }}" alt="" class="img-profile-icon">
+            <img src="{{ asset('images/profile-icon.png') }}" alt="Profile Icon" class="img-profile-icon">
         </div>
         <div class="nickname">
             Ryosuke
         </div>
         <div class="sns-icons">
             <a href="#">
-                <img src="{{ asset('images/Logo blue.svg') }}" alt="" class="icon-twitter">
+                <img src="{{ asset('images/Logo blue.svg') }}" alt="X Logo" class="icon-twitter">
             </a>
             <a href="#">
-                <img src="{{ asset('images/logo-github.svg') }}" alt="" class="icon-github">
+                <img src="{{ asset('images/logo-github.svg') }}" alt="GitHub Logo" class="icon-github">
             </a>
         </div>
     </div>
