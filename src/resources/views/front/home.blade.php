@@ -6,7 +6,7 @@
 
             <div class="columns">
                 <div class="main-column">
-                    @include('front._block.posts')
+                    @include('front._block.posts-list')
                     {{ $posts->links('vendor.pagination.my-simple-default') }}
                 </div>
                 <div class="side-column">
