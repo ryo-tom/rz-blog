@@ -1,7 +1,10 @@
 @use '../global' as *;
 
 .search-block {
-  padding: 16px;
+  --padding-x: 16px;
+  --padding-y: 16px;
+  --search-header-height: 128px;
+  --search-bar-height: 32px;
 }
 
 /* -----------------------
@@ -9,6 +12,7 @@ Search Header
 ----------------------- */
 .search-header {
   height: var(--search-header-height);
+  padding: var(--padding-y) var(--padding-x);
 }
 
 /* Search Bar
@@ -16,6 +20,7 @@ Search Header
 .search-bar {
   align-items: center;
   display: flex;
+  padding-bottom: 8px;
 }
 
 .search-form {
@@ -66,7 +71,7 @@ Search Header
 -------------------------*/
 .suggestion-bar {
   display: flex;
-  padding: 8px 0;
+  padding-bottom: 8px;
 }
 
 .suggestion-list {
@@ -81,7 +86,7 @@ Search Header
 -------------------------*/
 .search-scope-bar {
   display: flex;
-  align-items: center;
+  padding-bottom: 8px;
 }
 
 .scope-label {
@@ -118,20 +123,32 @@ Search Header
 Search Body
 ----------------------- */
 .search-body {
-  height: 100%;
-  overflow-y: auto;
-  padding: 8px 0;
-  padding-bottom: 159px; // headerの高さに合わせる
-
-  @include pc-screen() {
-    min-height: 320px;
-    max-height: calc(600px - 159px);
-    padding-bottom: 0;
-  }
+  padding-top: 16px;
+  padding-bottom: 16px;
+  // background-color: aqua;
 }
 
 /* Search Results
 -------------------------*/
+.search-result-label {
+  height: var(--search-bar-height);
+  padding-left: var(--padding-x);
+  padding-right: var(--padding-x);
+}
+
+.search-results {
+  height: 100%;
+  overflow-y: auto;
+  padding-left: var(--padding-x);
+  padding-right: var(--padding-x);
+  padding-bottom: 159px; // headerの高さに合わせる
+
+  @include pc-screen() {
+    max-height: calc(600px - var(--search-header-height) - 32px - var(--search-bar-height));
+    padding-bottom: 0;
+  }
+}
+
 .search-result-item {
   background-color: var(--white);
   border-radius: 4px;
