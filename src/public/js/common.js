@@ -24,7 +24,7 @@ function toggleSearchModal() {
 const htmlBody           = document.body;
 const searchModalTrigger = document.getElementById('searchModalTrigger');
 const searchModal        = document.getElementById('searchModal');
-const searchClose        = document.getElementById('searchClose');
+const mobileModalClose   = document.getElementById('mobileModalClose');
 
 searchModalTrigger.addEventListener('click', () => {
   toggleSearchModal();
@@ -35,6 +35,6 @@ searchModal.addEventListener('click', e => {
       toggleSearchModal();
   }
 });
-searchClose.addEventListener('click', () => {
+mobileModalClose.addEventListener('click', () => {
   toggleSearchModal();
 });
