@@ -1,6 +1,7 @@
 <div class="search-block">
     {{-- Search Header --}}
     <div class="search-header">
+        {{-- Search Bar --}}
         <div class="search-bar">
             <form id="searchForm" action="" class="search-form">
                 <label for="searchInput" class="search-label">
@@ -12,7 +13,7 @@
             </form>
             <div id="mobileModalClose" class="mobile-modal-close">Close</div>
         </div>
-        {{-- Suggestion Words --}}
+        {{-- Suggestion Bar --}}
         <div class="suggestion-bar">
             <span>検索候補:</span>
             <ul class="suggestion-list">
@@ -21,7 +22,7 @@
                 <li class="suggestion-item">install</li>
             </ul>
         </div>
-        {{-- Search Scope --}}
+        {{-- Search Scope Bar --}}
         <div class="search-scope-bar">
             <span class="scope-label">検索範囲:</span>
             <ul class="scope-list">
@@ -40,6 +41,7 @@
             </ul>
         </div>
     </div>
+    {{-- Search Body --}}
     <div class="search-body">
         検索結果:
         <ul class="search-results">
