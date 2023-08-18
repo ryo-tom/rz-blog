@@ -1,18 +1,16 @@
 @use '../global' as *;
 
 .search-block {
-  padding: 0 16px;
+  padding: 16px;
 }
 
 .search-header {
+  height: var(--search-header-height);
+}
+
+.search-bar {
   align-items: center;
   display: flex;
-  height: var(--search-header-height);
-  padding: 16px 0;
-
-  @include pc-screen() {
-    display: block;
-  }
 }
 
 .search-form {
@@ -25,13 +23,13 @@
   width: 100%;
 }
 
-.label-search {
+.search-label {
   display: block;
   height: 24px;
-  width: 24px;
 
   .material-symbols-outlined {
     color: var(--blue);
+    margin-left: 8px;
   }
 }
 
@@ -39,9 +37,9 @@
   border: none;
   border-radius: 4px;
   color: var(--main-gray);
-  padding: 8px 4px;
+  font-size: 1.2rem;
+  padding: 8px;
   width: 100%;
-  font-size: 1rem;
 
   &:focus {
     outline: none;
@@ -59,9 +57,9 @@
   }
 }
 
-.suggestion {
+.suggestion-bar {
   display: flex;
-  padding: 4px 0;
+  padding: 8px 0;
 }
 
 .suggestion-list {
@@ -69,11 +67,11 @@
 }
 
 .suggestion-item {
-  padding: 0 4px;
+  padding-left: 8px;
 }
 
 .search-mode {
-  padding: 8px 0;
+
 }
 
 .search-body {
@@ -93,8 +91,8 @@
   background-color: var(--white);
   border-radius: 4px;
   box-shadow: 1px 1px 2px var(--shadow-color);
-  padding: 16px 8px;
   margin-bottom: 8px;
+  padding: 16px 8px;
 
   &:last-child {
     margin-bottom: 24px;
