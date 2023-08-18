@@ -21,9 +21,23 @@
                 <li class="suggestion-item">install</li>
             </ul>
         </div>
-        {{-- Search Mode --}}
-        <div class="search-mode">
-            <span>検索モード:</span>
+        {{-- Search Scope --}}
+        <div class="search-scope-bar">
+            <span class="scope-label">検索範囲:</span>
+            <ul class="scope-list">
+                <li class="scope-item">
+                    <input class="scope-radio" type="radio" id="titleMatch" name="searchScope" value="title">
+                    <label class="scope-label-item" for="titleMatch">タイトル</label>
+                </li>
+                <li class="scope-item">
+                    <input class="scope-radio" type="radio" id="contentMatch" name="searchScope" value="content">
+                    <label class="scope-label-item" for="contentMatch">記事内</label>
+                </li>
+                <li class="scope-item">
+                    <input class="scope-radio" type="radio" id="fullRange" name="searchScope" value="all">
+                    <label class="scope-label-item" for="fullRange">全範囲</label>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="search-body">

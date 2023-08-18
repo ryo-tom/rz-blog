@@ -70,8 +70,41 @@
   padding-left: 8px;
 }
 
-.search-mode {
+/* Search Scope
+-------------------------*/
+.search-scope-bar {
+  display: flex;
+  align-items: center;
+}
 
+.scope-label {
+  margin-right: 4px;
+}
+
+.scope-list {
+  display: flex;
+}
+
+.scope-item {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.scope-radio {
+  margin-right: 4px;
+}
+
+.scope-label-item {
+  cursor: pointer;
+
+  &:hover {
+    color: var(--blue-light);
+  }
 }
 
 .search-body {
