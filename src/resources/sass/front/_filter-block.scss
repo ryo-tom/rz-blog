@@ -94,11 +94,18 @@ Filter Body
 }
 
 .category-section {
-  padding: 16px;
+  padding: 16px 32px;
+
+  @include pc-screen() {
+    padding: 16px;
+  }
 }
 
 .tag-section {
-  padding: 16px 8px 32px 16px;
+  padding: 16px 32px 32px 32px;
+  @include pc-screen() {
+    padding: 16px;
+  }
 }
 
 /* -----------------------
@@ -110,7 +117,7 @@ Filter Footer
   border-top: 1px solid var(--gray);
   display: flex;
   justify-content: space-between;
-  padding: 16px;
+  padding: 16px 32px;
   position: absolute;
   width: 100%;
   bottom: 0;
