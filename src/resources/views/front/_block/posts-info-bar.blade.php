@@ -3,7 +3,7 @@
     {{-- TODO: add menu for pc layout --}}
 
     <div class="info-for-mobile">
-        <button class="open-filter-button">
+        <button id="mobileFilterTrigger" class="open-filter-button">
             <div class="label">
                 Filter
             </div>

@@ -1,8 +1,8 @@
-<div class="filter-block">
+<div id="filterBlock" class="filter-block">
     <form action="{{ route('home.filter') }}" method="GET" id="filterForm">
         {{-- Filter Header --}}
         <div class="filter-header">
-            <div class="mobile-filter-back">&lt; Back</div>
+            <div id="mobileFilterBack" class="mobile-filter-back">&lt; Back</div>
             <div class="filter-header-label">Filter</div>
             <a href="{{ route('home') }}" class="filter-clear-button">Clear</a>
         </div>

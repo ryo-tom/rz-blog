@@ -3,23 +3,26 @@
 .filter-block {
   background-color: var(--white);
   display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
 
   &.show {
     display: block;
-    height: 100%;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
   }
 
   @include pc-screen() {
     border-radius: 8px;
     display: block;
+    height: auto;
     margin-bottom: 16px;
+    position: static;
   }
 }
+
 
 /* -----------------------
 Filter Header
@@ -38,6 +41,9 @@ Filter Header
 }
 
 .mobile-filter-back {
+  &:hover {
+    cursor: pointer;
+  }
   @include pc-screen() {
     display: none;
   }
