@@ -130,15 +130,19 @@
 
   .nav-item {
     .nav-link {
-      border-top: 1px solid rgba(255, 255, 255, .15);
+      border-top: 1px solid var(--mist-gray);
       color: var(--white);
       display: block;
       font-weight: bold;
       padding: 16px;
+
+      &:focus {
+        background-color: var(--mist-gray);
+      }
     }
 
     &:last-child .nav-link {
-      border-bottom: 1px solid rgba(255, 255, 255, .15);
+      border-bottom: 1px solid var(--mist-gray);
     }
   }
 
