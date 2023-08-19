@@ -2,7 +2,8 @@
     <form action="{{ route('home.filter') }}" method="GET" id="filterForm">
         {{-- Filter Header --}}
         <div class="filter-header">
-            // Filter
+            <div class="filter-header-label">Filter</div>
+            <a href="{{ route('home') }}" class="filter-clear-button">Clear</a>
         </div>
         {{-- Filter Body --}}
         <div class="filter-body">

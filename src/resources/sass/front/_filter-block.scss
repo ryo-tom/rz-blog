@@ -10,10 +10,29 @@
 Filter Header
 ----------------------- */
 .filter-header {
+  align-items: center;
   background-color: var(--main-gray);
   border-radius: 8px 8px 0 0;
   color: var(--white);
+  display: flex;
+  justify-content: space-between;
   padding: 8px 16px;
+}
+
+.filter-header-label {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.filter-clear-button {
+  border: 1px solid var(--white);
+  border-radius: 4px;
+  padding: 0 8px;
+  font-size: 0.9rem;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 /* -----------------------
