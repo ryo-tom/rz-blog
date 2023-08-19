@@ -5,6 +5,7 @@
   --padding-y: 16px;
   --search-header-height: 128px;
   --search-bar-height: 32px;
+  --subtract-heights: calc(var(--search-header-height) + var(--padding-x) + var(--padding-x) + var(--search-bar-height));
 }
 
 /* -----------------------
@@ -137,14 +138,13 @@ Search Body
 }
 
 .search-results {
-  height: 100%;
+  height: calc(100vh - var(--subtract-heights));
   overflow-y: auto;
   padding-left: var(--padding-x);
   padding-right: var(--padding-x);
-  padding-bottom: 159px; // headerの高さに合わせる
 
   @include pc-screen() {
-    max-height: calc(600px - var(--search-header-height) - 32px - var(--search-bar-height));
+    max-height: calc(600px - var(--subtract-heights));
     padding-bottom: 0;
   }
 }
