@@ -6,6 +6,9 @@
   margin-bottom: 16px;
 }
 
+/* -----------------------
+Filter Header
+----------------------- */
 .filter-header {
   background-color: var(--main-gray);
   border-radius: 8px 8px 0 0;
@@ -13,6 +16,9 @@
   padding: 8px 16px;
 }
 
+/* -----------------------
+Filter Body
+----------------------- */
 .filter-invalid-feedback {
   background-color: var(--error-bg-color);
   color: var(--error-txt-color);
@@ -45,3 +51,8 @@
 .tag-section {
   padding: 16px 8px 32px 16px;
 }
+
+/* -----------------------
+Filter Footer
+----------------------- */
+
