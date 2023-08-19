@@ -2,8 +2,23 @@
 
 .filter-block {
   background-color: var(--white);
-  border-radius: 8px;
-  margin-bottom: 16px;
+  display: none;
+
+  &.show {
+    display: block;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+  }
+
+  @include pc-screen() {
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 16px;
+  }
 }
 
 /* -----------------------
@@ -12,11 +27,20 @@ Filter Header
 .filter-header {
   align-items: center;
   background-color: var(--main-gray);
-  border-radius: 8px 8px 0 0;
   color: var(--white);
   display: flex;
   justify-content: space-between;
   padding: 8px 16px;
+
+  @include pc-screen() {
+    border-radius: 8px 8px 0 0;
+  }
+}
+
+.mobile-filter-back {
+  @include pc-screen() {
+    display: none;
+  }
 }
 
 .filter-header-label {
@@ -74,4 +98,12 @@ Filter Body
 /* -----------------------
 Filter Footer
 ----------------------- */
+.filter-footer {
+  background-color: var(--gray-light);
+  border-top: 1px solid var(--gray);
+  padding: 8px 16px;
 
+  @include pc-screen() {
+    display: none;
+  }
+}
