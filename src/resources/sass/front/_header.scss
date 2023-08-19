@@ -120,6 +120,8 @@
 -------------------------*/
 .mobile-nav {
   background-color: var(--navy);
+  height: 100vh;
+  opacity: 0.9;
   padding: 40px 4%;
 
   @include pc-screen() {
