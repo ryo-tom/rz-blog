@@ -6,6 +6,8 @@
     <main class="layout-main">
         <div class="main-container">
 
+            @include('front._block.posts-info-bar')
+
             <div class="columns">
                 <div class="main-column">
                     @include('front._block.posts-list')
