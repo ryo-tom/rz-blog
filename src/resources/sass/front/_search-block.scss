@@ -99,8 +99,8 @@ Search Header
 }
 
 .scope-item {
-  display: flex;
   align-items: center;
+  display: flex;
   margin-right: 8px;
 
   &:last-child {
@@ -124,9 +124,8 @@ Search Header
 Search Body
 ----------------------- */
 .search-body {
-  padding-top: 16px;
-  padding-bottom: 16px;
-  // background-color: aqua;
+  padding-top: var(--padding-y);
+  padding-bottom: var(--padding-y);
 }
 
 /* Search Results
