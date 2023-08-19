@@ -105,11 +105,41 @@ Filter Body
 Filter Footer
 ----------------------- */
 .filter-footer {
+  align-items: center;
   background-color: var(--gray-light);
   border-top: 1px solid var(--gray);
-  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 
   @include pc-screen() {
     display: none;
+  }
+}
+
+.mobile-filter-counts {
+  letter-spacing: 1px;
+  color: var(--blue);
+  font-weight: bold;
+
+  .count-label {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+}
+
+.mobile-filter-button {
+  background-color: var(--blue);
+  border-radius: 4px;
+  color: var(--white);
+  font-weight: bold;
+  padding: 8px 32px;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.9;
   }
 }
