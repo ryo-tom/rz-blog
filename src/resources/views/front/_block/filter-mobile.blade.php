@@ -1,10 +1,10 @@
-<div id="filterBlock" class="filter-block">
-    <form action="{{ route('home.filter') }}" method="GET" id="filterForm">
+<div id="mobileFilterBlock" class="filter-block on-mobile">
+    <form action="" method="GET" id="">
         {{-- Filter Header --}}
         <div class="filter-header">
-
+            <div id="mobileFilterBack" class="mobile-filter-back">&lt; Back</div>
             <div class="filter-header-label">Filter</div>
-            <a href="{{ route('home') }}" class="filter-clear-button">Clear</a>
+            <a href="" class="filter-clear-button">Clear</a>
         </div>
         {{-- Filter Body --}}
         <div class="filter-body">
@@ -59,6 +59,15 @@
                     ;
                 </div>
             </div>
+        </div>
+        {{-- Filter Footer --}}
+        <div class="filter-footer">
+            <div class="mobile-filter-counts">
+                <span class="count-label">9,999</span>件
+            </div>
+            <button class="mobile-filter-button">
+                絞り込み結果を表示する
+            </button>
         </div>
     </form>
 </div>

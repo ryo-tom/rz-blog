@@ -7,6 +7,7 @@
         <div class="main-container">
 
             @include('front._block.posts-info-bar')
+            @include('front._block.filter-mobile')
 
             <div class="columns">
                 <div class="main-column">
@@ -22,3 +23,7 @@
         </div>
     </main>
 @endsection
+
+@push('scripts')
+    <script src="js/filter.js"></script>
+@endpush

@@ -26,15 +26,15 @@ checkboxes.forEach(checkbox => {
 });
 
 const mobileFilterTrigger = document.getElementById('mobileFilterTrigger');
-const filterBlock = document.getElementById('filterBlock');
+const mobileFilterBlock = document.getElementById('mobileFilterBlock');
 const mobileFilterBack = document.getElementById('mobileFilterBack');
 
 mobileFilterTrigger.addEventListener('click', () => {
-  filterBlock.classList.toggle('show');
-  document.body.classList.toggle('modal-open')
+  mobileFilterBlock.classList.toggle('show');
+  document.body.classList.toggle('filter-open')
 });
 
 mobileFilterBack.addEventListener('click', () => {
-  filterBlock.classList.toggle('show');
-  document.body.classList.toggle('modal-open')
+  mobileFilterBlock.classList.toggle('show');
+  document.body.classList.toggle('filter-open')
 });

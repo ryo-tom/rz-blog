@@ -1,17 +1,36 @@
 @use '../global' as *;
 
+// Prevent the page from scrolling when the mobile filter window is open
+body {
+  &.filter-open {
+    overflow: hidden;
+
+    @include pc-screen() {
+      overflow: auto;
+    }
+  }
+}
+
 .filter-block {
-  background-color: var(--white);
   display: none;
-  height: 100%;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
+  background-color: var(--white);
+
+  &.on-mobile {
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+  }
 
   &.show {
     display: block;
+    @include pc-screen() {
+      display: none;
+    }
+
   }
 
   @include pc-screen() {
