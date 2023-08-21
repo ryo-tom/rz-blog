@@ -1,10 +1,10 @@
-<div id="filterBlock" class="filter-block">
-    <form action="{{ route('home.filter') }}" method="GET" id="filterForm">
+<div id="mobileFilterBlock" class="filter-block on-mobile">
+    <form action="" method="GET" id="mobileFilterForm">
         {{-- Filter Header --}}
         <div class="filter-header">
-
+            <div id="mobileFilterBack" class="mobile-filter-back">&lt; Back</div>
             <div class="filter-header-label">Filter</div>
-            <a href="{{ route('home') }}" class="filter-clear-button">Clear</a>
+            <button type="button" class="filter-clear-button">Clear</button>
         </div>
         {{-- Filter Body --}}
         <div class="filter-body">
@@ -22,7 +22,7 @@
             <div class="category-section">
                 <div class="filter-label">
                     $category =
-                    <select id="categorySelector" name="category_slug" class="filter-form-select">
+                    <select id="mobileCategorySelector" name="category_slug" class="filter-form-select">
                         <option value="">全て</option>
                         @foreach ($categories as $category)
                         <option value="{{ $category->slug }}" @isset($queries['category_slug'])@selected($queries['category_slug'] == $category->slug)@endisset>
@@ -50,13 +50,22 @@
                 <div class="filter-label">];</div>
                 <div class="filter-label">
                     $tagOption =
-                    <select id="tagOptionSelector" name="tag_option" class="filter-form-select">
+                    <select id="mobileTagOptionSelector" name="tag_option" class="filter-form-select">
                         <option value="or" @isset($queries['tag_option'])@selected($queries['tag_option'] == 'or')@endisset>OR</option>
                         <option value="and" @isset($queries['tag_option'])@selected($queries['tag_option'] == 'and')@endisset>AND</option>
                     </select>
                     ;
                 </div>
             </div>
+        </div>
+        {{-- Filter Footer --}}
+        <div class="filter-footer">
+            <div class="mobile-filter-counts">
+                <span class="count-label">9,999</span>件
+            </div>
+            <button class="mobile-filter-button">
+                絞り込み結果を表示する
+            </button>
         </div>
     </form>
 </div>

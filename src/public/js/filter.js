@@ -25,3 +25,16 @@ checkboxes.forEach(checkbox => {
     });
 });
 
+const mobileFilterTrigger = document.getElementById('mobileFilterTrigger');
+const mobileFilterBlock = document.getElementById('mobileFilterBlock');
+const mobileFilterBack = document.getElementById('mobileFilterBack');
+
+mobileFilterTrigger.addEventListener('click', () => {
+  mobileFilterBlock.classList.toggle('show');
+  document.body.classList.toggle('filter-open')
+});
+
+mobileFilterBack.addEventListener('click', () => {
+  mobileFilterBlock.classList.toggle('show');
+  document.body.classList.toggle('filter-open')
+});

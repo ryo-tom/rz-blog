@@ -1,18 +1,92 @@
 @use '../global' as *;
 
+// Prevent the page from scrolling when the mobile filter window is open
+body {
+  &.filter-open {
+    overflow: hidden;
+
+    @include pc-screen() {
+      overflow: auto;
+    }
+  }
+}
+
 .filter-block {
+  display: none;
   background-color: var(--white);
-  border-radius: 8px;
-  margin-bottom: 16px;
+
+  &.on-mobile {
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+  }
+
+  &.show {
+    display: block;
+    @include pc-screen() {
+      display: none;
+    }
+
+  }
+
+  @include pc-screen() {
+    border-radius: 8px;
+    display: block;
+    height: auto;
+    margin-bottom: 16px;
+    position: static;
+  }
 }
 
+
+/* -----------------------
+Filter Header
+----------------------- */
 .filter-header {
+  align-items: center;
   background-color: var(--main-gray);
-  border-radius: 8px 8px 0 0;
   color: var(--white);
+  display: flex;
+  justify-content: space-between;
   padding: 8px 16px;
+
+  @include pc-screen() {
+    border-radius: 8px 8px 0 0;
+  }
 }
 
+.mobile-filter-back {
+  &:hover {
+    cursor: pointer;
+  }
+  @include pc-screen() {
+    display: none;
+  }
+}
+
+.filter-header-label {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.filter-clear-button {
+  border: 1px solid var(--white);
+  border-radius: 4px;
+  padding: 0 8px;
+  font-size: 0.9rem;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+/* -----------------------
+Filter Body
+----------------------- */
 .filter-invalid-feedback {
   background-color: var(--error-bg-color);
   color: var(--error-txt-color);
@@ -39,9 +113,59 @@
 }
 
 .category-section {
-  padding: 16px;
+  padding: 16px 32px;
+
+  @include pc-screen() {
+    padding: 16px;
+  }
 }
 
 .tag-section {
-  padding: 16px 8px 32px 16px;
+  padding: 16px 32px 32px 32px;
+  @include pc-screen() {
+    padding: 16px;
+  }
+}
+
+/* -----------------------
+Filter Footer
+----------------------- */
+.filter-footer {
+  align-items: center;
+  background-color: var(--gray-light);
+  border-top: 1px solid var(--gray);
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 32px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+
+  @include pc-screen() {
+    display: none;
+  }
+}
+
+.mobile-filter-counts {
+  letter-spacing: 1px;
+  color: var(--blue);
+  font-weight: bold;
+
+  .count-label {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+}
+
+.mobile-filter-button {
+  background-color: var(--blue);
+  border-radius: 4px;
+  color: var(--white);
+  font-weight: bold;
+  padding: 8px 32px;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
 }

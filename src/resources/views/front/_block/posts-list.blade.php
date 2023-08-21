@@ -15,12 +15,10 @@
             {{-- tags --}}
             <div class="tags-list">
                 @foreach ($post->tags as $tag)
-                <div class="my-tag">
-                    <div class="tag-inner">
-                        <label class="tag-label">
-                            {{ $tag->name }}
-                        </label>
-                    </div>
+                <div class="tag-item">
+                    <label class="tag-label @isset($queries['tag_slugs']){{ in_array($tag->slug, $queries['tag_slugs']) ? 'tag-checked' : '' }}@endisset">
+                        {{ $tag->name }}
+                    </label>
                 </div>
                 @endforeach
             </div>

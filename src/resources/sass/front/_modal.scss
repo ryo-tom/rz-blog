@@ -3,7 +3,7 @@
 // Prevent the page from scrolling when the modal window is open
 body {
   &.modal-open {
-    overflow: hidden;
+    overflow: hidden!important;
   }
 }
 
