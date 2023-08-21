@@ -39,7 +39,7 @@
                 <div class="filter-label">$tags = [</div>
                 <div class="tags-list">
                     @foreach ($tags as $tag)
-                    <div class="my-tag">
+                    <div class="tag-item">
                         <label class="tag-label @isset($queries['tag_slugs']){{ in_array($tag->slug, $queries['tag_slugs']) ? 'tag-checked' : '' }}@endisset">
                             <input type="checkbox" name="tag_slugs[]" value="{{ $tag->slug }}" @isset($queries['tag_slugs'])@checked(in_array($tag->slug, $queries['tag_slugs']))@endisset hidden>
                             {{ $tag->name }}
