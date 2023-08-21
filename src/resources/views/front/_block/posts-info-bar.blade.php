@@ -1,6 +1,10 @@
 <div class="posts-info-bar">
 
-    {{-- TODO: add menu for pc layout --}}
+    @isset($result)
+    <div class="filter-result">
+        {{ $result }} 件 
+    </div>
+    @endisset
 
     <div class="info-for-mobile">
         <button id="mobileFilterTrigger" class="open-filter-button">

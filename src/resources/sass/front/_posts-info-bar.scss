@@ -1,10 +1,29 @@
 @use '../global' as *;
 
+.posts-info-bar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+
+  .filter-result {
+    background-color: #00bfbc1a;
+    border-radius: 4px;
+    color: #00bfbc;
+    padding: 8px 16px;
+    margin-right: 16px;
+    width: 100%;
+
+    @include pc-screen() {
+      margin-right: 0;
+    }
+  }
+}
 
 /* info-for-mobile
 -------------------------*/
 .info-for-mobile {
-  padding-bottom: 16px;
+  margin-left: auto;
 
   @include pc-screen() {
     display: none;
