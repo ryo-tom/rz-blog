@@ -32,33 +32,34 @@ class PostController extends Controller
         $tagSlugs      = $request->input('tag_slugs');
         $tagOption     = $request->input('tag_option');
 
-        $posts = Post::query();
+        $postQuery = Post::query();
 
         if (!is_null($categorySlug)) {
-            $posts = $posts->whereHas('category', function ($q) use ($categorySlug) {
+            $postQuery->whereHas('category', function ($q) use ($categorySlug) {
                 $q->where('slug', $categorySlug);
             });
         }
 
         if (!is_null($tagSlugs) && $tagOption == 'or') {
-            $posts = $posts->whereHas('tags', function ($q) use ($tagSlugs) {
+            $postQuery->whereHas('tags', function ($q) use ($tagSlugs) {
                 $q->whereIn('slug', $tagSlugs);
             });
         } elseif (!is_null($tagSlugs) && $tagOption == 'and') {
             foreach ($tagSlugs as $tagSlug) {
-                $posts = $posts->whereHas('tags', function ($q) use ($tagSlug) {
+                $postQuery->whereHas('tags', function ($q) use ($tagSlug) {
                     $q->where('slug', $tagSlug);
                 });
             }
         }
 
-        $posts = $posts->published()->latest();
+        $result         = $postQuery->count();
+        $paginatedPosts = $postQuery->published()->latest()->simplePaginate(30)->withQueryString();
 
         return view('front.home', [
             'categories'    => Category::sorted()->get(),
             'tags'          => Tag::sorted()->get(),
-            'result'        => $posts->count(),
-            'posts'         => $posts->simplePaginate(30)->withQueryString(),
+            'result'        => $result,
+            'posts'         => $paginatedPosts,
             'queries'       => $request->query(),
         ]);
     }
