@@ -17,10 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('front.home');
-})->name('home');
-
 Route::get('/', [VisitorPostController::class, 'index'])->name('home');
 Route::get('/filter', [VisitorPostController::class, 'filter'])->name('home.filter');
 Route::get('/post/{slug}', [VisitorPostController::class, 'show'])->name('post.show');
