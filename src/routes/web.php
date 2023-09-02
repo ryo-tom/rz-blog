@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [VisitorPostController::class, 'index'])->name('home');
-Route::get('/filter', [VisitorPostController::class, 'filter'])->name('home.filter');
-Route::get('/post/{slug}', [VisitorPostController::class, 'show'])->name('post.show');
+Route::get('filter', [VisitorPostController::class, 'filter'])->name('home.filter');
+Route::get('posts/{slug}', [VisitorPostController::class, 'show'])->name('post.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('admin', function () {
@@ -30,26 +30,26 @@ Route::middleware('auth')->group(function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
 
-    Route::get('admin/category', [CategoryController::class, 'index'])->name('admin.category.index');
-    Route::get('admin/category/create', [CategoryController::class, 'create'])->name('admin.category.create');
-    Route::post('admin/category', [CategoryController::class, 'store'])->name('admin.category.store');
-    Route::get('admin/category/{category}/edit', [CategoryController::class, 'edit'])->name('admin.category.edit');
-    Route::patch('admin/category/{category}', [CategoryController::class, 'update'])->name('admin.category.update');
-    Route::delete('admin/category/{category}', [CategoryController::class, 'destroy'])->name('admin.category.destroy');
+    Route::get('admin/categories', [CategoryController::class, 'index'])->name('admin.category.index');
+    Route::get('admin/categories/create', [CategoryController::class, 'create'])->name('admin.category.create');
+    Route::post('admin/categories', [CategoryController::class, 'store'])->name('admin.category.store');
+    Route::get('admin/categories/{category}/edit', [CategoryController::class, 'edit'])->name('admin.category.edit');
+    Route::patch('admin/categories/{category}', [CategoryController::class, 'update'])->name('admin.category.update');
+    Route::delete('admin/categories/{category}', [CategoryController::class, 'destroy'])->name('admin.category.destroy');
 
-    Route::get('admin/post', [PostController::class, 'index'])->name('admin.post.index');
-    Route::get('admin/post/create', [PostController::class, 'create'])->name('admin.post.create');
-    Route::post('admin/post', [PostController::class, 'store'])->name('admin.post.store');
-    Route::get('admin/post/{post}/edit', [PostController::class, 'edit'])->name('admin.post.edit');
-    Route::patch('admin/post/{post}', [PostController::class, 'update'])->name('admin.post.update');
-    Route::delete('admin/post/{post}', [PostController::class, 'destroy'])->name('admin.post.destroy');
+    Route::get('admin/posts', [PostController::class, 'index'])->name('admin.post.index');
+    Route::get('admin/posts/create', [PostController::class, 'create'])->name('admin.post.create');
+    Route::post('admin/posts', [PostController::class, 'store'])->name('admin.post.store');
+    Route::get('admin/posts/{post}/edit', [PostController::class, 'edit'])->name('admin.post.edit');
+    Route::patch('admin/posts/{post}', [PostController::class, 'update'])->name('admin.post.update');
+    Route::delete('admin/posts/{post}', [PostController::class, 'destroy'])->name('admin.post.destroy');
 
-    Route::get('admin/tag', [TagController::class, 'index'])->name('admin.tag.index');
-    Route::get('admin/tag/create', [TagController::class, 'create'])->name('admin.tag.create');
-    Route::post('admin/tag', [TagController::class, 'store'])->name('admin.tag.store');
-    Route::get('admin/tag/{tag}/edit', [TagController::class, 'edit'])->name('admin.tag.edit');
-    Route::patch('admin/tag/{tag}', [TagController::class, 'update'])->name('admin.tag.update');
-    Route::delete('admin/tag/{tag}', [TagController::class, 'destroy'])->name('admin.tag.destroy');
+    Route::get('admin/tags', [TagController::class, 'index'])->name('admin.tag.index');
+    Route::get('admin/tags/create', [TagController::class, 'create'])->name('admin.tag.create');
+    Route::post('admin/tags', [TagController::class, 'store'])->name('admin.tag.store');
+    Route::get('admin/tags/{tag}/edit', [TagController::class, 'edit'])->name('admin.tag.edit');
+    Route::patch('admin/tags/{tag}', [TagController::class, 'update'])->name('admin.tag.update');
+    Route::delete('admin/tags/{tag}', [TagController::class, 'destroy'])->name('admin.tag.destroy');
 });
 
 require __DIR__.'/auth.php';
