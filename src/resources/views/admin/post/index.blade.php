@@ -31,6 +31,7 @@
                     <th class="th-cell">slug</th>
                     <th class="th-cell">content</th>
                     <th class="th-cell">is_published</th>
+                    <th class="th-cell">published_at</th>
                     <th class="th-cell">created_at</th>
                     <th class="th-cell">updated_at</th>
                 </tr>
@@ -59,7 +60,8 @@
                     <td class="td-cell">{{ $post->title }}</td>
                     <td class="td-cell">{{ $post->slug }}</td>
                     <td class="td-cell">{{ $post->content }}</td>
-                    <td class="td-cell">{{ $post->is_published }}</td>
+                    <td class="td-cell">{{ $post->is_published ? '公開' : '非公開' }}</td>
+                    <td class="td-cell">{{ $post->published_at ?? 'NULL' }}</td>
                     <td class="td-cell">{{ $post->created_at ?? 'NULL' }}</td>
                     <td class="td-cell">{{ $post->updated_at ?? 'NULL' }}</td>
                 </tr>
