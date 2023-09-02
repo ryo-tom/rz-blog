@@ -34,17 +34,17 @@ class PostController extends Controller
 
         $postQuery = Post::query();
 
-        if (!is_null($categorySlug)) {
+        if ($categorySlug) {
             $postQuery->whereHas('category', function ($q) use ($categorySlug) {
                 $q->where('slug', $categorySlug);
             });
         }
 
-        if (!is_null($tagSlugs) && $tagOption == 'or') {
+        if ($tagSlugs && $tagOption === 'or') {
             $postQuery->whereHas('tags', function ($q) use ($tagSlugs) {
                 $q->whereIn('slug', $tagSlugs);
             });
-        } elseif (!is_null($tagSlugs) && $tagOption == 'and') {
+        } elseif ($tagSlugs && $tagOption === 'and') {
             foreach ($tagSlugs as $tagSlug) {
                 $postQuery->whereHas('tags', function ($q) use ($tagSlug) {
                     $q->where('slug', $tagSlug);
