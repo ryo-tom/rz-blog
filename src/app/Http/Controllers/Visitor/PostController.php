@@ -22,7 +22,7 @@ class PostController extends Controller
     public function show(string $slug)
     {
         return view('front.post', [
-            'post' => Post::where('slug', $slug)->first(),
+            'post' => Post::where('slug', $slug)->firstOrFail(),
         ]);
     }
 
