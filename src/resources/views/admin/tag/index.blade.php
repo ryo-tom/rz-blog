@@ -4,7 +4,7 @@
 
 @section('content')
 
-<h1 class="admin-page-title">Tag List</h1>
+<h1 class="admin-page-title">Tags</h1>
 
 <div class="operation-bar">
     <a href="{{ route('admin.tags.create') }}" class="btn btn-create">Create</a>

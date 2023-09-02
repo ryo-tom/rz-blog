@@ -4,7 +4,7 @@
 
 @section('content')
 
-<h1 class="admin-page-title">Category List</h1>
+<h1 class="admin-page-title">Categories</h1>
 
 <div class="operation-bar">
     <a href="{{ route('admin.categories.create') }}" class="btn btn-create">Create</a>

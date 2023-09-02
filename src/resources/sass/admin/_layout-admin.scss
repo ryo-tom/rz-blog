@@ -1,7 +1,8 @@
 @use '../global' as *;
 
-// Variables
-$left-width: 184px;
+:root {
+  --left-side-width: 184px;
+}
 
 .layout-admin {
   display: flex;
@@ -14,14 +15,14 @@ $left-width: 184px;
   overflow: auto;
   position: fixed;
   top: 0;
-  width: $left-width;
+  width: var(--left-side-width);
 }
 
 .right-column {
   background-color: var(--gray-light);
   height: 100vh;
-  margin-left: $left-width;
-  width: calc(100% - $left-width);
+  margin-left: var(--left-side-width);
+  width: calc(100% - var(--left-side-width));
   overflow: auto;
 }
 
