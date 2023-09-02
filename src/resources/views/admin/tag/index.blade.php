@@ -7,7 +7,7 @@
 <h1 class="admin-page-title">Tag List</h1>
 
 <div class="operation-bar">
-    <a href="{{ route('admin.tag.create') }}" class="btn btn-create">Create</a>
+    <a href="{{ route('admin.tags.create') }}" class="btn btn-create">Create</a>
 </div>
 
 @if (session('action'))
@@ -35,10 +35,10 @@
                 @foreach ($tags as $tag)
                 <tr class="tbody-row">
                     <td class="td-cell">
-                        <a href="{{ route('admin.tag.edit', ['tag' => $tag]) }}" class="btn btn-edit">Edit</a>
+                        <a href="{{ route('admin.tags.edit', ['tag' => $tag]) }}" class="btn btn-edit">Edit</a>
                     </td>
                     <td class="td-cell">
-                        <form action="{{ route('admin.tag.destroy', ['tag' => $tag]) }}" method="POST">
+                        <form action="{{ route('admin.tags.destroy', ['tag' => $tag]) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-delete">Delete</button>

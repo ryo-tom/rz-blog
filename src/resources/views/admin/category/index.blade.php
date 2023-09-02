@@ -7,7 +7,7 @@
 <h1 class="admin-page-title">Category List</h1>
 
 <div class="operation-bar">
-    <a href="{{ route('admin.category.create') }}" class="btn btn-create">Create</a>
+    <a href="{{ route('admin.categories.create') }}" class="btn btn-create">Create</a>
 </div>
 
 @if (session('action'))
@@ -35,10 +35,10 @@
                 @foreach ($categories as $category)
                 <tr class="tbody-row">
                     <td class="td-cell">
-                        <a href="{{ route('admin.category.edit', ['category' => $category]) }}" class="btn btn-edit">Edit</a>
+                        <a href="{{ route('admin.categories.edit', ['category' => $category]) }}" class="btn btn-edit">Edit</a>
                     </td>
                     <td class="td-cell">
-                        <form action="{{ route('admin.category.destroy', ['category' => $category]) }}" method="POST">
+                        <form action="{{ route('admin.categories.destroy', ['category' => $category]) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-delete">Delete</button>

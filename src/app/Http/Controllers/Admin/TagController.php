@@ -28,7 +28,7 @@ class TagController extends Controller
         $tag = Tag::create($inputs);
 
         return redirect()
-            ->route('admin.tag.index')
+            ->route('admin.tags.index')
             ->with([
                 'action'    => 'success',
                 'message'   => "タグID:{$tag->id}を登録しました。",
@@ -47,7 +47,7 @@ class TagController extends Controller
         $tag->update($inputs);
 
         return redirect()
-            ->route('admin.tag.index')
+            ->route('admin.tags.index')
             ->with([
                 'action'    => 'updated',
                 'message'   => "タグID:{$tag->id}を更新しました。",
@@ -65,7 +65,7 @@ class TagController extends Controller
         $tag->delete();
 
         return redirect()
-            ->route('admin.tag.index')
+            ->route('admin.tags.index')
             ->with([
                 'action'    => 'deleted',
                 'message'   => "タグID:{$tag->id}を削除しました。",

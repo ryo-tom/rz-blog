@@ -7,7 +7,7 @@
 <h1 class="admin-page-title">Post List</h1>
 
 <div class="operation-bar">
-    <a href="{{ route('admin.post.create') }}" class="btn btn-create">Create</a>
+    <a href="{{ route('admin.posts.create') }}" class="btn btn-create">Create</a>
 </div>
 
 @if (session('action'))
@@ -39,10 +39,10 @@
                 @foreach ($posts as $post)
                 <tr class="tbody-row">
                     <td class="td-cell">
-                        <a href="{{ route('admin.post.edit', ['post' => $post]) }}" class="btn btn-edit">Edit</a>
+                        <a href="{{ route('admin.posts.edit', ['post' => $post]) }}" class="btn btn-edit">Edit</a>
                     </td>
                     <td class="td-cell">
-                        <form action="{{ route('admin.post.destroy', ['post' => $post]) }}" method="POST">
+                        <form action="{{ route('admin.posts.destroy', ['post' => $post]) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-delete">Delete</button>

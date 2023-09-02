@@ -28,7 +28,7 @@ class CategoryController extends Controller
         $category = Category::create($inputs);
 
         return redirect()
-            ->route('admin.category.index')
+            ->route('admin.categories.index')
             ->with([
                 'action'    => 'success',
                 'message'   => "カテゴリーID:{$category->id}を登録しました。",
@@ -47,7 +47,7 @@ class CategoryController extends Controller
         $category->update($inputs);
 
         return redirect()
-            ->route('admin.category.index')
+            ->route('admin.categories.index')
             ->with([
                 'action'    => 'updated',
                 'message'   => "カテゴリーID:{$category->id}を更新しました。",
@@ -58,7 +58,7 @@ class CategoryController extends Controller
     {
         if ($category->posts->count() > 0) {
             return redirect()
-                ->route('admin.category.index')
+                ->route('admin.categories.index')
                 ->with([
                     'action'  => 'error',
                     'message' => 'カテゴリに関連する投稿が存在するため、削除できません。'
@@ -68,7 +68,7 @@ class CategoryController extends Controller
         $category->delete();
 
         return redirect()
-            ->route('admin.category.index')
+            ->route('admin.categories.index')
             ->with([
                 'action'    => 'deleted',
                 'message'   => "カテゴリーID:{$category->id}を削除しました。",

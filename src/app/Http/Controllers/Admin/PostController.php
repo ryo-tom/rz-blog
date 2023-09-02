@@ -42,7 +42,7 @@ class PostController extends Controller
         $tagIds = $request->input('tag_id');
         $post->tags()->attach($tagIds);
 
-        return redirect()->route('admin.post.index')
+        return redirect()->route('admin.posts.index')
             ->with([
                 'action'    => 'success',
                 'message'   => "記事ID:{$post->id}を登録しました。",
@@ -73,7 +73,7 @@ class PostController extends Controller
         $post->tags()->sync($tagIds);
 
         return redirect()
-            ->route('admin.post.index')
+            ->route('admin.posts.index')
             ->with([
                 'action'    => 'updated',
                 'message'   => "記事ID:{$post->id}を更新しました。",
@@ -84,7 +84,7 @@ class PostController extends Controller
     {
         $post->delete();
 
-        return redirect()->route('admin.post.index')
+        return redirect()->route('admin.posts.index')
             ->with([
                 'action'    => 'deleted',
                 'message'   => "記事ID:{$post->id}を削除しました。",
