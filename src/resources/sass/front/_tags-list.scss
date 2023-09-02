@@ -1,6 +1,11 @@
 .tags-list {
   display: flex;
   flex-wrap: wrap;
+
+  &.is-scrollable {
+    max-height: 240px;
+    overflow-y: scroll;
+  }
 }
 
 .tag-item {

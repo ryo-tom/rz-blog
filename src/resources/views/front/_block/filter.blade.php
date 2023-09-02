@@ -37,7 +37,7 @@
             {{-- Tag Section --}}
             <div class="tag-section">
                 <div class="filter-label">$tags = [</div>
-                <div class="tags-list">
+                <div class="tags-list is-scrollable">
                     @foreach ($tags as $tag)
                     <div class="tag-item">
                         <label class="tag-label @isset($queries['tag_slugs']){{ in_array($tag->slug, $queries['tag_slugs']) ? 'tag-checked' : '' }}@endisset">
