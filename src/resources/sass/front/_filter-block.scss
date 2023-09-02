@@ -87,6 +87,10 @@ Filter Header
 /* -----------------------
 Filter Body
 ----------------------- */
+.filter-body {
+  padding: 16px;
+}
+
 .filter-invalid-feedback {
   background-color: var(--error-bg-color);
   color: var(--error-txt-color);
@@ -109,21 +113,6 @@ Filter Body
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
-  }
-}
-
-.category-section {
-  padding: 16px 32px;
-
-  @include pc-screen() {
-    padding: 16px;
-  }
-}
-
-.tag-section {
-  padding: 16px 32px 32px 32px;
-  @include pc-screen() {
-    padding: 16px;
   }
 }
 
