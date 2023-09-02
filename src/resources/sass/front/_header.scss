@@ -34,14 +34,6 @@
       font-size: 1.3rem;
       letter-spacing: 1px;
     }
-
-    .sub-title {
-      font-size: 0.9rem;
-
-      span {
-        color: var(--red);
-      }
-    }
   }
 }
 
@@ -52,15 +44,17 @@
   border: 1px solid var(--white);
   border-radius: 4px;
   display: flex;
-  padding: 4px 16px;
+  padding: 4px 32px;
+  opacity: 0.8;
 
   &:hover {
     cursor: pointer;
-    opacity: 0.8;
+    opacity: 1;
   }
 
   .placeholder {
-    padding: 0 16px;
+    font-weight: bold;
+    padding: 0 4px;
   }
 }
 
@@ -108,9 +102,15 @@
 
   .nav-link {
     color: var(--white);
+    font-weight: bold;
+    opacity: 0.8;
+
+    &.active {
+      opacity: 1;
+    }
 
     &:hover {
-      opacity: 0.8;
+      opacity: 1;
     }
   }
 }

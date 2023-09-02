@@ -3,8 +3,7 @@
         {{-- Site Title --}}
         <div class="site-title-box">
             <a href="{{ route('home') }}" class="site-title">
-                <div class="main-title">Rz Note</div>
-                <div class="sub-title">with <span>Laravel</span></div>
+                <div class="main-title">Rz Blog</div>
             </a>
         </div>
 
@@ -24,9 +23,12 @@
         {{-- PC Navigation --}}
         <nav class="pc-nav">
             <ul class="nav-list">
-                <li class="nav-item"><a href="{{ route('home') }}" class="nav-link">HOME</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                <li class="nav-item">
+                    <a href="{{ route('home') }}" class="nav-link {{ Request::is('/*') ? 'active' : '' }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Profile</a>
+                </li>
             </ul>
         </nav>
     </div>
@@ -35,7 +37,6 @@
         <ul class="nav-list">
             <li class="nav-item"><a href="{{ route('home') }}" class="nav-link">HOME</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
         </ul>
     </nav>
 </header>
