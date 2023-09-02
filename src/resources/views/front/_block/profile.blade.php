@@ -1,10 +1,12 @@
 <div class="profile-block">
-    <div class="profile-header">
+    <div class="profile-content">
         <div class="profile-icon">
-            <img src="{{ asset('images/profile-icon.png') }}" alt="Profile Icon" class="img-profile-icon">
+            <a href="#">
+                <img src="{{ asset('images/profile-icon.png') }}" alt="Profile Icon" class="image-profile">
+            </a>
         </div>
-        <div class="nickname">
-            Ryosuke
+        <div class="author-info">
+            <a href="#" class="nickname">Ryosuke</a>
         </div>
         <div class="sns-icons">
             <a href="#">
@@ -14,15 +16,6 @@
                 <img src="{{ asset('images/logo-github.svg') }}" alt="GitHub Logo" class="icon-github">
             </a>
         </div>
-    </div>
-    <div class="profile-content">
-        PHP/Laravelで作ったこのブログで学習アウトプットします。
-    </div>
-    <div class="profile-footer">
-        <ul class="list">
-            <li class="list-item"><a href="#" class="list-link">詳しいプロフィール</a></li>
-            <li class="list-item"><a href="#" class="list-link">このブログについて</a></li>
-        </ul>
     </div>
 </div>
 
