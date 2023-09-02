@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\Category;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\App;
 
-class CategorySeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -22,7 +22,7 @@ class CategorySeeder extends Seeder
             return;
         }
 
-        Category::factory(10)->create();
+        $this->createTestUser();
     }
 
     private function skipBecauseOfEnvironment(): bool
@@ -37,11 +37,19 @@ class CategorySeeder extends Seeder
 
     private function skipBecauseRecordsExist(): bool
     {
-        if (Category::count() > 0) {
-            $this->command->info('既にレコードが存在するためCategorySeederをスキップしました。');
+        if (User::count() > 0) {
+            $this->command->info('既にレコードが存在するためUserSeederをスキップしました。');
             return true;
         }
 
         return false;
+    }
+
+    private function createTestUser(): void
+    {
+        User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+        ]);
     }
 }

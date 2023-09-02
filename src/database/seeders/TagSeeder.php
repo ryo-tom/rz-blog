@@ -26,7 +26,13 @@ class TagSeeder extends Seeder
             ['name' => 'HTML', 'slug' => 'html', 'sort_order' => 4, 'created_at' => now()],
             ['name' => 'CSS', 'slug' => 'css', 'sort_order' => 5, 'created_at' => now()],
         ];
-        Tag::insert($tags);
+
+        foreach ($tags as $tag) {
+            Tag::updateOrCreate(
+                ['name' => $tag['name']],
+                $tag
+            );
+        }
 
         Tag::factory(5)->create();
     }
