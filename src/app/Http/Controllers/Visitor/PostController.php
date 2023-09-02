@@ -52,13 +52,13 @@ class PostController extends Controller
             }
         }
 
-        $result         = $postQuery->count();
+        $filteredPostCount = $postQuery->count();
         $paginatedPosts = $postQuery->published()->latest()->simplePaginate(30)->withQueryString();
 
         return view('front.home', [
             'categories'    => Category::sorted()->get(),
             'tags'          => Tag::sorted()->get(),
-            'result'        => $result,
+            'filteredPostCount' => $filteredPostCount,
             'posts'         => $paginatedPosts,
             'queries'       => $request->query(),
         ]);
