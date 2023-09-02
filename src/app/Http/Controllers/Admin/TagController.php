@@ -12,7 +12,7 @@ class TagController extends Controller
     public function index()
     {
         return view('admin.tag.index', [
-            'tags' => Tag::orderByRaw('ISNULL(`sort_order`), `sort_order` ASC')->get(),
+            'tags' => Tag::sorted()->get(),
         ]);
     }
 

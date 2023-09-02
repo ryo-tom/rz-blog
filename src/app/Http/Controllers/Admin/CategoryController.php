@@ -12,7 +12,7 @@ class CategoryController extends Controller
     public function index()
     {
         return view('admin.category.index', [
-            'categories' => Category::orderByRaw('ISNULL(`sort_order`), `sort_order` ASC')->get(),
+            'categories' => Category::sorted()->get(),
         ]);
     }
 
