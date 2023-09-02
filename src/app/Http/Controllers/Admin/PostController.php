@@ -15,15 +15,15 @@ class PostController extends Controller
     public function index()
     {
         return view('admin.post.index', [
-            'posts' => Post::orderBy('created_at', 'DESC')->get(),
+            'posts' => Post::latest()->get(),
         ]);
     }
 
     public function create()
     {
         return view('admin.post.create', [
-            'categories' => Category::all(),
-            'tags'       => Tag::all(),
+            'categories' => Category::sorted()->get(),
+            'tags'       => Tag::sorted()->get(),
         ]);
     }
 
@@ -53,8 +53,8 @@ class PostController extends Controller
     {
         return view('admin.post.edit', [
             'post'       => $post,
-            'categories' => Category::all(),
-            'tags'       => Tag::all(),
+            'categories' => Category::sorted()->get(),
+            'tags'       => Tag::sorted()->get(),
         ]);
     }
 
