@@ -1,0 +1,21 @@
+@use '../global' as *;
+
+.is-error-page {
+  height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+.error-content-title {
+  color: var(--black);
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 16px 0 8px 0;
+}
+
+.error-content-message {
+  color: var(--black);
+}
+
+.error-content-action {
+  color: var(--blue);
+  margin: 32px 0;
+}
