@@ -5,7 +5,7 @@
 @section('content')
     <h1 class="admin-page-title">Tag > Create</h1>
 
-    <form action="{{ route('admin.tag.store') }}" method="POST">
+    <form action="{{ route('admin.tags.store') }}" method="POST">
         @csrf
         <div class="form-block">
             <div class="operation-bar">

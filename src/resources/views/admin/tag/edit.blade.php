@@ -5,7 +5,7 @@
 @section('content')
     <h1 class="admin-page-title">Tag > Edit</h1>
 
-    <form action="{{ route('admin.tag.update', ['tag' => $tag]) }}" method="POST">
+    <form action="{{ route('admin.tags.update', ['tag' => $tag]) }}" method="POST">
         @csrf
         @method('PATCH')
         <div class="form-block">
