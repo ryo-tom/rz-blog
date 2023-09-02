@@ -1,8 +1,8 @@
 <div class="posts-info-bar">
 
-    @isset($result)
+    @isset($filteredPostCount)
     <div class="filter-result">
-        {{ $result }} 件 
+        {{ $filteredPostCount }} 件
     </div>
     @endisset
 
