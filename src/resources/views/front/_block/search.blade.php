@@ -45,9 +45,7 @@
     <div class="search-body">
         <div class="search-result-label">検索結果:</div>
         <ul class="search-results">
-            @for ($i = 0; $i < 30; $i++)
-                <li class="search-result-item"><a href="">記事タイトル{{ $i }}</a></li>
-            @endfor
+            {{-- <a href=""><li class="search-result-item"></li></a> --}}
         </ul>
     </div>
 </div>
