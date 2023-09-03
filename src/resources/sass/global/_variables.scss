@@ -3,7 +3,7 @@
   /* Height
   -------------------------*/
   --header-height: 64px;
-  scroll-padding-top: calc(var(--header-height) + 32px);
+  scroll-padding-top: calc(var(--header-height) + 16px);
   --footer-height: 40px;
 
   /* Width
@@ -47,6 +47,11 @@
 
   /* Shadow */
   --shadow-color: rgba(0, 0, 0, 0.2);
+
+  /* TOC */
+  --toc-color: var(--dark-gray);
+  --toc-hover-color: var(--black);
+  --toc-hover-bg-color: var(--blue-transparent);
 
   /* Tags */
   --tag-color: var(--dark-gray);
