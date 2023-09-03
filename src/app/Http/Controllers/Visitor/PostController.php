@@ -7,6 +7,7 @@ use App\Http\Requests\FilterRequest;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -63,4 +64,20 @@ class PostController extends Controller
             'queries'       => $request->query(),
         ]);
     }
+
+    /** Ajax Search */
+    public function search(Request $request)
+    {
+        $query = $request->get('query');
+
+        $postQuery = Post::query()
+                        ->published()
+                        ->where('title', 'LIKE', "%{$query}%")
+                        ->latest();
+
+        $posts = $postQuery->get();
+
+        return response()->json(['posts' => $posts]);
+    }
+
 }
