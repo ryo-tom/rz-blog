@@ -10,55 +10,69 @@
   -------------------------*/
   --max-width-pc: 1200px;
 
-  /* Colors
+  /* Basic Colors
   -------------------------*/
   --black: #333;
   --white: #fff;
+  /* Gray */
+  --lightest-gray: #f1f6f9;
+  --light-gray: #eee;
   --gray: #ccc;
-  --gray-light: #eee;
-  --main-gray: #545454;
-  --mist-gray: rgba(101, 108, 133, .8);
+  --dark-gray: #545454;
+  /* Navy */
   --navy: #212A3E;
-  --red: #F9322C;
-  --red-light: #f8d7da;
-  --red-deep: #721c24;
+  --navy-transparent: rgba(101, 108, 133, .8);
+  /* Red */
+  --red: #E93147;
+  --red-transparent: #E931471A;
+  /* Blue*/
   --blue: #5468FF;
   --blue-light: #0080ff;
+  --vivid-blue: #086DDD;
+  --blue-transparent: #086DDD1A;
+  /* Green */
   --green: #28a745;
-
+  --vivid-green: #08b94e;
+  --green-transparent: #08b94e1a;
+  /* Cyan */
   --cyan: #00bfbc;
   --cyan-transparent: #00bfbc1a;
 
-  /* Skin color */
-  --body-color: #f1f6f9;
-  --modal-color: var(--mist-gray);
+  /* Theme Colors
+  -------------------------*/
+  --header-color: var(--navy);
+  --footer-color: var(--navy);
+  --body-color: var(--lightest-gray);
+  --modal-color: var(--navy-transparent);
 
-  /* Shadow color */
+  /* Shadow */
   --shadow-color: rgba(0, 0, 0, 0.2);
 
   /* Tags */
-  --tag-color: var(--main-gray);
+  --tag-color: var(--dark-gray);
   --tag-border-color: var(--gray);
-  --tag-hover-bg-color: var(--gray-light);
+  --tag-hover-bg-color: var(--light-gray);
   --tag-checked-color: var(--cyan);
   --tag-checked-bg-color: var(--cyan-transparent);
 
-  --link-color: #362fd9;
+  /* Filter Result */
+  --filter-result-color: var(--cyan);
+  --filter-result-bg-color: var(--cyan-transparent);
 
   /* Buttons */
   --create-color: var(--green);
   --store-color: var(--green);
   --edit-color: var(--blue-light);
   --update-color: var(--blue-light);
-  --delete-color: var(--red-deep);
+  --delete-color: var(--red);
 
   /* Alerts */
-  --success-bg-color: #08b94e1a;
-  --success-txt-color: #08b94e;
-  --updated-bg-color: #086DDD1A;
-  --updated-txt-color: #086DDD;
-  --deleted-bg-color: #E931471A;
-  --deleted-txt-color: #E93147;
-  --error-bg-color: #E931471A;
-  --error-txt-color: #E93147;
+  --success-bg-color: var(--green-transparent);
+  --success-txt-color: var(--vivid-green);
+  --updated-bg-color: var(--blue-transparent);
+  --updated-txt-color: var(--vivid-blue);
+  --deleted-bg-color: var(--red-transparent);
+  --deleted-txt-color: var(--red);
+  --error-bg-color: var(--red-transparent);
+  --error-txt-color: var(--red);
 }

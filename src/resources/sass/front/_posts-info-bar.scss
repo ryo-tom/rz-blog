@@ -6,9 +6,9 @@
   justify-content: space-between;
 
   .filter-result {
-    background-color: #00bfbc1a;
+    background-color: var(--filter-result-bg-color);
     border-radius: 4px;
-    color: #00bfbc;
+    color: var(--filter-result-color);
     padding: 8px 16px;
     margin-bottom: 16px;
     margin-right: 16px;
@@ -33,7 +33,7 @@
   .open-filter-button {
     align-items: center;
     border-radius: 32px;
-    background-color: var(--main-gray);
+    background-color: var(--dark-gray);
     color: var(--white);
     display: flex;
     margin-left: auto;

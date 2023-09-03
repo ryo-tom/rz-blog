@@ -1,7 +1,7 @@
 @use '../global' as *;
 
 .layout-header {
-  background-color: var(--navy);
+  background-color: var(--header-color);
   height: var(--header-height);
   position: fixed;
   top: 0;
@@ -119,7 +119,7 @@
 /* Mobile Navigation
 -------------------------*/
 .mobile-nav {
-  background-color: var(--navy);
+  background-color: var(--header-color);
   height: calc(100vh - var(--header-height));
   opacity: 0.9;
   overflow: auto;
@@ -131,19 +131,19 @@
 
   .nav-item {
     .nav-link {
-      border-top: 1px solid var(--mist-gray);
+      border-top: 1px solid var(--navy-transparent);
       color: var(--white);
       display: block;
       font-weight: bold;
       padding: 16px;
 
       &:focus {
-        background-color: var(--mist-gray);
+        background-color: var(--navy-transparent);
       }
     }
 
     &:last-child .nav-link {
-      border-bottom: 1px solid var(--mist-gray);
+      border-bottom: 1px solid var(--navy-transparent);
     }
   }
 
