@@ -70,6 +70,10 @@ class PostController extends Controller
     {
         $query = $request->get('query');
 
+        if(empty($query)) {
+            return response()->json(['posts' => []]);
+        }
+
         $postQuery = Post::query()
                         ->published()
                         ->where('title', 'LIKE', "%{$query}%")
