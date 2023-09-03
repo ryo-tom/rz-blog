@@ -21,7 +21,7 @@ function toggleSearchModal() {
 function shouldCloseModal(target) {
     const isModalBackground = target.classList.contains('layout-modal');
     const isNotModalContent = !target.classList.contains('modal-container');
-    
+
     return isModalBackground && isNotModalContent;
 }
 
@@ -37,8 +37,11 @@ mobileModalClose.addEventListener('click', toggleSearchModal);
 /* -----------------------
 Ajax Serach
 ----------------------- */
+const searchForm    = document.getElementById("searchForm");
 const searchInput   = document.getElementById("searchInput");
 const searchResults = document.querySelector(".search-results");
+
+searchForm.addEventListener("submit", e => e.preventDefault());
 
 searchInput.addEventListener("input", function() {
     const searchQuery = this.value;
