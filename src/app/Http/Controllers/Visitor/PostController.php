@@ -75,7 +75,7 @@ class PostController extends Controller
                         ->where('title', 'LIKE', "%{$query}%")
                         ->latest();
 
-        $posts = $postQuery->get();
+        $posts = $postQuery->select('title', 'slug')->get();
 
         return response()->json(['posts' => $posts]);
     }
