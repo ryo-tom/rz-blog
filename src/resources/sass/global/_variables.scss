@@ -26,6 +26,9 @@
   --blue-light: #0080ff;
   --green: #28a745;
 
+  --cyan: #00bfbc;
+  --cyan-transparent: #00bfbc1a;
+
   /* Skin color */
   --body-color: #f1f6f9;
   --modal-color: var(--mist-gray);
@@ -33,7 +36,12 @@
   /* Shadow color */
   --shadow-color: rgba(0, 0, 0, 0.2);
 
-  --tag-color: #85cdfd;
+  /* Tags */
+  --tag-color: var(--main-gray);
+  --tag-border-color: var(--gray);
+  --tag-hover-bg-color: var(--gray-light);
+  --tag-checked-color: var(--cyan);
+  --tag-checked-bg-color: var(--cyan-transparent);
 
   --link-color: #362fd9;
 
