@@ -40,13 +40,10 @@ Ajax Serach
 const searchInput   = document.getElementById("searchInput");
 const searchResults = document.querySelector(".search-results");
 
-searchInput.addEventListener("change", function() {
+searchInput.addEventListener("input", function() {
     const searchQuery = this.value;
 
     const url = "/search?query=" + encodeURIComponent(searchQuery);
-
-    // 既存の検索結果をクリア
-    searchResults.innerHTML = '';
 
     fetch(url)
     .then(response => {
@@ -56,6 +53,9 @@ searchInput.addEventListener("change", function() {
         return response.json();
     })
     .then(data => {
+
+        searchResults.innerHTML = '';
+
         data.posts.forEach(post => {
             const postUrl = `/posts/${post.slug}`;
 
