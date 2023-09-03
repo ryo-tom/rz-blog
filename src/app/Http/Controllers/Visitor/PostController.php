@@ -69,21 +69,38 @@ class PostController extends Controller
     public function search(Request $request)
     {
         $query = $request->get('query');
+        $scope = $request->get('scope');
 
         if(empty($query)) {
             return response()->json(['posts' => []]);
         }
 
-        $postQuery = Post::query()
-                        ->published()
-                        ->where('title', 'LIKE', "%{$query}%")
-                        ->latest();
+        $postQuery = Post::query()->published();
 
-        $posts = $postQuery->select('title', 'slug')
-                            ->limit(30)
-                            ->get();
+        switch ($scope) {
+            case 'title':
+              $postQuery->where('title', 'LIKE', "%{$query}%");
+              break;
+            case 'content':
+              $postQuery->where('content', 'LIKE', "%{$query}%");
+              break;
+            case 'all':
+              $postQuery->where(function ($q) use ($query) {
+                $q->where('title', 'LIKE', "%{$query}%")
+                  ->orWhere('content', 'LIKE', "%{$query}%");
+              });
+              break;
+            default:
+              return response()->json(['error' => 'Invalid search scope'], 400);
+          }
 
-        return response()->json(['posts' => $posts]);
+          $postQuery->latest();
+
+          $posts = $postQuery->select('title', 'slug')
+                             ->limit(30)
+                             ->get();
+
+          return response()->json(['posts' => $posts]);
     }
 
 }

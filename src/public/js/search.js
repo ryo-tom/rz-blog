@@ -45,8 +45,10 @@ searchForm.addEventListener("submit", e => e.preventDefault());
 
 searchInput.addEventListener("input", function() {
     const searchQuery = this.value;
+    const radioChecked = document.querySelector('input[name="searchScope"]:checked');
+    const searchScope  = radioChecked ? radioChecked.value : 'error';
 
-    const url = "/search?query=" + encodeURIComponent(searchQuery);
+    const url = `/search?query=${encodeURIComponent(searchQuery)}&scope=${encodeURIComponent(searchScope)}`;
 
     fetch(url)
     .then(response => {
@@ -75,6 +77,7 @@ searchInput.addEventListener("input", function() {
         });
     })
     .catch(error => {
+        searchResults.innerHTML = '';
         console.error('There was a problem with the fetch operation:', error);
         const errorMessage = document.createElement("li");
         errorMessage.classList.add("search-result-item");

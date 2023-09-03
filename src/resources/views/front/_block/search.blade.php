@@ -27,7 +27,7 @@
             <span class="scope-label">検索範囲:</span>
             <ul class="scope-list">
                 <li class="scope-item">
-                    <input class="scope-radio" type="radio" id="titleMatch" name="searchScope" value="title">
+                    <input class="scope-radio" type="radio" id="titleMatch" name="searchScope" value="title" checked>
                     <label class="scope-label-item" for="titleMatch">タイトル</label>
                 </li>
                 <li class="scope-item">
