@@ -19,6 +19,10 @@
   font-size: 14px;
   padding: 4px 8px;
 
+  &.ignore-pointer  {
+    pointer-events: none;
+  }
+
   &:hover {
     background-color: var(--tag-hover-bg-color);
     cursor: pointer;
