@@ -19,10 +19,10 @@ function toggleSearchModal() {
  * @returns {boolean} - Whether the modal should be closed
  */
 function shouldCloseModal(target) {
-    const isModalBackground = target.classList.contains('layout-modal');
-    const isNotModalContent = !target.classList.contains('modal-container');
+  const isModalBackground = target.classList.contains('layout-modal');
+  const isNotModalContent = !target.classList.contains('modal-container');
 
-    return isModalBackground && isNotModalContent;
+  return isModalBackground && isNotModalContent;
 }
 
 // Event Listeners
@@ -37,7 +37,7 @@ mobileModalClose.addEventListener('click', toggleSearchModal);
 /* -----------------------
 Ajax Serach
 ----------------------- */
-const searchForm    = document.getElementById("searchForm");
+const searchForm = document.getElementById("searchForm");
 searchForm.addEventListener("submit", e => e.preventDefault());
 
 /**
@@ -47,20 +47,20 @@ searchForm.addEventListener("submit", e => e.preventDefault());
  * @throws Will throw an error if the network request fails.
  */
 function performSearch() {
-  const searchQuery = searchInput.value.trim();
+  const searchQuery  = searchInput.value.trim();
   const radioChecked = document.querySelector('input[name="searchScope"]:checked');
   const searchScope  = radioChecked ? radioChecked.value : 'error';
 
   const url = `/search?query=${encodeURIComponent(searchQuery)}&scope=${encodeURIComponent(searchScope)}`;
 
   fetch(url)
-  .then(response => {
+    .then(response => {
       if (!response.ok) {
-          throw new Error(`Network response was not ok, status: ${response.status}`);
+        throw new Error(`Network response was not ok, status: ${response.status}`);
       }
       return response.json();
-  })
-  .then(data => {
+    })
+    .then(data => {
       searchResults.innerHTML = '';
 
       if (!searchQuery) {
@@ -69,7 +69,7 @@ function performSearch() {
         searchResults.appendChild(inputKeywordMessage);
         return;
       }
-      
+
       if (data.posts.length === 0) {
         const noResultsMessage = document.createElement("li");
         noResultsMessage.textContent = `"${searchQuery}" の検索結果はありません`;
@@ -78,28 +78,28 @@ function performSearch() {
       }
 
       data.posts.forEach(post => {
-          const postUrl = `/posts/${post.slug}`;
+        const postUrl = `/posts/${post.slug}`;
 
-          const linkElement = document.createElement("a");
-          linkElement.setAttribute("href", postUrl);
-          linkElement.classList.add("search-result-link");
+        const linkElement = document.createElement("a");
+        linkElement.setAttribute("href", postUrl);
+        linkElement.classList.add("search-result-link");
 
-          const listItemElement = document.createElement("li");
-          listItemElement.classList.add("search-result-item");
-          listItemElement.textContent = post.title;
+        const listItemElement = document.createElement("li");
+        listItemElement.classList.add("search-result-item");
+        listItemElement.textContent = post.title;
 
-          linkElement.appendChild(listItemElement);
-          searchResults.appendChild(linkElement);
+        linkElement.appendChild(listItemElement);
+        searchResults.appendChild(linkElement);
       });
-  })
-  .catch(error => {
+    })
+    .catch(error => {
       searchResults.innerHTML = '';
       console.error('There was a problem with the fetch operation:', error);
       const errorMessage = document.createElement("li");
       errorMessage.classList.add("search-result-item");
       errorMessage.textContent = "検索中にエラーが発生しました。";
       searchResults.appendChild(errorMessage);
-  });
+    });
 }
 
 const searchInput   = document.getElementById("searchInput");
