@@ -37,6 +37,14 @@ searchModal.addEventListener('click', (e) => {
 });
 mobileModalClose.addEventListener('click', toggleSearchModal);
 
+// Hotkey
+document.addEventListener('keydown', (e) =>  {
+  if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+    toggleSearchModal();
+    searchInput.focus();
+  }
+});
+
 /* -----------------------
 Ajax Serach
 ----------------------- */

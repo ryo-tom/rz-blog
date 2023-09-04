@@ -9,12 +9,18 @@
 
         {{-- Search Form --}}
         <div id="searchModalTrigger" class="search-box">
-            <span class="material-symbols-outlined">
-                search
+            <span class="search-icon-wrapper">
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+                <div class="placeholder">
+                    Search
+                </div>
             </span>
-            <div class="placeholder">
-                Search
-            </div>
+            <span class="shortcut-keys">
+                <kbd class="shortcut-key">⌘</kbd>
+                <kbd class="shortcut-key">K</kbd>
+            </span>
         </div>
 
         {{-- Mobile Navigation Button --}}
