@@ -63,6 +63,13 @@ function performSearch() {
   .then(data => {
       searchResults.innerHTML = '';
 
+      if (!searchQuery) {
+        const inputKeywordMessage = document.createElement("li");
+        inputKeywordMessage.textContent = "検索キーワードを入力してください";
+        searchResults.appendChild(inputKeywordMessage);
+        return;
+      }
+      
       if (data.posts.length === 0) {
         const noResultsMessage = document.createElement("li");
         noResultsMessage.textContent = `"${searchQuery}" の検索結果はありません`;
