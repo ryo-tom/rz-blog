@@ -3,9 +3,10 @@
 .search-block {
   --padding-x: 16px;
   --padding-y: 16px;
-  --search-header-height: 128px;
-  --search-bar-height: 32px;
-  --subtract-heights: calc(var(--search-header-height) + var(--padding-x) + var(--padding-x) + var(--search-bar-height));
+  --search-header-height: 104px;
+  --subtract-heights: calc(var(--search-header-height) + var(--padding-x) + var(--padding-x));
+
+  padding: var(--padding-y) var(--padding-x);
 }
 
 /* -----------------------
@@ -13,7 +14,6 @@ Search Header
 ----------------------- */
 .search-header {
   height: var(--search-header-height);
-  padding: var(--padding-y) var(--padding-x);
 }
 
 /* Search Bar
@@ -68,26 +68,10 @@ Search Header
   }
 }
 
-/* Suggestion Bar
--------------------------*/
-.suggestion-bar {
-  display: flex;
-  padding-bottom: 8px;
-}
-
-.suggestion-list {
-  display: flex;
-}
-
-.suggestion-item {
-  padding-left: 8px;
-}
-
 /* Search Scope Bar
 -------------------------*/
 .search-scope-bar {
   display: flex;
-  padding-bottom: 8px;
 }
 
 .scope-label {
@@ -123,28 +107,15 @@ Search Header
 /* -----------------------
 Search Body
 ----------------------- */
-.search-body {
-  padding-top: var(--padding-y);
-  padding-bottom: var(--padding-y);
-}
 
 /* Search Results
 -------------------------*/
-.search-result-label {
-  height: var(--search-bar-height);
-  padding-left: var(--padding-x);
-  padding-right: var(--padding-x);
-}
-
 .search-results {
   height: calc(100vh - var(--subtract-heights));
   overflow-y: auto;
-  padding-left: var(--padding-x);
-  padding-right: var(--padding-x);
 
   @include pc-screen() {
     max-height: calc(600px - var(--subtract-heights));
-    padding-bottom: 0;
   }
 }
 

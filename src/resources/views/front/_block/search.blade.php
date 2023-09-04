@@ -13,15 +13,6 @@
             </form>
             <div id="mobileModalClose" class="mobile-modal-close">Close</div>
         </div>
-        {{-- Suggestion Bar --}}
-        <div class="suggestion-bar">
-            <span>検索候補:</span>
-            <ul class="suggestion-list">
-                <li class="suggestion-item">laravel</li>
-                <li class="suggestion-item">composer</li>
-                <li class="suggestion-item">install</li>
-            </ul>
-        </div>
         {{-- Search Scope Bar --}}
         <div class="search-scope-bar">
             <span class="scope-label">検索範囲:</span>
@@ -43,7 +34,6 @@
     </div>
     {{-- Search Body --}}
     <div class="search-body">
-        <div class="search-result-label">検索結果:</div>
         <ul class="search-results" id="searchResults">
             {{-- <a href=""><li class="search-result-item"></li></a> --}}
         </ul>
