@@ -137,8 +137,9 @@
       font-weight: bold;
       padding: 16px;
 
-      &:focus {
-        background-color: var(--navy-transparent);
+      &:focus,
+      &:hover {
+        background-color: var(--blue-transparent);
       }
     }
 
