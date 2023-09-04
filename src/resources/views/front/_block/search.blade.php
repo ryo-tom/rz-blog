@@ -44,7 +44,7 @@
     {{-- Search Body --}}
     <div class="search-body">
         <div class="search-result-label">検索結果:</div>
-        <ul class="search-results">
+        <ul class="search-results" id="searchResults">
             {{-- <a href=""><li class="search-result-item"></li></a> --}}
         </ul>
     </div>
