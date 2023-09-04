@@ -27,7 +27,7 @@
             <span class="scope-label">検索範囲:</span>
             <ul class="scope-list">
                 <li class="scope-item">
-                    <input class="scope-radio" type="radio" id="titleMatch" name="searchScope" value="title">
+                    <input class="scope-radio" type="radio" id="titleMatch" name="searchScope" value="title" checked>
                     <label class="scope-label-item" for="titleMatch">タイトル</label>
                 </li>
                 <li class="scope-item">
@@ -44,10 +44,8 @@
     {{-- Search Body --}}
     <div class="search-body">
         <div class="search-result-label">検索結果:</div>
-        <ul class="search-results">
-            @for ($i = 0; $i < 30; $i++)
-                <li class="search-result-item"><a href="">記事タイトル{{ $i }}</a></li>
-            @endfor
+        <ul class="search-results" id="searchResults">
+            {{-- <a href=""><li class="search-result-item"></li></a> --}}
         </ul>
     </div>
 </div>
