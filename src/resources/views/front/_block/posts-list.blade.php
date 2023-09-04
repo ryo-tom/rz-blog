@@ -16,9 +16,9 @@
             <div class="tags-list">
                 @foreach ($post->tags as $tag)
                 <div class="tag-item">
-                    <label class="tag-label ignore-pointer  @isset($queries['tag_slugs']){{ in_array($tag->slug, $queries['tag_slugs']) ? 'tag-checked' : '' }}@endisset">
+                    <span class="tag-label ignore-pointer  @isset($queries['tag_slugs']){{ in_array($tag->slug, $queries['tag_slugs']) ? 'tag-checked' : '' }}@endisset">
                         {{ $tag->name }}
-                    </label>
+                    </span>
                 </div>
                 @endforeach
             </div>
