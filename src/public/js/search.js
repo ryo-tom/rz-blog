@@ -42,6 +42,10 @@ document.addEventListener('keydown', (e) =>  {
   if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
     toggleSearchModal();
     searchInput.focus();
+  } else if (e.key === 'Escape') {
+    if (!searchModal.classList.contains('disable')) {
+      toggleSearchModal();
+    }
   }
 });
 
