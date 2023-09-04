@@ -47,7 +47,7 @@ searchForm.addEventListener("submit", e => e.preventDefault());
  * @throws Will throw an error if the network request fails.
  */
 function performSearch() {
-  const searchQuery = searchInput.value;
+  const searchQuery = searchInput.value.trim();
   const radioChecked = document.querySelector('input[name="searchScope"]:checked');
   const searchScope  = radioChecked ? radioChecked.value : 'error';
 
