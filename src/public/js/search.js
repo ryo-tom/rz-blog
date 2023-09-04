@@ -26,7 +26,10 @@ function shouldCloseModal(target) {
 }
 
 // Event Listeners
-searchModalTrigger.addEventListener('click', toggleSearchModal);
+searchModalTrigger.addEventListener('click', () => {
+  toggleSearchModal();
+  searchInput.focus();
+});
 searchModal.addEventListener('click', (e) => {
   if (shouldCloseModal(e.target)) {
     toggleSearchModal();
