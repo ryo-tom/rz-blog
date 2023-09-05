@@ -14,7 +14,7 @@ class PostController extends Controller
     public function index()
     {
         return view('front.home', [
-            'posts'      => Post::published()->latest()->simplePaginate(30)->withQueryString(),
+            'posts'      => Post::published()->latestPublished()->simplePaginate(30)->withQueryString(),
             'categories' => Category::sorted()->get(),
             'tags'       => Tag::sorted()->get(),
         ]);
@@ -54,7 +54,7 @@ class PostController extends Controller
         }
 
         $filteredPostCount = $postQuery->count();
-        $paginatedPosts = $postQuery->published()->latest()->simplePaginate(30)->withQueryString();
+        $paginatedPosts = $postQuery->published()->latestPublished()->simplePaginate(30)->withQueryString();
 
         return view('front.home', [
             'categories'    => Category::sorted()->get(),
@@ -94,7 +94,7 @@ class PostController extends Controller
               return response()->json(['error' => 'Invalid search scope'], 400);
           }
 
-          $postQuery->latest();
+          $postQuery->latestPublished();
 
           $posts = $postQuery->select('title', 'slug')
                              ->limit(30)
