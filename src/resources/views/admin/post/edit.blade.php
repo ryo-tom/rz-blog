@@ -56,7 +56,7 @@
                 </div>
                 <div class="input-box">
                     <label for="published_at">公開日<span class="required-mark">*</span></label>
-                    <input type="date" id="published_at" placeholder="published_at" name="published_at" value="{{ old('published_at', $post->puclished_at ?? now()->format('Y-m-d')) }}">
+                    <input type="datetime-local" id="published_at" placeholder="published_at" name="published_at" value="{{ old('published_at', $post->published_at ?? now()) }}">
                     @error('published_at')
                     <div class="validation-message">{{ $message }}</div>
                     @enderror
