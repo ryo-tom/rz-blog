@@ -87,7 +87,7 @@ class Post extends Model
         return $query->orderBy('created_at', 'DESC');
     }
 
-    public function scopeWithSlug(Builder $query, string $slug)
+    public function scopeWithSlug(Builder $query, string $slug): Builder
     {
         return $query->where('slug', $slug);
     }
