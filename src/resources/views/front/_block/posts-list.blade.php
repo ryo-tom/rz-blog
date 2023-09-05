@@ -4,7 +4,7 @@
         <a href="{{ route('posts.show', ['slug' => $post->slug]) }}" class="post-item-link">
             {{-- published_at --}}
             <div class="post-published-at">
-                {{ $post->published_at->format('Y-m-d') }}
+                {{ $post->published_at?->format('Y-m-d') }}
             </div>
 
             {{-- title --}}

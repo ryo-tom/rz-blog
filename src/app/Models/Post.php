@@ -57,7 +57,7 @@ class Post extends Model
     protected function publishedAt(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => Carbon::parse($value),
+            get: fn ($value) => is_null($value) ? NULL : Carbon::parse($value),
         );
     }
 
