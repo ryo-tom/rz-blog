@@ -25,17 +25,19 @@ class Post extends Model
 
     /*
     |--------------------------------------------------------------------------
-    | Defining Relationships
+    | Relationships
     |--------------------------------------------------------------------------
     */
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
+
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }
+
     public function tags(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class);
@@ -43,10 +45,9 @@ class Post extends Model
 
     /*
     |--------------------------------------------------------------------------
-    | Defining Accessors
+    | Accessors
     |--------------------------------------------------------------------------
     */
-
     /**
      * Get the array of tag IDs associated with the Post.
      *
@@ -76,7 +77,6 @@ class Post extends Model
     | Scopes
     |--------------------------------------------------------------------------
     */
-
     public function scopePublished(Builder $query): Builder
     {
         return $query->where('is_published', true);

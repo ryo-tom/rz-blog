@@ -19,7 +19,7 @@ class Tag extends Model
 
     /*
     |--------------------------------------------------------------------------
-    | Defining Relationships
+    | Relationships
     |--------------------------------------------------------------------------
     */
     public function posts(): BelongsToMany
@@ -32,7 +32,6 @@ class Tag extends Model
     | Scopes
     |--------------------------------------------------------------------------
     */
-
     public function scopeSorted(Builder $query): Builder
     {
         return $query->orderByRaw('ISNULL(`sort_order`), `sort_order` ASC');

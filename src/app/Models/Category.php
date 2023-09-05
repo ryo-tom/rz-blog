@@ -19,7 +19,7 @@ class Category extends Model
 
     /*
     |--------------------------------------------------------------------------
-    | Defining Relationships
+    | Relationships
     |--------------------------------------------------------------------------
     */
     public function posts(): HasMany
@@ -32,7 +32,6 @@ class Category extends Model
     | Scopes
     |--------------------------------------------------------------------------
     */
-
     public function scopeSorted(Builder $query): Builder
     {
         return $query->orderByRaw('ISNULL(`sort_order`), `sort_order` ASC');
