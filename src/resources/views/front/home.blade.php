@@ -24,5 +24,5 @@
 @endsection
 
 @push('scripts')
-    <script src="js/filter.js"></script>
+    <script src={{ asset('js/filter.js') }}></script>
 @endpush
