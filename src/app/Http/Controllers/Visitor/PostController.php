@@ -33,28 +33,14 @@ class PostController extends Controller
         $tagSlugs      = $request->input('tag_slugs');
         $tagOption     = $request->input('tag_option');
 
-        $postQuery = Post::query();
+        $posts = Post::query()
+                ->published()
+                ->filterByCategory($categorySlug)
+                ->filterByTags($tagSlugs, $tagOption)
+                ->latestPublished();
 
-        if ($categorySlug) {
-            $postQuery->whereHas('category', function ($q) use ($categorySlug) {
-                $q->where('slug', $categorySlug);
-            });
-        }
-
-        if ($tagSlugs && $tagOption === 'or') {
-            $postQuery->whereHas('tags', function ($q) use ($tagSlugs) {
-                $q->whereIn('slug', $tagSlugs);
-            });
-        } elseif ($tagSlugs && $tagOption === 'and') {
-            foreach ($tagSlugs as $tagSlug) {
-                $postQuery->whereHas('tags', function ($q) use ($tagSlug) {
-                    $q->where('slug', $tagSlug);
-                });
-            }
-        }
-
-        $filteredPostCount = $postQuery->count();
-        $paginatedPosts = $postQuery->published()->latestPublished()->simplePaginate(30)->withQueryString();
+        $filteredPostCount  = $posts->count();
+        $paginatedPosts     = $posts->simplePaginate(30)->withQueryString();
 
         return view('front.home', [
             'categories'    => Category::sorted()->get(),

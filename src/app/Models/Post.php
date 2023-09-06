@@ -105,4 +105,40 @@ class Post extends Model
     {
         return $query->where('slug', $slug);
     }
+
+    public function scopeFilterByCategory(Builder $query, ?string $categorySlug): Builder
+    {
+        if (!$categorySlug) {
+            return $query;
+        }
+
+        return $query->whereHas('category', function ($q) use ($categorySlug) {
+            $q->where('slug', $categorySlug);
+        });
+    }
+
+    public function scopeFilterByTags(Builder $query, ?array $tagSlugs, ?string $tagOption): Builder
+    {
+        if (!$tagSlugs) {
+            return $query;
+        }
+
+        if ($tagOption === 'or') {
+            return $query->whereHas('tags', function ($q) use ($tagSlugs) {
+                $q->whereIn('slug', $tagSlugs);
+            });
+        }
+
+        if ($tagOption === 'and') {
+            foreach ($tagSlugs as $tagSlug) {
+                $query->whereHas('tags', function ($q) use ($tagSlug) {
+                    $q->where('slug', $tagSlug);
+                });
+            }
+        }
+
+        return $query;
+    }
+
+
 }
