@@ -8,16 +8,8 @@
         </div>
         {{-- Filter Body --}}
         <div class="filter-body">
-            {{-- Invalid Feedback --}}
-            @if ($errors->any())
-            <div class="filter-invalid-feedback">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
+            {{-- Insert filter-invalid-feedback element by JS --}}
+
             {{-- Category Section --}}
             <div class="category-section">
                 <div class="filter-label">

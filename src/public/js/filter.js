@@ -126,7 +126,25 @@ function performFilter() {
 
     })
     .catch(error => {
+      insertErrorElement('検索エラーが発生しました... ;(');
       console.error('There was a problem with the fetch operation:', error);
     });
 
 }
+
+function createErrorElement(errorMessage) {
+  const errorElement = document.createElement('div');
+  errorElement.classList.add('filter-invalid-feedback');
+  errorElement.textContent = errorMessage;
+  return errorElement;
+}
+
+function insertErrorElement(errorMessage) {
+  const errorElement = createErrorElement(errorMessage);
+
+  const filterBlock = document.getElementById('filterBlock');
+  const filterBody = filterBlock.querySelector('.filter-body');
+
+  filterBody.insertAdjacentElement('beforebegin', errorElement);
+}
+
