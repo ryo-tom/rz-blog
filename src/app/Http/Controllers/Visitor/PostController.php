@@ -51,6 +51,24 @@ class PostController extends Controller
         ]);
     }
 
+    public function ajaxFilter(FilterRequest $request)
+    {
+        $categorySlug  = $request->input('category_slug');
+        $tagSlugs      = $request->input('tag_slugs');
+        $tagOption     = $request->input('tag_option');
+
+        $posts = Post::with('tags')
+                ->published()
+                ->filterByCategory($categorySlug)
+                ->filterByTags($tagSlugs, $tagOption)
+                ->latestPublished()
+                ->select('id', 'title', 'slug', 'published_at')
+                ->limit(30)
+                ->get();
+
+        return response()->json(['posts' => $posts]);
+    }
+
     /** Ajax Search */
     public function search(Request $request)
     {
