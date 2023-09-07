@@ -1,5 +1,5 @@
 <div id="filterBlock" class="filter-block">
-    <form action="{{ route('posts.filter') }}" method="GET" id="filterForm">
+    <form id="filterForm">
         {{-- Filter Header --}}
         <div class="filter-header">
 
@@ -25,7 +25,7 @@
                     <select id="categorySelector" name="category_slug" class="filter-form-select">
                         <option value="">全て</option>
                         @foreach ($categories as $category)
-                        <option value="{{ $category->slug }}" @isset($queries['category_slug'])@selected($queries['category_slug'] == $category->slug)@endisset>
+                        <option value="{{ $category->slug }}">
                             {{ $category->name }}
                         </option>
                         @endforeach
@@ -40,8 +40,8 @@
                 <div class="tags-list is-scrollable">
                     @foreach ($tags as $tag)
                     <div class="tag-item">
-                        <label class="tag-label @isset($queries['tag_slugs']){{ in_array($tag->slug, $queries['tag_slugs']) ? 'tag-checked' : '' }}@endisset">
-                            <input type="checkbox" name="tag_slugs[]" value="{{ $tag->slug }}" @isset($queries['tag_slugs'])@checked(in_array($tag->slug, $queries['tag_slugs']))@endisset hidden>
+                        <label class="tag-label">
+                            <input type="checkbox" name="tag_slugs[]" value="{{ $tag->slug }}" hidden>
                             {{ $tag->name }}
                         </label>
                     </div>
@@ -51,8 +51,8 @@
                 <div class="filter-label">
                     $tagOption =
                     <select id="tagOptionSelector" name="tag_option" class="filter-form-select">
-                        <option value="or" @isset($queries['tag_option'])@selected($queries['tag_option'] == 'or')@endisset>OR</option>
-                        <option value="and" @isset($queries['tag_option'])@selected($queries['tag_option'] == 'and')@endisset>AND</option>
+                        <option value="or">OR</option>
+                        <option value="and">AND</option>
                     </select>
                     ;
                 </div>
@@ -63,6 +63,6 @@
 
 @push('scripts')
     <script>
-        const ajaxFilterRoute = '{{ route('posts.ajaxFilter') }}';
+        const ajaxFilterRoute = '{{ route('posts.filter') }}';
     </script>
 @endpush

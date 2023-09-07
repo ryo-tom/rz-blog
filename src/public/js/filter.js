@@ -1,8 +1,5 @@
 'use strict';
 
-/** 検索条件フォーム */
-const filterForm = document.getElementById('filterForm');
-
 /**
  * 指定したidのセレクトボックが変更された時
  *
