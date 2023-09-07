@@ -71,6 +71,11 @@ function performFilter() {
       const postsList = document.querySelector('.posts-list');
       postsList.innerHTML = '';
 
+      const filterBody = document.querySelector('.filter-body');
+      if (filterBody) {
+          updateOrInsertFilterResult(filterBody, data.filteredPostCount);
+      }
+
       data.posts.forEach((post, index) => {
         const postItem = document.createElement('div');
         postItem.classList.add('post-item');
@@ -148,3 +153,21 @@ function insertErrorElement(errorMessage) {
   filterBody.insertAdjacentElement('beforebegin', errorElement);
 }
 
+function updateOrInsertFilterResult(filterBody, count) {
+  const existingFilterResult = document.querySelector(".filter-result");
+
+  if (existingFilterResult) {
+      existingFilterResult.textContent = `${count} 件`;
+      return;
+  }
+
+  const filterResultElement = createFilterResultElement(count);
+  filterBody.insertAdjacentElement('beforeend', filterResultElement);
+}
+
+function createFilterResultElement(count) {
+  const resultDiv = document.createElement('div');
+  resultDiv.classList.add('filter-result');
+  resultDiv.textContent = `${count} 件`;
+  return resultDiv;
+}

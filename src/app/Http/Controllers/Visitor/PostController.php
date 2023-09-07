@@ -34,16 +34,19 @@ class PostController extends Controller
         $tagSlugs      = $request->input('tag_slugs');
         $tagOption     = $request->input('tag_option');
 
-        $posts = Post::with('tags')
+        $query = Post::with('tags')
                 ->published()
                 ->filterByCategory($categorySlug)
                 ->filterByTags($tagSlugs, $tagOption)
-                ->latestPublished()
-                ->select('id', 'title', 'slug', 'published_at')
+                ->latestPublished();
+
+        $filteredPostCount = $query->count();
+
+        $posts = $query->select('id', 'title', 'slug', 'published_at')
                 ->limit(30)
                 ->get();
 
-        return response()->json(['posts' => $posts]);
+        return response()->json(['posts' => $posts, 'filteredPostCount' => $filteredPostCount]);
     }
 
     /** Ajax Search */
