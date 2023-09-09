@@ -57,100 +57,25 @@ function performFilter() {
   const url = `${ajaxFilterRoute}?${params.toString()}`;
   console.log(url);
 
-  fetch(url)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Network response was not ok, status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log('Received data:', data);
-
-      // posts-listをクリア
-      const postsList = document.querySelector('.posts-list');
-      postsList.innerHTML = '';
-
-      const filterBody = document.querySelector('.filter-body');
-      if (filterBody) {
-          updateOrInsertFilterResult(filterBody, data.filteredPostCount);
-      }
-
-      data.posts.forEach((post, index) => {
-        const postItem = document.createElement('div');
-        postItem.classList.add('post-item');
-
-        const postLink = document.createElement('a');
-        postLink.classList.add('post-item-link');
-        postLink.href = `/posts/${post.slug}`;
-
-        // published_at
-        const postPublishedAt = document.createElement('div');
-        postPublishedAt.classList.add('post-published-at');
-        postPublishedAt.textContent = formatDateToYMD(post.published_at);
-
-        // title
-        const postTitle = document.createElement('h2');
-        postTitle.classList.add('post-title');
-        postTitle.textContent = post.title;
-
-        // tags
-        const tagsList = document.createElement('div');
-        tagsList.classList.add('tags-list');
-
-        if (post.tags) {
-          post.tags.forEach(tag => {
-            const tagItem = document.createElement('div');
-            tagItem.classList.add('tag-item');
-
-            const tagLabel = document.createElement('span');
-            tagLabel.classList.add('tag-label', 'ignore-pointer');
-            tagLabel.textContent = tag.name;
-
-            tagItem.appendChild(tagLabel);
-            tagsList.appendChild(tagItem);
-          });
-        } else {
-          console.warn('Tags are undefined for post', post);
-        }
-
-        // row number
-        const rowNum = document.createElement('div');
-        rowNum.classList.add('post-row-num');
-        rowNum.textContent = data.posts.length - index;
-
-        // Assemble the post item
-        postLink.appendChild(postPublishedAt);
-        postLink.appendChild(postTitle);
-        postLink.appendChild(tagsList);
-        postLink.appendChild(rowNum);
-
-        postItem.appendChild(postLink);
-        postsList.appendChild(postItem);
-      });
-
-    })
-    .catch(error => {
-      insertErrorElement('検索エラーが発生しました... ;(');
-      console.error('There was a problem with the fetch operation:', error);
-    });
-
+  fetchPosts(url).then(data => {
+    if (data) renderPosts(data);
+  });
 }
 
-function createErrorElement(errorMessage) {
-  const errorElement = document.createElement('div');
-  errorElement.classList.add('filter-invalid-feedback');
-  errorElement.textContent = errorMessage;
-  return errorElement;
-}
+function renderPosts(data) {
+  console.log('Received data:', data);
+  clearPostsList();
 
-function insertErrorElement(errorMessage) {
-  const errorElement = createErrorElement(errorMessage);
+  const filterBody = document.querySelector('.filter-body');
+  if (filterBody) {
+      updateOrInsertFilterResult(filterBody, data.filteredPostCount);
+  }
 
-  const filterBlock = document.getElementById('filterBlock');
-  const filterBody = filterBlock.querySelector('.filter-body');
-
-  filterBody.insertAdjacentElement('beforebegin', errorElement);
+  const postsList = document.querySelector('.posts-list');
+  data.posts.forEach((post, index) => {
+    const postElement = createPostElement(post, index, data.posts.length);
+    postsList.appendChild(postElement);
+  });
 }
 
 function updateOrInsertFilterResult(filterBody, count) {
@@ -179,4 +104,87 @@ function formatDateToYMD(dateString) {
   const day   = String(date.getDate()).padStart(2, '0');
 
   return `${year}-${month}-${day}`;
+}
+
+//
+
+function fetchPosts(url) {
+  return fetch(url)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Network response was not ok, status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .catch(error => {
+      insertErrorElement('検索エラーが発生しました... ;(');
+      console.error('There was a problem with the fetch operation:', error);
+    });
+}
+
+function appendTag(tagsList, tagName) {
+  const tagItem = document.createElement('div');
+  tagItem.classList.add('tag-item');
+
+  const tagLabel = document.createElement('span');
+  tagLabel.classList.add('tag-label', 'ignore-pointer');
+  tagLabel.textContent = tagName;
+
+  tagItem.appendChild(tagLabel);
+  tagsList.appendChild(tagItem);
+}
+
+function createPostElement(post, index, totalPosts) {
+  const postItem = document.createElement('div');
+  postItem.classList.add('post-item');
+
+  const postLink = document.createElement('a');
+  postLink.classList.add('post-item-link');
+  postLink.href = `/posts/${post.slug}`;
+
+  const postPublishedAt = document.createElement('div');
+  postPublishedAt.classList.add('post-published-at');
+  postPublishedAt.textContent = formatDateToYMD(post.published_at);
+
+  const postTitle = document.createElement('h2');
+  postTitle.classList.add('post-title');
+  postTitle.textContent = post.title;
+
+  const tagsList = document.createElement('div');
+  tagsList.classList.add('tags-list');
+  post.tags && post.tags.forEach(tag => appendTag(tagsList, tag.name));
+
+  const rowNum = document.createElement('div');
+  rowNum.classList.add('post-row-num');
+  rowNum.textContent = totalPosts - index;
+
+  postLink.appendChild(postPublishedAt);
+  postLink.appendChild(postTitle);
+  postLink.appendChild(tagsList);
+  postLink.appendChild(rowNum);
+
+  postItem.appendChild(postLink);
+
+  return postItem;
+}
+
+function clearPostsList() {
+  const postsList = document.querySelector('.posts-list');
+  postsList.innerHTML = '';
+}
+
+function createErrorElement(errorMessage) {
+  const errorElement = document.createElement('div');
+  errorElement.classList.add('filter-invalid-feedback');
+  errorElement.textContent = errorMessage;
+  return errorElement;
+}
+
+function insertErrorElement(errorMessage) {
+  const errorElement = createErrorElement(errorMessage);
+
+  const filterBlock = document.getElementById('filterBlock');
+  const filterBody = filterBlock.querySelector('.filter-body');
+
+  filterBody.insertAdjacentElement('beforebegin', errorElement);
 }
