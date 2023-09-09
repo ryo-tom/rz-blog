@@ -87,7 +87,7 @@ function performFilter() {
         // published_at
         const postPublishedAt = document.createElement('div');
         postPublishedAt.classList.add('post-published-at');
-        postPublishedAt.textContent = post.published_at;
+        postPublishedAt.textContent = formatDateToYMD(post.published_at);
 
         // title
         const postTitle = document.createElement('h2');
@@ -170,4 +170,13 @@ function createFilterResultElement(count) {
   resultDiv.classList.add('filter-result');
   resultDiv.textContent = `${count} 件`;
   return resultDiv;
+}
+
+function formatDateToYMD(dateString) {
+  const date  = new Date(dateString);
+  const year  = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day   = String(date.getDate()).padStart(2, '0');
+
+  return `${year}-${month}-${day}`;
 }
