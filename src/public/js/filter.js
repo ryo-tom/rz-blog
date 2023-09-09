@@ -42,25 +42,60 @@ mobileFilterBack.addEventListener('click', () => {
 /* -----------------------
 Ajax
 ----------------------- */
+/**
+ * Fetches and renders posts based on user's filter criteria.
+ *
+ * 1. Gets the user-selected values.
+ * 2. Constructs the URL with the selected values.
+ * 3. Fetches the posts using the constructed URL.
+ * 4. Renders the posts if any data is returned.
+ */
 function performFilter() {
-  const selectedCategory = document.getElementById("categorySelector").value;
-  const selectedTagOption = document.getElementById("tagOptionSelector").value;
-  const selectedTagSlugs = Array.from(document.querySelectorAll('input[name="tag_slugs[]"]:checked')).map(e => e.value);
-
-  console.log(ajaxFilterRoute);
-
-  const params = new URLSearchParams();
-  params.append('category_slug', selectedCategory);
-  selectedTagSlugs.forEach(tag => params.append('tag_slugs[]', tag));
-  params.append('tag_option', selectedTagOption);
-
-  const url = `${ajaxFilterRoute}?${params.toString()}`;
-  console.log(url);
+  const selections = getSelectedValues();
+  const url = buildFilterURL(ajaxFilterRoute, selections);
 
   fetchPosts(url).then(data => {
-    if (data) renderPosts(data);
+      if (data) renderPosts(data);
   });
 }
+
+/**
+ * Retrieves the selected filter values from the user interface.
+ *
+ * @returns {Object} - An object containing values selected by the user: category, tag option, and tag slugs.
+ */
+function getSelectedValues() {
+  const selectedCategory  = document.getElementById("categorySelector").value;
+  const selectedTagOption = document.getElementById("tagOptionSelector").value;
+  const selectedTagSlugs  = Array.from(document.querySelectorAll('input[name="tag_slugs[]"]:checked')).map(e => e.value);
+
+  return {
+      category: selectedCategory,
+      tagOption: selectedTagOption,
+      tagSlugs: selectedTagSlugs
+  };
+}
+
+/**
+ * Constructs a URL based on the given base route and user-selected filter values.
+ *
+ * @param {string} baseRoute - The base endpoint for the filter request.
+ * @param {Object} selections - An object containing the user's filter criteria.
+ * @param {string} selections.category - The selected category slug.
+ * @param {Array<string>} selections.tagSlugs - An array of selected tag slugs.
+ * @param {string} selections.tagOption - The selected tag option value.
+ *
+ * @returns {string} - The fully constructed URL for fetching filtered results.
+ */
+function buildFilterURL(baseRoute, selections) {
+  const params = new URLSearchParams();
+  params.append('category_slug', selections.category);
+  selections.tagSlugs.forEach(tag => params.append('tag_slugs[]', tag));
+  params.append('tag_option', selections.tagOption);
+
+  return `${baseRoute}?${params.toString()}`;
+}
+
 
 function renderPosts(data) {
   console.log('Received data:', data);
