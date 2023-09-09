@@ -27,28 +27,26 @@ class PostController extends Controller
         ]);
     }
 
+    /** Ajax Filter */
     public function filter(FilterRequest $request)
     {
         $categorySlug  = $request->input('category_slug');
         $tagSlugs      = $request->input('tag_slugs');
         $tagOption     = $request->input('tag_option');
 
-        $posts = Post::query()
+        $query = Post::with('tags')
                 ->published()
                 ->filterByCategory($categorySlug)
                 ->filterByTags($tagSlugs, $tagOption)
                 ->latestPublished();
 
-        $filteredPostCount  = $posts->count();
-        $paginatedPosts     = $posts->simplePaginate(30)->withQueryString();
+        $filteredPostCount = $query->count();
 
-        return view('front.home', [
-            'categories'    => Category::sorted()->get(),
-            'tags'          => Tag::sorted()->get(),
-            'filteredPostCount' => $filteredPostCount,
-            'posts'         => $paginatedPosts,
-            'queries'       => $request->query(),
-        ]);
+        $posts = $query->select('id', 'title', 'slug', 'published_at')
+                ->limit(30)
+                ->get();
+
+        return response()->json(['posts' => $posts, 'filteredPostCount' => $filteredPostCount]);
     }
 
     /** Ajax Search */
