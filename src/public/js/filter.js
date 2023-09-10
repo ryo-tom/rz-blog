@@ -180,6 +180,12 @@ function fetchPosts(url) {
       });
 }
 
+/**
+ * Appends a new tag to the provided tags list.
+ *
+ * @param {HTMLElement} tagsList - The element to which the tag should be appended.
+ * @param {string} tagName - The name of the tag.
+ */
 function appendTag(tagsList, tagName) {
   const tagItem = document.createElement('div');
   tagItem.classList.add('tag-item');
@@ -192,6 +198,14 @@ function appendTag(tagsList, tagName) {
   tagsList.appendChild(tagItem);
 }
 
+/**
+ * Creates a new post element using the provided post data.
+ *
+ * @param {Object} post - The post data.
+ * @param {number} index - The index of the post in the list.
+ * @param {number} totalPosts - The total number of posts.
+ * @returns {HTMLElement} - The new post element.
+ */
 function createPostElement(post, index, totalPosts) {
   const postItem = document.createElement('div');
   postItem.classList.add('post-item');
@@ -226,11 +240,20 @@ function createPostElement(post, index, totalPosts) {
   return postItem;
 }
 
+/**
+ * Clears all posts from the posts list.
+ */
 function clearPostsList() {
   const postsList = document.querySelector('.posts-list');
   postsList.innerHTML = '';
 }
 
+/**
+ * Creates a new error element using the provided error message.
+ *
+ * @param {string} errorMessage - The error message.
+ * @returns {HTMLElement} - The new error element.
+ */
 function createErrorElement(errorMessage) {
   const errorElement = document.createElement('div');
   errorElement.classList.add('filter-invalid-feedback');
@@ -238,11 +261,15 @@ function createErrorElement(errorMessage) {
   return errorElement;
 }
 
+/**
+ * Inserts a new error element before the filter body using the provided error message.
+ *
+ * @param {string} errorMessage - The error message.
+ */
 function insertErrorElement(errorMessage) {
   const errorElement = createErrorElement(errorMessage);
-
-  const filterBlock = document.getElementById('filterBlock');
-  const filterBody = filterBlock.querySelector('.filter-body');
+  const filterBlock  = document.getElementById('filterBlock');
+  const filterBody   = filterBlock.querySelector('.filter-body');
 
   filterBody.insertAdjacentElement('beforebegin', errorElement);
 }
