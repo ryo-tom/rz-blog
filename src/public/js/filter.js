@@ -96,25 +96,36 @@ function buildFilterURL(baseRoute, selections) {
   return `${baseRoute}?${params.toString()}`;
 }
 
-
+/**
+ * Renders post data on the page by clearing the existing posts list,
+ * updating the filtered posts count, and appending each post to the posts list.
+ *
+ * @param {Object} data - The data containing posts and filtered post count.
+ */
 function renderPosts(data) {
   console.log('Received data:', data);
   clearPostsList();
 
   const filterBody = document.querySelector('.filter-body');
   if (filterBody) {
-      updateOrInsertFilterResult(filterBody, data.filteredPostCount);
+      updateOrInsertFilterResult(data.filteredPostCount);
   }
 
   const postsList = document.querySelector('.posts-list');
   data.posts.forEach((post, index) => {
-    const postElement = createPostElement(post, index, data.posts.length);
-    postsList.appendChild(postElement);
+      const postElement = createPostElement(post, index, data.posts.length);
+      postsList.appendChild(postElement);
   });
 }
 
-function updateOrInsertFilterResult(filterBody, count) {
-  const existingFilterResult = document.querySelector(".filter-result");
+/**
+ * Updates the filter result count on the page, or inserts a new count if it doesn't exist.
+ *
+ * @param {number} count - The number of posts that match the filter.
+ */
+function updateOrInsertFilterResult(count) {
+  const filterBody = document.querySelector('.filter-body');
+  const existingFilterResult = filterBody.querySelector(".filter-result");
 
   if (existingFilterResult) {
       existingFilterResult.textContent = `${count} 件`;
@@ -125,6 +136,12 @@ function updateOrInsertFilterResult(filterBody, count) {
   filterBody.insertAdjacentElement('beforeend', filterResultElement);
 }
 
+/**
+ * Creates a new DOM element to display the filtered post count.
+ *
+ * @param {number} count - The number of posts that match the filter.
+ * @returns {HTMLElement} - The new DOM element.
+ */
 function createFilterResultElement(count) {
   const resultDiv = document.createElement('div');
   resultDiv.classList.add('filter-result');
@@ -132,29 +149,35 @@ function createFilterResultElement(count) {
   return resultDiv;
 }
 
+/**
+ * Formats a date string into YYYY-MM-DD format.
+ *
+ * @param {string} dateString - The input date string.
+ * @returns {string} - The formatted date string.
+ */
 function formatDateToYMD(dateString) {
   const date  = new Date(dateString);
-  const year  = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day   = String(date.getDate()).padStart(2, '0');
-
-  return `${year}-${month}-${day}`;
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
 }
 
-//
-
+/**
+ * Fetches posts data from the given URL.
+ *
+ * @param {string} url - The URL to fetch posts from.
+ * @returns {Promise<Object>|undefined} - A promise that resolves with the fetched data, or undefined if an error occurred.
+ */
 function fetchPosts(url) {
   return fetch(url)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Network response was not ok, status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .catch(error => {
-      insertErrorElement('検索エラーが発生しました... ;(');
-      console.error('There was a problem with the fetch operation:', error);
-    });
+      .then(response => {
+          if (!response.ok) {
+              throw new Error(`Network response was not ok, status: ${response.status}`);
+          }
+          return response.json();
+      })
+      .catch(error => {
+          insertErrorElement('検索エラーが発生しました... ;(');
+          console.error('There was a problem with the fetch operation:', error);
+      });
 }
 
 function appendTag(tagsList, tagName) {
