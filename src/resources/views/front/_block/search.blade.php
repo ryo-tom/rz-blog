@@ -39,3 +39,10 @@
         </ul>
     </div>
 </div>
+
+@push('scripts')
+    <script>
+        const ajaxSearchRoute = '{{ route('posts.search') }}';
+    </script>
+    <script src="{{ asset('js/search.js') }}"></script>
+@endpush

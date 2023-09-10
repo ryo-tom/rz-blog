@@ -66,7 +66,7 @@ function performSearch() {
   const radioChecked = document.querySelector('input[name="searchScope"]:checked');
   const searchScope  = radioChecked ? radioChecked.value : 'error';
 
-  const url = `/search?query=${encodeURIComponent(searchQuery)}&scope=${encodeURIComponent(searchScope)}`;
+  const url = `${ajaxSearchRoute}?query=${encodeURIComponent(searchQuery)}&scope=${encodeURIComponent(searchScope)}`;
 
   fetch(url)
     .then(response => {
