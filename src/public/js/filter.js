@@ -1,43 +1,50 @@
 'use strict';
 
 /**
- * 指定したidのセレクトボックが変更された時
+ * Adds a change event listener to the element with the specified ID to trigger the performFilter function.
  *
- * @param {string} targetIdName -セレクトボックスのID
+ * @param {string} targetIdName - The ID of the select box.
  */
-function submitForm(targetIdName) {
-    document.getElementById(targetIdName).addEventListener('change', () => {
-        performFilter();
-    });
+function addFilterOnChange(targetIdName) {
+  const element = document.getElementById(targetIdName);
+  element.addEventListener('change', performFilter);
 }
 
-submitForm('categorySelector');
-submitForm('tagOptionSelector');
-
-/** 複数のタグチェックボックス */
-const checkboxes = document.getElementsByName('tag_slugs[]');
-checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', () => {
-        const label = checkbox.closest('.tag-label');
-        checkbox.checked ? label.classList.add('tag-checked') : label.classList.remove('tag-checked');
-
-        performFilter();
-    });
-});
-
-const mobileFilterTrigger = document.getElementById('mobileFilterTrigger');
-const mobileFilterBlock = document.getElementById('mobileFilterBlock');
-const mobileFilterBack = document.getElementById('mobileFilterBack');
-
-mobileFilterTrigger.addEventListener('click', () => {
+/**
+* Toggles the visibility of the mobile filter and modifies the body class accordingly.
+*/
+function toggleMobileFilter() {
+  const mobileFilterBlock = document.getElementById('mobileFilterBlock');
   mobileFilterBlock.classList.toggle('show');
-  document.body.classList.toggle('filter-open')
-});
+  document.body.classList.toggle('filter-open');
+}
 
-mobileFilterBack.addEventListener('click', () => {
-  mobileFilterBlock.classList.toggle('show');
-  document.body.classList.toggle('filter-open')
-});
+/**
+* Initialize event listeners for filtering.
+*/
+function initFilterEventListeners() {
+  addFilterOnChange('categorySelector');
+  addFilterOnChange('tagOptionSelector');
+
+  const checkboxes = document.getElementsByName('tag_slugs[]');
+  checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', () => {
+          const label = checkbox.closest('.tag-label');
+          checkbox.checked ? label.classList.add('tag-checked') : label.classList.remove('tag-checked');
+          performFilter();
+      });
+  });
+
+  // Mobile filter toggling
+  const mobileFilterTrigger = document.getElementById('mobileFilterTrigger');
+  const mobileFilterBack = document.getElementById('mobileFilterBack');
+
+  mobileFilterTrigger.addEventListener('click', toggleMobileFilter);
+  mobileFilterBack.addEventListener('click', toggleMobileFilter);
+}
+
+// Initialize the filter event listeners.
+initFilterEventListeners();
 
 /* -----------------------
 Ajax
