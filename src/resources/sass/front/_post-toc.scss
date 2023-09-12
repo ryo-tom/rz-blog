@@ -1,8 +1,15 @@
+@use '../global' as *;
+
 .toc-container {
   background-color: var(--white);
   border-radius: 8px;
+  display: none;
   padding: 16px;
   margin-bottom: 16px;
+  
+  @include pc-screen() {
+    display: block;
+  }
 
   .toc-title {
     font-weight: bold;
