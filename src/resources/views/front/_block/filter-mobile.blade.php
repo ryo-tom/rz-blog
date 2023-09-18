@@ -61,7 +61,7 @@
         {{-- Filter Footer --}}
         <div class="filter-footer">
             <div class="mobile-filter-counts">
-                <span class="count-label">9,999</span>件
+                <span id="filterCount" class="count-label">9,999</span>件
             </div>
             <button class="mobile-filter-button">
                 絞り込み結果を表示する
