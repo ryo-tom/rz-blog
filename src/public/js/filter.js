@@ -1,13 +1,10 @@
 'use strict';
 
-/**
- * Adds a change event listener to the element with the specified ID to trigger the performFilter function.
- *
- * @param {string} targetIdName - The ID of the select box.
- */
-function addFilterOnChange(targetIdName) {
-  const element = document.getElementById(targetIdName);
-  element.addEventListener('change', performFilter);
+function addFilterOnChange(name, device) {
+  const element = document.querySelector(`select[name="${name}"][data-device="${device}"]`)
+  element.addEventListener('change', () => {
+    performFilter(device);
+  });
 }
 
 /**
@@ -23,28 +20,44 @@ function toggleMobileFilter() {
 * Initialize event listeners for filtering.
 */
 function initFilterEventListeners() {
-  addFilterOnChange('categorySelector');
-  addFilterOnChange('tagOptionSelector');
+  addFilterOnChange('category_slug', 'pc');
+  addFilterOnChange('tag_option', 'pc');
 
-  const checkboxes = document.getElementsByName('tag_slugs[]');
-  checkboxes.forEach(checkbox => {
+  const pcCheckboxes = document.querySelectorAll('input[name="tag_slugs[]"][data-device="pc"]');
+  pcCheckboxes.forEach(checkbox => {
       checkbox.addEventListener('change', () => {
           const label = checkbox.closest('.tag-label');
           checkbox.checked ? label.classList.add('tag-checked') : label.classList.remove('tag-checked');
-          performFilter();
+          performFilter('pc');
       });
   });
 
   // Mobile filter toggling
   const mobileFilterTrigger = document.getElementById('mobileFilterTrigger');
-  const mobileFilterBack = document.getElementById('mobileFilterBack');
-
   mobileFilterTrigger.addEventListener('click', toggleMobileFilter);
+}
+
+function initMobileFilterEventListeners() {
+  addFilterOnChange('category_slug', 'mobile');
+  addFilterOnChange('tag_option', 'mobile');
+
+  const mobileCheckboxes = document.querySelectorAll('input[name="tag_slugs[]"][data-device="mobile"]');
+  mobileCheckboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', () => {
+          const label = checkbox.closest('.tag-label');
+          checkbox.checked ? label.classList.add('tag-checked') : label.classList.remove('tag-checked');
+          performFilter('mobile');
+      });
+  });
+
+  // Mobile filter toggling
+  const mobileFilterBack = document.getElementById('mobileFilterBack');
   mobileFilterBack.addEventListener('click', toggleMobileFilter);
 }
 
 // Initialize the filter event listeners.
 initFilterEventListeners();
+initMobileFilterEventListeners();
 
 /* -----------------------
 Ajax
@@ -57,24 +70,36 @@ Ajax
  * 3. Fetches the posts using the constructed URL.
  * 4. Renders the posts if any data is returned.
  */
-function performFilter() {
-  const selections = getSelectedValues();
+function performFilter(device) {
+  const selections = getSelectedValues(device);
   const url = buildFilterURL(ajaxFilterRoute, selections);
 
   fetchPosts(url).then(data => {
-      if (data) renderPosts(data);
+      if (!data) { return; }
+
+      switch (device) {
+        case 'pc':
+          renderPosts(data);
+          break;
+        case 'mobile':
+          displayFilterCount(data);
+          break;
+        default:
+          console.error('Unknown device type:', device);
+      }
   });
 }
 
 /**
- * Retrieves the selected filter values from the user interface.
+ * Retrieves the selected filter values from the user interface for a specified device type.
  *
+ * @param {string} [device="pc"] - The type of the device ("pc" or "mobile") from which to retrieve the selected values.
  * @returns {Object} - An object containing values selected by the user: category, tag option, and tag slugs.
  */
-function getSelectedValues() {
-  const selectedCategory  = document.getElementById("categorySelector").value;
-  const selectedTagOption = document.getElementById("tagOptionSelector").value;
-  const selectedTagSlugs  = Array.from(document.querySelectorAll('input[name="tag_slugs[]"]:checked')).map(e => e.value);
+function getSelectedValues(device = "pc") {
+  const selectedCategory  = document.querySelector(`select[name="category_slug"][data-device="${device}"]`).value;
+  const selectedTagOption = document.querySelector(`select[name="tag_option"][data-device="${device}"]`).value;
+  const selectedTagSlugs  = Array.from(document.querySelectorAll(`input[name="tag_slugs[]"][data-device="${device}"]:checked`)).map(e => e.value);
 
   return {
       category: selectedCategory,
@@ -280,3 +305,12 @@ function insertErrorElement(errorMessage) {
 
   filterBody.insertAdjacentElement('beforebegin', errorElement);
 }
+
+/* -----------------------
+Mobile Filter
+----------------------- */
+function displayFilterCount(data) {
+  const filterCount = document.getElementById('filterCount');
+  filterCount.textContent = data.filteredPostCount;
+}
+

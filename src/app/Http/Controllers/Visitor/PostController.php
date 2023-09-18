@@ -11,10 +11,27 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(FilterRequest $request)
     {
+        $categorySlug  = $request->input('category_slug');
+        $tagSlugs      = $request->input('tag_slugs');
+        $tagOption     = $request->input('tag_option');
+
+        $query = Post::with('tags')
+        ->published()
+        ->filterByCategory($categorySlug)
+        ->filterByTags($tagSlugs, $tagOption)
+        ->latestPublished();
+
+        $filteredPostCount = $query->count();
+
+        $posts = $query->select('id', 'title', 'slug', 'published_at')
+                    ->simplePaginate(30)
+                    ->withQueryString();
+
         return view('front.home', [
-            'posts'      => Post::published()->latestPublished()->simplePaginate(30)->withQueryString(),
+            'posts'      => $posts,
+            'filteredPostCount' => $filteredPostCount,
             'categories' => Category::sorted()->get(),
             'tags'       => Tag::sorted()->get(),
         ]);

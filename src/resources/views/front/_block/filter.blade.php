@@ -14,7 +14,7 @@
             <div class="category-section">
                 <div class="filter-label">
                     $category =
-                    <select id="categorySelector" name="category_slug" class="filter-form-select">
+                    <select id="categorySelector" name="category_slug" class="filter-form-select" data-device="pc">
                         <option value="">全て</option>
                         @foreach ($categories as $category)
                         <option value="{{ $category->slug }}">
@@ -33,7 +33,7 @@
                     @foreach ($tags as $tag)
                     <div class="tag-item">
                         <label class="tag-label">
-                            <input type="checkbox" name="tag_slugs[]" value="{{ $tag->slug }}" hidden>
+                            <input type="checkbox" name="tag_slugs[]" value="{{ $tag->slug }}" hidden data-device="pc">
                             {{ $tag->name }}
                         </label>
                     </div>
@@ -42,7 +42,7 @@
                 <div class="filter-label">];</div>
                 <div class="filter-label">
                     $tagOption =
-                    <select id="tagOptionSelector" name="tag_option" class="filter-form-select">
+                    <select id="tagOptionSelector" name="tag_option" class="filter-form-select" data-device="pc">
                         <option value="or">OR</option>
                         <option value="and">AND</option>
                     </select>
