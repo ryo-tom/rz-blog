@@ -72,8 +72,8 @@ function performFilter() {
  * @returns {Object} - An object containing values selected by the user: category, tag option, and tag slugs.
  */
 function getSelectedValues() {
-  const selectedCategory  = document.getElementById("categorySelector").value;
-  const selectedTagOption = document.getElementById("tagOptionSelector").value;
+  const selectedCategory  = document.querySelector('select[name="category_slug"][data-device="pc"]').value;
+  const selectedTagOption = document.querySelector('select[name="tag_option"][data-device="pc"]').value;
   const selectedTagSlugs  = Array.from(document.querySelectorAll('input[name="tag_slugs[]"][data-device="pc"]:checked')).map(e => e.value);
 
   return {
