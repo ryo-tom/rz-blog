@@ -1,10 +1,10 @@
 <div class="posts-info-bar">
 
-    @isset($filteredPostCount)
+    @if(isset($filteredPostCount) && request()->query())
     <div class="filter-result">
         {{ $filteredPostCount }} 件
     </div>
-    @endisset
+    @endif
 
     <div class="info-for-mobile">
         <button id="mobileFilterTrigger" class="open-filter-button">

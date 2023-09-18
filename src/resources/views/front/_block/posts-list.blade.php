@@ -16,15 +16,12 @@
             <div class="tags-list">
                 @foreach ($post->tags as $tag)
                 <div class="tag-item">
-                    <span class="tag-label ignore-pointer">
+                    <span class="tag-label ignore-pointer {{ in_array($tag->slug, request()->query('tag_slugs') ?? []) ? 'tag-checked' : '' }}">
                         {{ $tag->name }}
                     </span>
                 </div>
                 @endforeach
             </div>
-
-            {{-- row number --}}
-            <div class="post-row-num">{{ $loop->remaining + 1 }}</div>
         </a>
     </div>
     @endforeach
