@@ -43,34 +43,26 @@ initFilterEventListeners('pc');
 initFilterEventListeners('mobile');
 
 /* -----------------------
-Ajax
+Filter
 ----------------------- */
-/**
- * Fetches and renders posts based on user's filter criteria.
- *
- * 1. Gets the user-selected values.
- * 2. Constructs the URL with the selected values.
- * 3. Fetches the posts using the constructed URL.
- * 4. Renders the posts if any data is returned.
- */
 function performFilter(device) {
   const selections = getSelectedValues(device);
   const url = buildFilterURL(ajaxFilterRoute, selections);
 
-  fetchPosts(url).then(data => {
-      if (!data) { return; }
+  switch (device) {
+    case 'pc':
+      document.getElementById('filterForm').submit();
+      break;
+    case 'mobile':
+      fetchPosts(url).then(data => {
+        if (!data) { return; }
+        displayFilterCount(data);
+      });
+      break;
+    default:
+      console.error('Unknown device type:', device);
+  }
 
-      switch (device) {
-        case 'pc':
-          renderPosts(data);
-          break;
-        case 'mobile':
-          displayFilterCount(data);
-          break;
-        default:
-          console.error('Unknown device type:', device);
-      }
-  });
 }
 
 /**
