@@ -69,12 +69,15 @@ Styles for post content converted Markdown to HTML
   /* List
   -------------------------*/
   ul {
-    list-style: inside;
+    list-style: disc;
+    padding-left: 16px;
+    margin-bottom: 16px;
   }
 
   ol {
     list-style: decimal;
-    list-style-position: inside;
+    list-style-position: outside;
+    padding-left: 16px;
   }
 
   li {
