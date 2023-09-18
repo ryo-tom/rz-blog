@@ -17,47 +17,30 @@ function toggleMobileFilter() {
 }
 
 /**
-* Initialize event listeners for filtering.
-*/
-function initFilterEventListeners() {
-  addFilterOnChange('category_slug', 'pc');
-  addFilterOnChange('tag_option', 'pc');
+ * Initialize event listeners for filtering based on the given device type.
+ *
+ * @param {string} device - Device type ("pc" or "mobile").
+ */
+function initFilterEventListeners(device) {
+  addFilterOnChange('category_slug', device);
+  addFilterOnChange('tag_option', device);
 
-  const pcCheckboxes = document.querySelectorAll('input[name="tag_slugs[]"][data-device="pc"]');
-  pcCheckboxes.forEach(checkbox => {
+  const checkboxes = document.querySelectorAll(`input[name="tag_slugs[]"][data-device="${device}"]`);
+  checkboxes.forEach(checkbox => {
       checkbox.addEventListener('change', () => {
           const label = checkbox.closest('.tag-label');
           checkbox.checked ? label.classList.add('tag-checked') : label.classList.remove('tag-checked');
-          performFilter('pc');
+          performFilter(device);
       });
   });
 
-  // Mobile filter toggling
-  const mobileFilterTrigger = document.getElementById('mobileFilterTrigger');
-  mobileFilterTrigger.addEventListener('click', toggleMobileFilter);
-}
-
-function initMobileFilterEventListeners() {
-  addFilterOnChange('category_slug', 'mobile');
-  addFilterOnChange('tag_option', 'mobile');
-
-  const mobileCheckboxes = document.querySelectorAll('input[name="tag_slugs[]"][data-device="mobile"]');
-  mobileCheckboxes.forEach(checkbox => {
-      checkbox.addEventListener('change', () => {
-          const label = checkbox.closest('.tag-label');
-          checkbox.checked ? label.classList.add('tag-checked') : label.classList.remove('tag-checked');
-          performFilter('mobile');
-      });
-  });
-
-  // Mobile filter toggling
-  const mobileFilterBack = document.getElementById('mobileFilterBack');
-  mobileFilterBack.addEventListener('click', toggleMobileFilter);
+  document.getElementById('mobileFilterTrigger').addEventListener('click', toggleMobileFilter);
+  document.getElementById('mobileFilterBack').addEventListener('click', toggleMobileFilter);
 }
 
 // Initialize the filter event listeners.
-initFilterEventListeners();
-initMobileFilterEventListeners();
+initFilterEventListeners('pc');
+initFilterEventListeners('mobile');
 
 /* -----------------------
 Ajax
