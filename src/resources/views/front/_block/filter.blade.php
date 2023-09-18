@@ -1,5 +1,5 @@
 <div id="filterBlock" class="filter-block">
-    <form id="filterForm">
+    <form id="filterForm" action="{{ route('posts.filter') }}" method="GET">
         {{-- Filter Header --}}
         <div class="filter-header">
 
@@ -8,8 +8,6 @@
         </div>
         {{-- Filter Body --}}
         <div class="filter-body">
-            {{-- Insert filter-invalid-feedback element by JS --}}
-
             {{-- Category Section --}}
             <div class="category-section">
                 <div class="filter-label">
@@ -17,7 +15,7 @@
                     <select id="categorySelector" name="category_slug" class="filter-form-select" data-device="pc">
                         <option value="">全て</option>
                         @foreach ($categories as $category)
-                        <option value="{{ $category->slug }}">
+                        <option value="{{ $category->slug }}" @selected(request()->query('category_slug') === $category->slug)>
                             {{ $category->name }}
                         </option>
                         @endforeach
@@ -32,8 +30,8 @@
                 <div class="tags-list is-scrollable">
                     @foreach ($tags as $tag)
                     <div class="tag-item">
-                        <label class="tag-label">
-                            <input type="checkbox" name="tag_slugs[]" value="{{ $tag->slug }}" hidden data-device="pc">
+                        <label class="tag-label {{ in_array($tag->slug, request()->query('tag_slugs') ?? []) ? 'tag-checked' : '' }}">
+                            <input type="checkbox" name="tag_slugs[]" value="{{ $tag->slug }}" hidden data-device="pc" @checked(in_array($tag->slug, request()->query('tag_slugs') ?? []))>
                             {{ $tag->name }}
                         </label>
                     </div>
@@ -43,8 +41,8 @@
                 <div class="filter-label">
                     $tagOption =
                     <select id="tagOptionSelector" name="tag_option" class="filter-form-select" data-device="pc">
-                        <option value="or">OR</option>
-                        <option value="and">AND</option>
+                        <option value="or" @selected(request()->query('tag_option') === 'or')>OR</option>
+                        <option value="and" @selected(request()->query('tag_option') === 'and')>AND</option>
                     </select>
                     ;
                 </div>
@@ -53,8 +51,3 @@
     </form>
 </div>
 
-@push('scripts')
-    <script>
-        const ajaxFilterRoute = '{{ route('posts.filter') }}';
-    </script>
-@endpush

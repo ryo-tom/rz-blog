@@ -19,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [VisitorPostController::class, 'index'])->name('home');
 Route::get('posts/{slug}', [VisitorPostController::class, 'show'])->name('posts.show');
-Route::get('posts/actions/filter', [VisitorPostController::class, 'filter'])->name('posts.filter'); // Ajax Filter
+Route::get('filter', [VisitorPostController::class, 'index'])->name('posts.filter');
+Route::get('filter/count', [VisitorPostController::class, 'count'])->name('posts.filter.count');
 Route::get('posts/actions/search', [VisitorPostController::class, 'search'])->name('posts.search'); // Ajax Search
 
 Route::middleware('auth')->group(function () {
