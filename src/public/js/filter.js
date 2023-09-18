@@ -67,14 +67,15 @@ function performFilter() {
 }
 
 /**
- * Retrieves the selected filter values from the user interface.
+ * Retrieves the selected filter values from the user interface for a specified device type.
  *
+ * @param {string} [device="pc"] - The type of the device ("pc" or "mobile") from which to retrieve the selected values.
  * @returns {Object} - An object containing values selected by the user: category, tag option, and tag slugs.
  */
-function getSelectedValues() {
-  const selectedCategory  = document.querySelector('select[name="category_slug"][data-device="pc"]').value;
-  const selectedTagOption = document.querySelector('select[name="tag_option"][data-device="pc"]').value;
-  const selectedTagSlugs  = Array.from(document.querySelectorAll('input[name="tag_slugs[]"][data-device="pc"]:checked')).map(e => e.value);
+function getSelectedValues(device = "pc") {
+  const selectedCategory  = document.querySelector(`select[name="category_slug"][data-device="${device}"]`).value;
+  const selectedTagOption = document.querySelector(`select[name="tag_option"][data-device="${device}"]`).value;
+  const selectedTagSlugs  = Array.from(document.querySelectorAll(`input[name="tag_slugs[]"][data-device="${device}"]:checked`)).map(e => e.value);
 
   return {
       category: selectedCategory,
