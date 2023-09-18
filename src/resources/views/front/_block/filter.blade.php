@@ -51,8 +51,3 @@
     </form>
 </div>
 
-@push('scripts')
-    <script>
-        const ajaxFilterRoute = '{{ route('posts.filter') }}';
-    </script>
-@endpush

@@ -44,8 +44,8 @@ class PostController extends Controller
         ]);
     }
 
-    /** Ajax Filter */
-    public function filter(FilterRequest $request)
+    /** Ajax for Mobile filter view */
+    public function count(FilterRequest $request)
     {
         $categorySlug  = $request->input('category_slug');
         $tagSlugs      = $request->input('tag_slugs');
@@ -54,16 +54,10 @@ class PostController extends Controller
         $query = Post::with('tags')
                 ->published()
                 ->filterByCategory($categorySlug)
-                ->filterByTags($tagSlugs, $tagOption)
-                ->latestPublished();
+                ->filterByTags($tagSlugs, $tagOption);
 
         $filteredPostCount = $query->count();
-
-        $posts = $query->select('id', 'title', 'slug', 'published_at')
-                ->limit(30)
-                ->get();
-
-        return response()->json(['posts' => $posts, 'filteredPostCount' => $filteredPostCount]);
+        return response()->json(['filteredPostCount' => $filteredPostCount]);
     }
 
     /** Ajax Search */

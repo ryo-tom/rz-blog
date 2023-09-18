@@ -1,5 +1,5 @@
 <div id="mobileFilterBlock" class="filter-block on-mobile">
-    <form>
+    <form action="{{ route('posts.filter') }}" method="GET">
         {{-- Filter Header --}}
         <div class="filter-header">
             <div id="mobileFilterBack" class="mobile-filter-back">&lt; Back</div>
@@ -71,3 +71,9 @@
         </div>
     </form>
 </div>
+
+@push('scripts')
+    <script>
+        const ajaxFilterRoute = '{{ route('posts.filter.count') }}';
+    </script>
+@endpush
