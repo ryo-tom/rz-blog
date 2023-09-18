@@ -130,3 +130,27 @@ function displayFilterCount(data) {
   filterCount.textContent = data.filteredPostCount;
 }
 
+document.getElementById('mobileFilterClearTrigger').addEventListener('click', () => {
+  resetSelect('mobileCategorySelector');
+  resetSelect('mobileTagOptionSelector');
+  resetCheckboxes('tag_slugs[]', 'mobile');
+  performFilter('mobile');
+});
+
+function resetSelect(id) {
+  const select = document.getElementById(id);
+  select.selectedIndex = 0;
+}
+
+function resetCheckboxes(name, device) {
+  const checkboxes = document.querySelectorAll(`input[name="${name}"][data-device="${device}"]`);
+  checkboxes.forEach(checkbox => {
+    checkbox.checked = false;
+    updateLabelClass(checkbox);
+  });
+}
+
+function updateLabelClass(checkbox) {
+  const label = checkbox.closest('.tag-label');
+  checkbox.checked ? label.classList.add('tag-checked') : label.classList.remove('tag-checked');
+}

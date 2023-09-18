@@ -4,7 +4,7 @@
         <div class="filter-header">
             <div id="mobileFilterBack" class="mobile-filter-back">&lt; Back</div>
             <div class="filter-header-label">Filter</div>
-            <button type="button" class="filter-clear-button">Clear</button>
+            <button id="mobileFilterClearTrigger" type="button" class="filter-clear-button">Clear</button>
         </div>
         {{-- Filter Body --}}
         <div class="filter-body">
