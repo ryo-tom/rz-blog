@@ -84,9 +84,12 @@ Styles for post content converted Markdown to HTML
   /* Table
   -------------------------*/
   table {
-    width: 100%;
     border-collapse: collapse;
     margin: 24px 0;
+    display: block;
+    overflow-x: scroll;
+    width: 100%;
+    white-space: nowrap;
 
     th,
     td {
@@ -107,6 +110,7 @@ Styles for post content converted Markdown to HTML
     background-color: var(--code-bg-color);
     border-radius: 4px;
     font-size: 16px;
+    overflow-x: scroll;
     padding: 16px 8px;
     word-wrap: break-word;
     white-space: pre-wrap;
