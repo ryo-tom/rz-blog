@@ -33,7 +33,7 @@
                     @foreach ($tags as $tag)
                     <div class="tag-item">
                         <label class="tag-label">
-                            <input type="checkbox" name="tag_slugs[]" value="{{ $tag->slug }}" hidden>
+                            <input type="checkbox" name="tag_slugs[]" value="{{ $tag->slug }}" hidden data-device="pc">
                             {{ $tag->name }}
                         </label>
                     </div>

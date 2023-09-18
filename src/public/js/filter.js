@@ -26,8 +26,8 @@ function initFilterEventListeners() {
   addFilterOnChange('categorySelector');
   addFilterOnChange('tagOptionSelector');
 
-  const checkboxes = document.getElementsByName('tag_slugs[]');
-  checkboxes.forEach(checkbox => {
+  const pcCheckboxes = document.querySelectorAll('input[name="tag_slugs[]"][data-device="pc"]');
+  pcCheckboxes.forEach(checkbox => {
       checkbox.addEventListener('change', () => {
           const label = checkbox.closest('.tag-label');
           checkbox.checked ? label.classList.add('tag-checked') : label.classList.remove('tag-checked');
@@ -74,7 +74,7 @@ function performFilter() {
 function getSelectedValues() {
   const selectedCategory  = document.getElementById("categorySelector").value;
   const selectedTagOption = document.getElementById("tagOptionSelector").value;
-  const selectedTagSlugs  = Array.from(document.querySelectorAll('input[name="tag_slugs[]"]:checked')).map(e => e.value);
+  const selectedTagSlugs  = Array.from(document.querySelectorAll('input[name="tag_slugs[]"][data-device="pc"]:checked')).map(e => e.value);
 
   return {
       category: selectedCategory,
@@ -280,3 +280,7 @@ function insertErrorElement(errorMessage) {
 
   filterBody.insertAdjacentElement('beforebegin', errorElement);
 }
+
+/* -----------------------
+Mobile Filter
+----------------------- */
