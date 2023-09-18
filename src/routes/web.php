@@ -21,7 +21,7 @@ Route::get('/', [VisitorPostController::class, 'index'])->name('home');
 Route::get('posts/{slug}', [VisitorPostController::class, 'show'])->name('posts.show');
 Route::get('filter', [VisitorPostController::class, 'index'])->name('posts.filter');
 Route::get('filter/count', [VisitorPostController::class, 'count'])->name('posts.filter.count');
-Route::get('posts/actions/search', [VisitorPostController::class, 'search'])->name('posts.search'); // Ajax Search
+Route::get('search', [VisitorPostController::class, 'search'])->name('posts.search'); // Ajax Search
 
 Route::middleware('auth')->group(function () {
     Route::get('admin', function () {
