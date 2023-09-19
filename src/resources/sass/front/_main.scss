@@ -25,7 +25,6 @@
 
 .main-column {
   @include pc-screen() {
-    overflow-x: auto;
     padding-right: 24px;
   }
 }
