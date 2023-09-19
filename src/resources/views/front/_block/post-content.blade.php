@@ -1,12 +1,12 @@
 <div class="post-content">
     <div class="post-header">
-        <h1>{{ $post->title }}</h1>
-        <div class="post-dates">
-            <div class="post-date">公開: {{ $post->published_at?->format('Y-m-d') }}</div>
-            <div class="post-date">更新: {{ $post->updated_at?->format('Y-m-d') }}</div>
+        <h1 class="post-title">{{ $post->title }}</h1>
+        <div class="post-datetime">
+            <div class="published-date">公開: {{ $post->published_at?->format('Y-m-d') }}</div>
+            <div class="updated-date">更新: {{ $post->updated_at?->format('Y-m-d') }}</div>
         </div>
     </div>
-    <div id="postBody">
+    <div id="postBody" class="post-body">
         {!! $post->html_content !!}
     </div>
 </div>

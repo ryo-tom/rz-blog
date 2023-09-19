@@ -3,23 +3,30 @@
   border-radius: 8px;
   margin-bottom: 16px;
   padding: 24px;
-}
 
-.post-dates {
-  display: flex;
-  margin-bottom: 16px;
-  
-  .post-date {
-    color: var(--dark-gray);
-    font-size: 0.9rem;
-    margin-right: 16px;
+  .post-title {
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+
+  .post-datetime {
+    display: flex;
+    margin: 16px 0;
+
+    .published-date,
+    .updated-date {
+      color: var(--dark-gray);
+      font-size: 0.9rem;
+      margin-right: 16px;
+    }
   }
 }
+
 
 /* -----------------------
 Styles for post content converted Markdown to HTML
 ----------------------- */
-.post-content {
+.post-body {
 
   /* Color Variables
   -------------------------*/
