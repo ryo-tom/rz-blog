@@ -4,3 +4,7 @@
         {!! $post->html_content !!}
     </div>
 </div>
+
+@push('scripts')
+<script src="{{ asset('js/externalLinkHandler.js') }}"></script>
+@endpush
