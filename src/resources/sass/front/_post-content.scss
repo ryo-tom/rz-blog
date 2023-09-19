@@ -5,6 +5,17 @@
   padding: 24px;
 }
 
+.post-dates {
+  display: flex;
+  margin-bottom: 16px;
+  
+  .post-date {
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+    margin-right: 16px;
+  }
+}
+
 /* -----------------------
 Styles for post content converted Markdown to HTML
 ----------------------- */
