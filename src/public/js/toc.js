@@ -4,9 +4,9 @@ window.onload = () => {
     let toc = "";
     let level = 0;
 
-    const postBodyDiv = document.getElementById("postContent");
+    const postBody = document.getElementById("postBody");
 
-    postBodyDiv.innerHTML = postBodyDiv.innerHTML.replace(
+    postBody.innerHTML = postBody.innerHTML.replace(
         /<h([\d])>([^<]+)<\/h([\d])>/gi,
         (str, openLevel, titleText, closeLevel) => {
             if (openLevel !== closeLevel) {
