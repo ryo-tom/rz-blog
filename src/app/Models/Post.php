@@ -25,6 +25,16 @@ class Post extends Model
         'published_at',
     ];
 
+    /** 新規レコード作成時はupdated_atをnullにする */
+    protected static function booted()
+    {
+        static::saving(function ($model) {
+            if ($model->isDirty() && !$model->exists) {
+                $model->updated_at = null;
+            }
+        });
+    }
+
     /*
     |--------------------------------------------------------------------------
     | Relationships
