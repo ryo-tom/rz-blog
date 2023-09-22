@@ -15,6 +15,9 @@
         <li class="menu-item {{ Route::is('admin.posts.*') ? 'active' : '' }}">
             <a href="{{ route('admin.posts.index') }}" class="menu-link">Posts</a>
         </li>
+        <li class="menu-item {{ Route::is('admin.pages.*') ? 'active' : '' }}">
+            <a href="{{ route('admin.pages.index') }}" class="menu-link">Pages</a>
+        </li>
     </ul>
 
     <div class="logout-block">
