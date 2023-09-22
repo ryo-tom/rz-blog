@@ -25,7 +25,7 @@ Route::get('posts/filter/count', [VisitorPostController::class, 'count'])->name(
 Route::get('posts/search', [VisitorPostController::class, 'search'])->name('posts.search'); // Ajax Search
 Route::get('posts/{slug}', [VisitorPostController::class, 'show'])->name('posts.show');
 
-Route::get('{slud}', [VisitorPageController::class, 'show'])->name('pages.show');
+Route::get('{slug}', [VisitorPageController::class, 'show'])->name('pages.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('admin', function () {
