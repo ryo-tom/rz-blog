@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Visitor\PageController as VisitorPageController;
 use App\Http\Controllers\Visitor\PostController as VisitorPostController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +24,8 @@ Route::get('posts/filter', [VisitorPostController::class, 'index'])->name('posts
 Route::get('posts/filter/count', [VisitorPostController::class, 'count'])->name('posts.filter.count');
 Route::get('posts/search', [VisitorPostController::class, 'search'])->name('posts.search'); // Ajax Search
 Route::get('posts/{slug}', [VisitorPostController::class, 'show'])->name('posts.show');
+
+Route::get('{slud}', [VisitorPageController::class, 'show'])->name('pages.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('admin', function () {
@@ -52,6 +56,13 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/tags/{tag}/edit', [TagController::class, 'edit'])->name('admin.tags.edit');
     Route::patch('admin/tags/{tag}', [TagController::class, 'update'])->name('admin.tags.update');
     Route::delete('admin/tags/{tag}', [TagController::class, 'destroy'])->name('admin.tags.destroy');
+
+    Route::get('admin/pages', [PageController::class, 'index'])->name('admin.pages.index');
+    Route::get('admin/pages/create', [PageController::class, 'create'])->name('admin.pages.create');
+    Route::post('admin/pages', [PageController::class, 'store'])->name('admin.pages.store');
+    Route::get('admin/pages/{page}/edit', [PageController::class, 'edit'])->name('admin.pages.edit');
+    Route::patch('admin/pages/{page}', [PageController::class, 'update'])->name('admin.pages.update');
+    Route::delete('admin/pages/{page}', [PageController::class, 'destroy'])->name('admin.pages.destroy');
 });
 
 require __DIR__.'/auth.php';
