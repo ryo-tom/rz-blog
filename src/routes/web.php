@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Visitor\PageController as VisitorPageController;
 use App\Http\Controllers\Visitor\PostController as VisitorPostController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,8 @@ Route::get('posts/filter', [VisitorPostController::class, 'index'])->name('posts
 Route::get('posts/filter/count', [VisitorPostController::class, 'count'])->name('posts.filter.count');
 Route::get('posts/search', [VisitorPostController::class, 'search'])->name('posts.search'); // Ajax Search
 Route::get('posts/{slug}', [VisitorPostController::class, 'show'])->name('posts.show');
+
+Route::get('{slud}', [VisitorPageController::class, 'show'])->name('pages.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('admin', function () {
