@@ -1,12 +1,12 @@
 <div class="profile-block">
     <div class="profile-content">
         <div class="profile-icon">
-            <a href="#">
+            <a href="{{ route('pages.showProfile') }}">
                 <img src="{{ asset('images/profile-icon.png') }}" alt="Profile Icon" class="image-profile">
             </a>
         </div>
         <div class="author-info">
-            <a href="#" class="nickname">Ryosuke</a>
+            <a href="{{ route('pages.showProfile') }}" class="nickname">Ryosuke</a>
         </div>
         <div class="sns-icons">
             <a href="#">

@@ -33,7 +33,7 @@
                     <a href="{{ route('home') }}" class="nav-link {{ Request::is('/*') ? 'active' : '' }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Profile</a>
+                    <a href="{{ route('pages.showProfile') }}" class="nav-link {{ Request::is('profile') ? 'active' : '' }}">Profile</a>
                 </li>
             </ul>
         </nav>
@@ -42,7 +42,7 @@
     <nav id="mobileNav" class="mobile-nav collapse">
         <ul class="nav-list">
             <li class="nav-item"><a href="{{ route('home') }}" class="nav-link">HOME</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+            <li class="nav-item"><a href="{{ route('pages.showProfile') }}" class="nav-link">Profile</a></li>
         </ul>
     </nav>
 </header>

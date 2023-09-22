@@ -26,6 +26,7 @@ Route::get('posts/search', [VisitorPostController::class, 'search'])->name('post
 Route::get('posts/{slug}', [VisitorPostController::class, 'show'])->name('posts.show');
 
 Route::get('pages/{slug}', [VisitorPageController::class, 'show'])->name('pages.show');
+Route::get('profile', [VisitorPageController::class, 'show'])->defaults('slug', 'profile')->name('pages.showProfile');
 
 Route::middleware('auth')->group(function () {
     Route::get('admin', function () {
