@@ -23,35 +23,34 @@
   --light-black: #333;
   --black: #222;
   /* Gray */
-  --lightest-gray: #f1f6f9;
   --light-gray: #eee;
   --gray: #ccc;
   --dark-gray: #545454;
   /* Navy */
   --navy: #212a3e;
-  --navy-transparent: rgba(101, 108, 133, 0.8);
+  --transparent-navy: rgba(101, 108, 133, 0.8);
   /* Red */
   --red: #e93147;
-  --red-transparent: #e931471a;
+  --transparent-red: #e931471a;
   /* Blue */
+  --light-blue: #0080ff;
   --blue: #5468ff;
-  --blue-light: #0080ff;
   --vivid-blue: #086ddd;
-  --blue-transparent: #086ddd1a;
+  --transparent-blue: #086ddd1a;
   /* Green */
   --green: #28a745;
   --vivid-green: #08b94e;
-  --green-transparent: #08b94e1a;
+  --transparent-green: #08b94e1a;
   /* Cyan */
   --cyan: #00bfbc;
-  --cyan-transparent: #00bfbc1a;
+  --transparent-cyan: #00bfbc1a;
 
   /* Theme Colors
   -------------------------*/
   --header-color: var(--black);
   --footer-color: var(--black);
   --body-color: var(--light-gray);
-  --modal-color: var(--navy-transparent);
+  --modal-color: var(--transparent-navy);
 
   /* Shadow */
   --shadow-color: rgba(0, 0, 0, 0.2);
@@ -59,33 +58,33 @@
   /* TOC */
   --toc-color: var(--dark-gray);
   --toc-hover-color: var(--black);
-  --toc-hover-bg-color: var(--blue-transparent);
+  --toc-hover-bg-color: var(--transparent-blue);
 
   /* Tags */
   --tag-color: var(--dark-gray);
   --tag-border-color: var(--gray);
   --tag-hover-bg-color: var(--light-gray);
   --tag-checked-color: var(--blue);
-  --tag-checked-bg-color: var(--blue-transparent);
+  --tag-checked-bg-color: var(--transparent-blue);
 
   /* Filter Result */
   --filter-result-color: var(--blue);
-  --filter-result-bg-color: var(--blue-transparent);
+  --filter-result-bg-color: var(--transparent-blue);
 
   /* Buttons */
   --create-color: var(--green);
   --store-color: var(--green);
-  --edit-color: var(--blue-light);
-  --update-color: var(--blue-light);
+  --edit-color: var(--light-blue);
+  --update-color: var(--light-blue);
   --delete-color: var(--red);
 
   /* Alerts */
-  --success-bg-color: var(--green-transparent);
+  --success-bg-color: var(--transparent-green);
   --success-txt-color: var(--vivid-green);
-  --updated-bg-color: var(--blue-transparent);
+  --updated-bg-color: var(--transparent-blue);
   --updated-txt-color: var(--vivid-blue);
-  --deleted-bg-color: var(--red-transparent);
+  --deleted-bg-color: var(--transparent-red);
   --deleted-txt-color: var(--red);
-  --error-bg-color: var(--red-transparent);
+  --error-bg-color: var(--transparent-red);
   --error-txt-color: var(--red);
 }

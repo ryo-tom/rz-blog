@@ -100,7 +100,7 @@ Search Header
   cursor: pointer;
 
   &:hover {
-    color: var(--blue-light);
+    color: var(--light-blue);
   }
 }
 
@@ -127,7 +127,7 @@ Search Body
   padding: 16px 8px;
 
   &:hover {
-    background-color: var(--blue-light);
+    background-color: var(--light-blue);
     color: var(--white);
   }
 }

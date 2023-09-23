@@ -75,7 +75,7 @@
   }
 
   .shortcut-key {
-    background-color: var(--navy-transparent);
+    background-color: var(--transparent-navy);
     border-radius: 4px;
     padding: 2px 4px;
   }
@@ -154,7 +154,7 @@
 
   .nav-item {
     .nav-link {
-      border-top: 1px solid var(--navy-transparent);
+      border-top: 1px solid var(--transparent-navy);
       color: var(--white);
       display: block;
       font-weight: bold;
@@ -162,12 +162,12 @@
 
       &:focus,
       &:hover {
-        background-color: var(--blue-transparent);
+        background-color: var(--transparent-blue);
       }
     }
 
     &:last-child .nav-link {
-      border-bottom: 1px solid var(--navy-transparent);
+      border-bottom: 1px solid var(--transparent-navy);
     }
   }
 
