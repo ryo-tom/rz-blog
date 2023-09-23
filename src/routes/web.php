@@ -26,10 +26,14 @@ Route::get('posts/search', [VisitorPostController::class, 'search'])->name('post
 Route::get('posts/{slug}', [VisitorPostController::class, 'show'])->name('posts.show');
 
 // Static Pages
+$staticPages = ['profile', 'privacy', 'contact'];
+foreach ($staticPages as $page) {
+    Route::get($page, [VisitorPageController::class, 'show'])
+        ->defaults('slug', $page)
+        ->name('pages.' . $page);
+}
+// Dynamic route for other slugs
 Route::get('pages/{slug}', [VisitorPageController::class, 'show'])->name('pages.show');
-Route::get('profile', [VisitorPageController::class, 'show'])->defaults('slug', 'profile')->name('pages.profile');
-Route::get('privacy', [VisitorPageController::class, 'show'])->defaults('slug', 'privacy')->name('pages.privacy');
-Route::get('contact', [VisitorPageController::class, 'show'])->defaults('slug', 'contact')->name('pages.contact');
 
 Route::middleware('auth')->group(function () {
     Route::get('admin', function () {
@@ -69,4 +73,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('admin/pages/{page}', [PageController::class, 'destroy'])->name('admin.pages.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
