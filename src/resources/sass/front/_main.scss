@@ -12,7 +12,10 @@
   @include pc-screen() {
     max-width: var(--max-width-pc);
     margin: 0 auto;
-    padding: 16px 24px;
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    padding-right: var(--main-padding-x);
+    padding-left: var(--main-padding-x);
   }
 }
 
@@ -34,6 +37,6 @@
     max-height: 100vh;
     overflow-y: scroll;
     position: sticky;
-    top: calc(var(--header-height) + 16px);
+    top: calc(var(--header-height) + var(--main-padding-top));
   }
 }
