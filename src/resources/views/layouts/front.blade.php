@@ -9,6 +9,9 @@
     {{-- Styles --}}
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
+    {{-- Favicon --}}
+    <link rel="shortcut icon" href="{{ asset('/favicon.ico') }}">
+
     @vite('resources/sass/styles-front.scss')
 </head>
 <body>
