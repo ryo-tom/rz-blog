@@ -63,10 +63,10 @@
             <div class="mobile-filter-counts">
                 <span id="filterCount" class="count-label">
                     @isset($filteredPostCount){{ $filteredPostCount }}@endisset
-                </span>件
+                </span> 件
             </div>
             <button class="mobile-filter-button">
-                絞り込み結果を表示する
+                結果を表示する
             </button>
         </div>
     </form>
