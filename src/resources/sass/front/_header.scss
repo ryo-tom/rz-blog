@@ -2,7 +2,7 @@
 
 .layout-header {
   background-color: var(--color-header);
-  height: var(--header-height);
+  height: var(--height-header);
   position: fixed;
   top: 0;
   width: 100%;
@@ -143,7 +143,7 @@
 -------------------------*/
 .mobile-nav {
   background-color: var(--color-header);
-  height: calc(100vh - var(--header-height));
+  height: calc(100vh - var(--height-header));
   opacity: 0.9;
   overflow: auto;
   padding: 40px 4%;

@@ -2,9 +2,9 @@
 
   /* Height
   -------------------------*/
-  --header-height: 64px;
-  scroll-padding-top: calc(var(--header-height) + 16px);
-  --footer-height: 40px;
+  --height-header: 64px;
+  --height-footer: 40px;
+  scroll-padding-top: calc(var(--height-header) + 16px);
 
   /* Width
   -------------------------*/

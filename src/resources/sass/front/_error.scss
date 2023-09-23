@@ -1,7 +1,7 @@
 @use '../global' as *;
 
 .is-error-page {
-  height: calc(100vh - var(--header-height) - var(--footer-height));
+  height: calc(100vh - var(--height-header) - var(--height-footer));
 }
 
 .error-content-title {
