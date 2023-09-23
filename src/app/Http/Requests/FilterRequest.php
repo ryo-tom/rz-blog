@@ -22,7 +22,7 @@ class FilterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'category_slug' => ['nullable', 'string', 'max:255'],
+            'category' => ['nullable', 'string', 'max:255'],
             'tag_slugs'     => ['nullable', 'array'],
             'tag_slugs.*'   => ['nullable', 'string', 'max:255'],
             'tag_option'    => ['nullable', 'string', 'in:or,and'],

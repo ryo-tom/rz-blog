@@ -12,10 +12,10 @@
             <div class="category-section">
                 <div class="filter-label">
                     $category =
-                    <select id="categorySelector" name="category_slug" class="filter-form-select" data-device="pc">
+                    <select id="categorySelector" name="category" class="filter-form-select" data-device="pc">
                         <option value="">全て</option>
                         @foreach ($categories as $category)
-                        <option value="{{ $category->slug }}" @selected(request()->query('category_slug') === $category->slug)>
+                        <option value="{{ $category->slug }}" @selected(request()->query('category') === $category->slug)>
                             {{ $category->name }}
                         </option>
                         @endforeach

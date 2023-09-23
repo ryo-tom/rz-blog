@@ -22,7 +22,7 @@ function toggleMobileFilter() {
  * @param {string} device - Device type ("pc" or "mobile").
  */
 function initFilterEventListeners(device) {
-  addFilterOnChange('category_slug', device);
+  addFilterOnChange('category', device);
   addFilterOnChange('tag_option', device);
 
   const checkboxes = document.querySelectorAll(`input[name="tag_slugs[]"][data-device="${device}"]`);
@@ -72,7 +72,7 @@ function performFilter(device) {
  * @returns {Object} - An object containing values selected by the user: category, tag option, and tag slugs.
  */
 function getSelectedValues(device = "pc") {
-  const selectedCategory  = document.querySelector(`select[name="category_slug"][data-device="${device}"]`).value;
+  const selectedCategory  = document.querySelector(`select[name="category"][data-device="${device}"]`).value;
   const selectedTagOption = document.querySelector(`select[name="tag_option"][data-device="${device}"]`).value;
   const selectedTagSlugs  = Array.from(document.querySelectorAll(`input[name="tag_slugs[]"][data-device="${device}"]:checked`)).map(e => e.value);
 
@@ -96,7 +96,7 @@ function getSelectedValues(device = "pc") {
  */
 function buildFilterURL(baseRoute, selections) {
   const params = new URLSearchParams();
-  params.append('category_slug', selections.category);
+  params.append('category', selections.category);
   selections.tagSlugs.forEach(tag => params.append('tag_slugs[]', tag));
   params.append('tag_option', selections.tagOption);
 

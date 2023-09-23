@@ -13,7 +13,7 @@ class PostController extends Controller
 {
     public function index(FilterRequest $request)
     {
-        $categorySlug  = $request->input('category_slug');
+        $categorySlug  = $request->input('category');
         $tagSlugs      = $request->input('tag_slugs');
         $tagOption     = $request->input('tag_option');
 
@@ -47,7 +47,7 @@ class PostController extends Controller
     /** Ajax for Mobile filter view */
     public function count(FilterRequest $request)
     {
-        $categorySlug  = $request->input('category_slug');
+        $categorySlug  = $request->input('category');
         $tagSlugs      = $request->input('tag_slugs');
         $tagOption     = $request->input('tag_option');
 
