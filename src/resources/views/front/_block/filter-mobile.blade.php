@@ -22,10 +22,10 @@
             <div class="category-section">
                 <div class="filter-label">
                     $category =
-                    <select id="mobileCategorySelector" name="category_slug" class="filter-form-select" data-device="mobile">
+                    <select id="mobileCategorySelector" name="category" class="filter-form-select" data-device="mobile">
                         <option value="">全て</option>
                         @foreach ($categories as $category)
-                        <option value="{{ $category->slug }}" @selected(request()->query('category_slug') === $category->slug)>
+                        <option value="{{ $category->slug }}" @selected(request()->query('category') === $category->slug)>
                             {{ $category->name }}
                         </option>
                         @endforeach
@@ -40,8 +40,8 @@
                 <div class="tags-list">
                     @foreach ($tags as $tag)
                     <div class="tag-item">
-                        <label class="tag-label {{ in_array($tag->slug, request()->query('tag_slugs') ?? []) ? 'tag-checked' : '' }}">
-                            <input type="checkbox" name="tag_slugs[]" value="{{ $tag->slug }}" hidden data-device="mobile" @checked(in_array($tag->slug, request()->query('tag_slugs') ?? []))>
+                        <label class="tag-label {{ in_array($tag->slug, request()->query('tags') ?? []) ? 'tag-checked' : '' }}">
+                            <input type="checkbox" name="tags[]" value="{{ $tag->slug }}" hidden data-device="mobile" @checked(in_array($tag->slug, request()->query('tags') ?? []))>
                             {{ $tag->name }}
                         </label>
                     </div>
@@ -63,10 +63,10 @@
             <div class="mobile-filter-counts">
                 <span id="filterCount" class="count-label">
                     @isset($filteredPostCount){{ $filteredPostCount }}@endisset
-                </span>件
+                </span> 件
             </div>
             <button class="mobile-filter-button">
-                絞り込み結果を表示する
+                結果を表示する
             </button>
         </div>
     </form>

@@ -8,12 +8,12 @@
 
     <div class="info-for-mobile">
         <button id="mobileFilterTrigger" class="open-filter-button">
+            <span class="material-symbols-outlined">
+            filter_list
+            </span>
             <div class="label">
                 Filter
             </div>
-            <span class="material-symbols-outlined">
-            add_circle
-            </span>
         </button>
     </div>
 </div>
