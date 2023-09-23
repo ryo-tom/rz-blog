@@ -12,6 +12,12 @@
     color: inherit;
     display: block;
     padding: 24px;
+
+    &:hover {
+      .post-title {
+        text-decoration: underline;
+      }
+    }
   }
 
   .post-published-at {
@@ -20,6 +26,7 @@
   }
 
   .post-title {
+    color: var(--black);
     font-size: 1.2rem;
     font-weight: bold;
     padding: 16px 0;
