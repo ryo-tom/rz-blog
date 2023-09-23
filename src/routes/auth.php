@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 Route::middleware('guest')->group(function () {
-    Route::get(config('mylogin.login_route'), [AuthenticatedSessionController::class, 'create'])->name('login');
-    Route::post(config('mylogin.login_route'), [AuthenticatedSessionController::class, 'store']);
+    Route::get(config('myconf.login_route'), [AuthenticatedSessionController::class, 'create'])->name('login');
+    Route::post(config('myconf.login_route'), [AuthenticatedSessionController::class, 'store']);
 });
 
 Route::middleware('auth')->group(function () {
