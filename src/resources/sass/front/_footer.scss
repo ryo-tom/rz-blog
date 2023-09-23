@@ -16,3 +16,33 @@
     padding: 8px 24px;
   }
 }
+
+.footer-nav {
+  overflow-x: scroll;
+  white-space: nowrap;
+  padding: 16px 0;
+}
+
+.footer-list {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-list-item {
+  border-right: 1px solid #fff;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.footer-list-link {
+  display: inline-block;
+  font-size: 0.9rem;
+  padding: 0 1rem;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline currentColor;
+  }
+}

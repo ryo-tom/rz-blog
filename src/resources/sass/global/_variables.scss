@@ -3,7 +3,7 @@
   /* Height
   -------------------------*/
   --height-header: 64px;
-  --height-footer: 40px;
+  --height-footer: 104px;
   scroll-padding-top: calc(var(--height-header) + 16px);
 
   /* Width
@@ -48,7 +48,7 @@
   /* Theme Colors
   -------------------------*/
   --color-header: var(--black);
-  --color-footer: var(--black);
+  --color-footer: var(--light-black);
   --color-body: var(--light-gray);
   --color-modal: var(--transparent-navy);
 
