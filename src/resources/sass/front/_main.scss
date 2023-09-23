@@ -12,10 +12,10 @@
   @include pc-screen() {
     max-width: var(--max-width-pc);
     margin: 0 auto;
-    padding-top: var(--main-padding-top);
-    padding-bottom: var(--main-padding-bottom);
-    padding-right: var(--main-padding-x);
-    padding-left: var(--main-padding-x);
+    padding-top: var(--padding-main-top);
+    padding-bottom: var(--padding-main-bottom);
+    padding-right: var(--padding-main-x);
+    padding-left: var(--padding-main-x);
   }
 }
 
@@ -37,6 +37,6 @@
     max-height: 100vh;
     overflow-y: scroll;
     position: sticky;
-    top: calc(var(--height-header) + var(--main-padding-top));
+    top: calc(var(--height-header) + var(--padding-main-top));
   }
 }
