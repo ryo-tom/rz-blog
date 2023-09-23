@@ -25,8 +25,11 @@ Route::get('posts/filter/count', [VisitorPostController::class, 'count'])->name(
 Route::get('posts/search', [VisitorPostController::class, 'search'])->name('posts.search'); // Ajax Search
 Route::get('posts/{slug}', [VisitorPostController::class, 'show'])->name('posts.show');
 
+// Static Pages
 Route::get('pages/{slug}', [VisitorPageController::class, 'show'])->name('pages.show');
-Route::get('profile', [VisitorPageController::class, 'show'])->defaults('slug', 'profile')->name('pages.showProfile');
+Route::get('profile', [VisitorPageController::class, 'show'])->defaults('slug', 'profile')->name('pages.profile');
+Route::get('privacy', [VisitorPageController::class, 'show'])->defaults('slug', 'privacy')->name('pages.privacy');
+Route::get('contact', [VisitorPageController::class, 'show'])->defaults('slug', 'contact')->name('pages.contact');
 
 Route::middleware('auth')->group(function () {
     Route::get('admin', function () {

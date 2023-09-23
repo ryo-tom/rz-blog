@@ -18,11 +18,27 @@ class PageSeeder extends Seeder
             return;
         }
 
-        Page::create([
-            'title' => 'Profile',
-            'slug' => 'profile',
-            'content' => '<h2>This is profile</h2>',
-            'is_published' => 1,
-        ]);
+        $pages = [
+            [
+                'title' => 'Profile',
+                'slug' => 'profile',
+                'content' => '<h2>This is profile</h2>',
+                'is_published' => 1,
+            ],
+            [
+                'title' => 'Privacy Policy',
+                'slug' => 'privacy',
+                'content' => '<h2>This is Privacy Policy</h2>',
+                'is_published' => 1,
+            ],
+            [
+                'title' => 'Contact',
+                'slug' => 'contact',
+                'content' => '<h2>This is Contact Page</h2>',
+                'is_published' => 1,
+            ],
+        ];
+
+        Page::insert($pages);
     }
 }
