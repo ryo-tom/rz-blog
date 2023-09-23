@@ -46,9 +46,9 @@
 
   /* Theme Colors
   -------------------------*/
-  --header-color: var(--navy);
-  --footer-color: var(--navy);
-  --body-color: var(--lightest-gray);
+  --header-color: var(--black);
+  --footer-color: var(--black);
+  --body-color: var(--light-gray);
   --modal-color: var(--navy-transparent);
 
   /* Shadow */
@@ -63,12 +63,12 @@
   --tag-color: var(--dark-gray);
   --tag-border-color: var(--gray);
   --tag-hover-bg-color: var(--light-gray);
-  --tag-checked-color: var(--cyan);
-  --tag-checked-bg-color: var(--cyan-transparent);
+  --tag-checked-color: var(--blue);
+  --tag-checked-bg-color: var(--blue-transparent);
 
   /* Filter Result */
-  --filter-result-color: var(--cyan);
-  --filter-result-bg-color: var(--cyan-transparent);
+  --filter-result-color: var(--blue);
+  --filter-result-bg-color: var(--blue-transparent);
 
   /* Buttons */
   --create-color: var(--green);
