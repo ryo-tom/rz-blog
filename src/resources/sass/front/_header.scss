@@ -33,9 +33,11 @@
     .main-title {
       font-size: 1.3rem;
       letter-spacing: 1px;
+      font-weight: bold;
 
-      span {
-        color: var(--green);
+      .accent {
+        color: var(--vivid-green);
+        font-weight: bold;
       }
     }
   }

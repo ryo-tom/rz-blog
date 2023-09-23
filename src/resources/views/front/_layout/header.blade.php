@@ -4,7 +4,7 @@
         <div class="site-title-box">
             <a href="{{ route('home') }}" class="site-title">
                 <div class="main-title">
-                    R<span>'s</span> Log
+                    R<span class="accent">'s</span> Log
                 </div>
             </a>
         </div>
