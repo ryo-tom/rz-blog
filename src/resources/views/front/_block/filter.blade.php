@@ -30,8 +30,8 @@
                 <div class="tags-list is-scrollable">
                     @foreach ($tags as $tag)
                     <div class="tag-item">
-                        <label class="tag-label {{ in_array($tag->slug, request()->query('tag_slugs') ?? []) ? 'tag-checked' : '' }}">
-                            <input type="checkbox" name="tag_slugs[]" value="{{ $tag->slug }}" hidden data-device="pc" @checked(in_array($tag->slug, request()->query('tag_slugs') ?? []))>
+                        <label class="tag-label {{ in_array($tag->slug, request()->query('tags') ?? []) ? 'tag-checked' : '' }}">
+                            <input type="checkbox" name="tags[]" value="{{ $tag->slug }}" hidden data-device="pc" @checked(in_array($tag->slug, request()->query('tags') ?? []))>
                             {{ $tag->name }}
                         </label>
                     </div>
