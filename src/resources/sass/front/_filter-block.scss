@@ -48,7 +48,7 @@ Filter Header
 ----------------------- */
 .filter-header {
   align-items: center;
-  background-color: var(--dark-gray);
+  background-color: var(--color-filter-header-bg);
   color: var(--white);
   display: flex;
   justify-content: space-between;
@@ -98,7 +98,7 @@ Filter Body
 }
 
 .filter-label {
-  color: var(--blue);
+  color: var(--color-filter-label);
   font-weight: bold;
   padding: 8px 0;
 }
@@ -111,7 +111,7 @@ Filter Body
 
   &:focus {
     outline: none;
-    border-color: #007bff;
+    border-color: var(--light-blue);
     box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
   }
 }
@@ -121,7 +121,7 @@ Filter Footer
 ----------------------- */
 .filter-footer {
   align-items: center;
-  background-color: var(--light-gray);
+  background-color: var(--color-filter-footer-bg);
   border-top: 1px solid var(--gray);
   display: flex;
   justify-content: space-between;
