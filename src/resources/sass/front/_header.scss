@@ -33,6 +33,10 @@
     .main-title {
       font-size: 1.3rem;
       letter-spacing: 1px;
+
+      span {
+        color: var(--green);
+      }
     }
   }
 }

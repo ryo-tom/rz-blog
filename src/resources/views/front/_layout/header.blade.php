@@ -3,7 +3,9 @@
         {{-- Site Title --}}
         <div class="site-title-box">
             <a href="{{ route('home') }}" class="site-title">
-                <div class="main-title">Rz Blog</div>
+                <div class="main-title">
+                    R<span>'s</span> Log
+                </div>
             </a>
         </div>
 
