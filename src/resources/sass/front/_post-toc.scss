@@ -6,7 +6,7 @@
   display: none;
   padding: 16px;
   margin-bottom: 16px;
-  
+
   @include pc-screen() {
     display: block;
   }
@@ -19,14 +19,14 @@
 
   a {
     border-radius: 4px;
-    color: var(--toc-color);
+    color: var(--color-toc);
     display: inline-block;
     line-height: 2.0;
     width: 100%;
 
     &:hover {
-      background-color: var(--toc-hover-bg-color);
-      color: var(--toc-hover-color);
+      background-color: var(--color-toc-hover-bg);
+      color: var(--color-toc-hover);
     }
   }
 }

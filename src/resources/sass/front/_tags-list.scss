@@ -13,9 +13,9 @@
 }
 
 .tag-label {
-  border: 1px solid var(--tag-border-color);
+  border: 1px solid var(--color-tag-border);
   border-radius: 16px;
-  color: var(--tag-color);
+  color: var(--color-tag);
   font-size: 14px;
   padding: 4px 8px;
 
@@ -24,14 +24,14 @@
   }
 
   &:hover {
-    background-color: var(--tag-hover-bg-color);
+    background-color: var(--color-tag-hover-bg);
     cursor: pointer;
   }
 
   &.tag-checked {
-    background-color: var(--tag-checked-bg-color);
-    border: 1px solid var(--tag-checked-color);
-    color: var(--tag-checked-color);
+    background-color: var(--color-tag-checked-bg);
+    border: 1px solid var(--color-tag-checked);
+    color: var(--color-tag-checked);
 
     &:hover {
       opacity: 0.8;

@@ -4,22 +4,22 @@
     padding: 8px;
 
     &.alert-success {
-      background-color: var(--success-bg-color);
-      color: var(--success-txt-color);
+      background-color: var(--color-success-bg);
+      color: var(--color-success-text);
     }
 
     &.alert-updated {
-      background-color: var(--updated-bg-color);
-      color: var(--updated-txt-color);
+      background-color: var(--color-updated-bg);
+      color: var(--color-updated-text);
     }
 
     &.alert-deleted {
-      background-color: var(--deleted-bg-color);
-      color: var(--deleted-txt-color);
+      background-color: var(--color-deleted-bg);
+      color: var(--color-deleted-text);
     }
 
     &.alert-error {
-      background-color: var(--deleted-bg-color);
-      color: var(--deleted-txt-color);
+      background-color: var(--color-deleted-bg);
+      color: var(--color-deleted-text);
     }
   }

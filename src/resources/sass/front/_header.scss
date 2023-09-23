@@ -1,7 +1,7 @@
 @use '../global' as *;
 
 .layout-header {
-  background-color: var(--header-color);
+  background-color: var(--color-header);
   height: var(--header-height);
   position: fixed;
   top: 0;
@@ -142,7 +142,7 @@
 /* Mobile Navigation
 -------------------------*/
 .mobile-nav {
-  background-color: var(--header-color);
+  background-color: var(--color-header);
   height: calc(100vh - var(--header-height));
   opacity: 0.9;
   overflow: auto;

@@ -47,44 +47,44 @@
 
   /* Theme Colors
   -------------------------*/
-  --header-color: var(--black);
-  --footer-color: var(--black);
-  --body-color: var(--light-gray);
-  --modal-color: var(--transparent-navy);
+  --color-header: var(--black);
+  --color-footer: var(--black);
+  --color-body: var(--light-gray);
+  --color-modal: var(--transparent-navy);
 
   /* Shadow */
-  --shadow-color: rgba(0, 0, 0, 0.2);
+  --color-shadow: rgba(0, 0, 0, 0.2);
 
   /* TOC */
-  --toc-color: var(--dark-gray);
-  --toc-hover-color: var(--black);
-  --toc-hover-bg-color: var(--transparent-blue);
+  --color-toc: var(--dark-gray);
+  --color-toc-hover: var(--black);
+  --color-toc-hover-bg: var(--transparent-blue);
 
   /* Tags */
-  --tag-color: var(--dark-gray);
-  --tag-border-color: var(--gray);
-  --tag-hover-bg-color: var(--light-gray);
-  --tag-checked-color: var(--blue);
-  --tag-checked-bg-color: var(--transparent-blue);
+  --color-tag: var(--dark-gray);
+  --color-tag-border: var(--gray);
+  --color-tag-hover-bg: var(--light-gray);
+  --color-tag-checked: var(--blue);
+  --color-tag-checked-bg: var(--transparent-blue);
 
   /* Filter Result */
-  --filter-result-color: var(--blue);
-  --filter-result-bg-color: var(--transparent-blue);
+  --color-filter-result: var(--blue);
+  --color-filter-result-bg: var(--transparent-blue);
 
   /* Buttons */
-  --create-color: var(--green);
-  --store-color: var(--green);
-  --edit-color: var(--light-blue);
-  --update-color: var(--light-blue);
-  --delete-color: var(--red);
+  --color-create: var(--green);
+  --color-store: var(--green);
+  --color-edit: var(--light-blue);
+  --color-update: var(--light-blue);
+  --color-delete: var(--red);
 
   /* Alerts */
-  --success-bg-color: var(--transparent-green);
-  --success-txt-color: var(--vivid-green);
-  --updated-bg-color: var(--transparent-blue);
-  --updated-txt-color: var(--vivid-blue);
-  --deleted-bg-color: var(--transparent-red);
-  --deleted-txt-color: var(--red);
-  --error-bg-color: var(--transparent-red);
-  --error-txt-color: var(--red);
+  --color-success-bg: var(--transparent-green);
+  --color-success-text: var(--vivid-green);
+  --color-updated-bg: var(--transparent-blue);
+  --color-updated-text: var(--vivid-blue);
+  --color-deleted-bg: var(--transparent-red);
+  --color-deleted-text: var(--red);
+  --color-error-bg: var(--transparent-red);
+  --color-error-text: var(--red);
 }

@@ -18,27 +18,27 @@
   }
 
   &.btn-create {
-    background-color: var(--create-color);
+    background-color: var(--color-create);
     color: var(--white);
   }
 
   &.btn-store {
-    background-color: var(--store-color);
+    background-color: var(--color-store);
     color: var(--white);
   }
 
   &.btn-edit {
-    background-color: var(--edit-color);
+    background-color: var(--color-edit);
     color: var(--white);
   }
 
   &.btn-update {
-    background-color: var(--update-color);
+    background-color: var(--color-update);
     color: var(--white);
   }
 
   &.btn-delete {
-    background-color: var(--delete-color);
+    background-color: var(--color-delete);
     color: var(--white);
   }
 }
