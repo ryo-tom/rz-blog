@@ -127,7 +127,35 @@ Mobile Filter
 ----------------------- */
 function displayFilterCount(data) {
   const filterCount = document.getElementById('filterCount');
-  filterCount.textContent = data.filteredPostCount;
+
+  // 現在の数値を取得（無効な場合は0をデフォルトとする）
+  const startValue = parseInt(filterCount.textContent, 10) || 0;
+
+  const endValue = data.filteredPostCount;
+
+  countUp(filterCount, startValue, endValue, 300);
+}
+
+/** 表示エフェクト用 */
+function countUp(element, startValue, endValue, duration) {
+  const startTime = Date.now();
+  const endTime = startTime + duration;
+
+  const update = () => {
+      const now = Date.now();
+      const progress = Math.min((now - startTime) / duration, 1);
+      const currentValue = Math.floor(startValue + (endValue - startValue) * progress);
+
+      element.textContent = currentValue;
+
+      if (now < endTime) {
+          requestAnimationFrame(update);
+      } else {
+          element.textContent = endValue;
+      }
+  };
+
+  requestAnimationFrame(update);
 }
 
 document.getElementById('mobileFilterClearTrigger').addEventListener('click', () => {
