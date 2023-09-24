@@ -12,7 +12,7 @@
 
     <main class="layout-admin">
         <div class="left-column">
-            @include('admin._layout.left-sidebar')
+            @include('admin.left-sidebar')
         </div>
         <div class="right-column">
             <div class="right-header">
