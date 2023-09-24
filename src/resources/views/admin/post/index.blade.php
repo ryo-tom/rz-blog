@@ -24,13 +24,12 @@
                     <th class="th-cell">操作</th>
                     <th class="th-cell">操作</th>
                     <th class="th-cell">id</th>
-                    <th class="th-cell">user</th>
+                    <th class="th-cell">is_published</th>
                     <th class="th-cell">category</th>
                     <th class="th-cell">tags</th>
                     <th class="th-cell">title</th>
                     <th class="th-cell">slug</th>
                     <th class="th-cell">content</th>
-                    <th class="th-cell">is_published</th>
                     <th class="th-cell">published_at</th>
                     <th class="th-cell">created_at</th>
                     <th class="th-cell">updated_at</th>
@@ -50,7 +49,7 @@
                         </form>
                     </td>
                     <td class="td-cell">{{ $post->id }}</td>
-                    <td class="td-cell">{{ $post->user->name }}</td>
+                    <td class="td-cell">{{ $post->is_published ? '公開' : '非公開' }}</td>
                     <td class="td-cell">{{ $post->category->name }}</td>
                     <td class="td-cell wrap">
                         @foreach ($post->tags as $tag)
@@ -60,7 +59,6 @@
                     <td class="td-cell">{{ $post->title }}</td>
                     <td class="td-cell">{{ $post->slug }}</td>
                     <td class="td-cell">{{ $post->content }}</td>
-                    <td class="td-cell">{{ $post->is_published ? '公開' : '非公開' }}</td>
                     <td class="td-cell">{{ $post->published_at ?? 'NULL' }}</td>
                     <td class="td-cell">{{ $post->created_at ?? 'NULL' }}</td>
                     <td class="td-cell">{{ $post->updated_at ?? 'NULL' }}</td>

@@ -24,10 +24,10 @@
                     <th class="th-cell">操作</th>
                     <th class="th-cell">操作</th>
                     <th class="th-cell">id</th>
+                    <th class="th-cell">is_published</th>
                     <th class="th-cell">title</th>
                     <th class="th-cell">slug</th>
                     <th class="th-cell">content</th>
-                    <th class="th-cell">is_published</th>
                     <th class="th-cell">created_at</th>
                     <th class="th-cell">updated_at</th>
                 </tr>
@@ -46,10 +46,10 @@
                         </form>
                     </td>
                     <td class="td-cell">{{ $page->id }}</td>
+                    <td class="td-cell">{{ $page->is_published ? '公開' : '非公開' }}</td>
                     <td class="td-cell">{{ $page->title }}</td>
                     <td class="td-cell">{{ $page->slug }}</td>
                     <td class="td-cell">{{ $page->content }}</td>
-                    <td class="td-cell">{{ $page->is_published ? '公開' : '非公開' }}</td>
                     <td class="td-cell">{{ $page->created_at ?? 'NULL' }}</td>
                     <td class="td-cell">{{ $page->updated_at ?? 'NULL' }}</td>
                 </tr>
