@@ -4,8 +4,9 @@
   background-color: var(--white);
   border-radius: 8px;
   display: none;
-  padding: 16px;
+  font-size: 0.9rem;
   margin-bottom: 16px;
+  padding: 16px;
 
   @include pc-screen() {
     display: block;

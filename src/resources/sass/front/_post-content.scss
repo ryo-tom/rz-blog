@@ -99,13 +99,14 @@ Styles for post content converted Markdown to HTML
   -------------------------*/
   ul {
     list-style: disc;
-    padding-left: 16px;
     margin-bottom: 16px;
+    padding-left: 16px;
   }
 
   ol {
     list-style: decimal;
     list-style-position: outside;
+    margin-bottom: 16px;
     padding-left: 16px;
   }
 
