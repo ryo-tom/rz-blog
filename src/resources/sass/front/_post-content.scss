@@ -112,6 +112,7 @@ Styles for post content converted Markdown to HTML
 
   li {
     padding: 4px 0;
+    word-break: break-all;
   }
 
   /* Table
@@ -169,5 +170,6 @@ Styles for post content converted Markdown to HTML
     line-height: 1.5;
     margin: 0 0 16px;
     padding: 4px;
+    word-break: break-all;
   }
 }
