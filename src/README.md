@@ -73,6 +73,10 @@ App\Models\User::create([
 
 ### Setting up Sass
 
+```bash
+npm install
+```
+
 Build the assets:
 
 ```bash
