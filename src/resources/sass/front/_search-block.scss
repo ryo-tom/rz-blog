@@ -51,6 +51,8 @@ Search Header
   font-size: 1.2rem;
   padding: 8px;
   width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
 
   &:focus {
     outline: none;
