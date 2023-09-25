@@ -1,7 +1,13 @@
+@use '../global' as *;
+
 .post-item {
   background-color: var(--white);
   border-radius: 8px;
   margin-bottom: 16px;
+
+  @include mobile-screen() {
+    border-radius: 0;
+  }
 
   &:hover {
     cursor: pointer;

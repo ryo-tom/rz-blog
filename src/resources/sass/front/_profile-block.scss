@@ -1,3 +1,5 @@
+@use '../global' as *;
+
 :root {
   --profile-size: 80px;
   --column-gap: 16px;
@@ -7,6 +9,10 @@
   background-color: var(--white);
   border-radius: 8px;
   padding: 16px;
+
+  @include mobile-screen() {
+    border-radius: 0;
+  }
 }
 
 /* -----------------------

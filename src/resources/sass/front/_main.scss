@@ -9,6 +9,10 @@
   padding: 16px 4%;
   min-height: calc(100vh - var(--height-header) - var(--height-footer));
 
+  @include mobile-screen() {
+    padding: 0;
+  }
+
   @include pc-screen() {
     max-width: var(--max-width-pc);
     margin: 0 auto;

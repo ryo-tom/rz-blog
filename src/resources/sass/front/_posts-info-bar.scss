@@ -5,6 +5,13 @@
   display: flex;
   justify-content: space-between;
 
+  @include mobile-screen() {
+    display: block;
+    height: 72px;
+    padding-top: 16px;
+    position: relative;
+  }
+
   .filter-result {
     background-color: var(--color-filter-result-bg);
     border-radius: 4px;
@@ -15,6 +22,11 @@
     width: 100%;
 
     @include pc-screen() {
+      margin-right: 0;
+    }
+
+    @include mobile-screen() {
+      border-radius: 0;
       margin-right: 0;
     }
   }
@@ -28,6 +40,11 @@
 
   @include pc-screen() {
     display: none;
+  }
+
+  @include mobile-screen() {
+    border-radius: 0;
+    padding-right: 16px;
   }
 
   .open-filter-button {
@@ -50,5 +67,12 @@
     .material-symbols-outlined {
       font-size: 1.2rem;
     }
+
+    @include mobile-screen() {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+    }
+
   }
 }

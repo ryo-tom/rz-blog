@@ -1,9 +1,15 @@
+@use '../global' as *;
+
 .post-content {
   background-color: var(--white);
   border-radius: 8px;
   color: var(--black);
   margin-bottom: 16px;
   padding: 24px;
+
+  @include mobile-screen() {
+    border-radius: 0;
+  }
 
   .post-title {
     font-weight: bold;
