@@ -11,6 +11,6 @@
             </ul>
         </nav>
 
-        <p class="copyright"><small>Copyright © 2023 rk-tecks All rights reserved.</small></p>
+        <p class="copyright"><small>Copyright © 2023 R's Log All rights reserved.</small></p>
     </div>
 </footer>
