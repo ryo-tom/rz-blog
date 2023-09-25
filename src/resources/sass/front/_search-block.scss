@@ -51,8 +51,12 @@ Search Header
   font-size: 1.2rem;
   padding: 8px;
   width: 100%;
+
+  // for iPhone
   -webkit-appearance: none;
   appearance: none;
+  box-shadow: none;
+  background-color: var(--white);
 
   &:focus {
     outline: none;
