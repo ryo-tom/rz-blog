@@ -11,24 +11,24 @@
     padding-top: 16px;
     position: relative;
   }
+}
 
-  .filter-result {
-    background-color: var(--color-filter-result-bg);
-    border-radius: 4px;
-    color: var(--color-filter-result);
-    padding: 8px 16px;
-    margin-bottom: 16px;
-    margin-right: 16px;
-    width: 100%;
+.filter-result {
+  background-color: var(--color-filter-result-bg);
+  border-radius: 4px;
+  color: var(--color-filter-result);
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  margin-right: 16px;
+  width: 100%;
 
-    @include pc-screen() {
-      margin-right: 0;
-    }
+  @include pc-screen() {
+    margin-right: 0;
+  }
 
-    @include mobile-screen() {
-      border-radius: 0;
-      margin-right: 0;
-    }
+  @include mobile-screen() {
+    border-radius: 0;
+    margin-right: 0;
   }
 }
 
@@ -46,33 +46,32 @@
     border-radius: 0;
     padding-right: 16px;
   }
+}
 
-  .open-filter-button {
-    align-items: center;
-    border-radius: 32px;
-    background-color: var(--dark-gray);
-    color: var(--white);
-    display: flex;
-    margin-left: auto;
-    padding: 8px 24px;
+.open-filter-button {
+  align-items: center;
+  border-radius: 32px;
+  background-color: var(--dark-gray);
+  color: var(--white);
+  display: flex;
+  margin-left: auto;
+  padding: 8px 24px;
 
-    .label {
-      padding: 0 4px;
-    }
+  .label {
+    padding: 0 4px;
+  }
 
-    &:hover {
-      cursor: pointer;
-    }
+  &:hover {
+    cursor: pointer;
+  }
 
-    .material-symbols-outlined {
-      font-size: 1.2rem;
-    }
+  .material-symbols-outlined {
+    font-size: 1.2rem;
+  }
 
-    @include mobile-screen() {
-      position: absolute;
-      right: 16px;
-      top: 16px;
-    }
-
+  @include mobile-screen() {
+    position: absolute;
+    right: 16px;
+    top: 16px;
   }
 }
