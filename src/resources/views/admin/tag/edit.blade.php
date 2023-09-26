@@ -13,7 +13,6 @@
     <form id="tagUpdateForm" action="{{ route('admin.tags.update', ['tag' => $tag]) }}" method="POST">
         @csrf
         @method('PATCH')
-        <div class="form-block">
             <div class="form-inner">
                 <div class="input-box">
                     <label for="tagName">タグ名<span class="required-mark">*</span></label>
@@ -36,8 +35,6 @@
                     <div class="validation-message">{{ $message }}</div>
                     @enderror
                 </div>
-
             </div>
-        </div>
     </form>
 @endsection

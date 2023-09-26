@@ -12,7 +12,6 @@
 
     <form id="pageStoreForm" action="{{ route('admin.pages.store') }}" method="POST">
         @csrf
-        <div class="form-block">
             <div class="form-inner">
                 <div class="input-box">
                     <label for="pageTitle">タイトル<span class="required-mark">*</span></label>
@@ -45,9 +44,7 @@
                     <div class="validation-message">{{ $message }}</div>
                     @enderror
                 </div>
-
             </div>
-        </div>
     </form>
 @endsection
 

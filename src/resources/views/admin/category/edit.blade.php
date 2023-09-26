@@ -13,7 +13,6 @@
     <form id="categoryUpdateForm" action="{{ route('admin.categories.update', ['category' => $category]) }}" method="POST">
         @method('PATCH')
         @csrf
-        <div class="form-block">
             <div class="form-inner">
                 <div class="input-box">
                     <label for="categoryName">カテゴリ名</label>
@@ -36,8 +35,6 @@
                     <div class="validation-message">{{ $message }}</div>
                     @enderror
                 </div>
-
             </div>
-        </div>
     </form>
 @endsection

@@ -13,7 +13,6 @@
     <form id="postUpdateForm" action="{{ route('admin.posts.update', ['post' => $post]) }}" method="POST">
         @method('PATCH')
         @csrf
-        <div class="form-block">
             <div class="form-inner">
                 <div class="input-box">
                     <label for="title">タイトル<span class="required-mark">*</span></label>
@@ -80,8 +79,6 @@
                     <div class="validation-message">{{ $message }}</div>
                     @enderror
                 </div>
-
             </div>
-        </div>
     </form>
 @endsection

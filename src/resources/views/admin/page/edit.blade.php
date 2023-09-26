@@ -13,7 +13,6 @@
     <form id="pageUpdateForm" action="{{ route('admin.pages.update', ['page' => $page]) }}" method="POST">
         @method('PATCH')
         @csrf
-        <div class="form-block">
             <div class="form-inner">
                 <div class="input-box">
                     <label for="title">タイトル<span class="required-mark">*</span></label>
@@ -48,6 +47,5 @@
                 </div>
 
             </div>
-        </div>
     </form>
 @endsection

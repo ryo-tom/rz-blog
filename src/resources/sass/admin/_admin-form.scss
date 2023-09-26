@@ -21,23 +21,21 @@ textarea {
 }
 
 /* -----------------------
-Form Block
+Form
 ----------------------- */
-.form-block {
-  .form-inner {
-    margin: 8px auto;
+.form-inner {
+  margin: 8px auto;
 
-    .input-box {
-      margin-bottom: 16px;
+  .input-box {
+    margin-bottom: 16px;
 
-      .validation-message {
-        background-color: #E931471A;
-        border-radius: 4px;
-        color: #E93147;
-        font-size: 14px;
-        margin-top: 4px;
-        padding: 4px 8px;
-      }
+    .validation-message {
+      background-color: #E931471A;
+      border-radius: 4px;
+      color: #E93147;
+      font-size: 14px;
+      margin-top: 4px;
+      padding: 4px 8px;
     }
   }
 }
