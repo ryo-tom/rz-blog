@@ -5,13 +5,15 @@
 @section('content')
     <h1 class="admin-page-title">Page > Edit</h1>
 
-    <form action="{{ route('admin.pages.update', ['page' => $page]) }}" method="POST">
+    <div class="operation-bar">
+        <button class="btn btn-update" data-form-id="pageUpdateForm">Update</button>
+        @push('scripts')<script src={{ asset('js/admin/operation.js') }}></script>@endpush
+    </div>
+
+    <form id="pageUpdateForm" action="{{ route('admin.pages.update', ['page' => $page]) }}" method="POST">
         @method('PATCH')
         @csrf
         <div class="form-block">
-            <div class="operation-bar">
-                <button class="btn btn-update">Update</button>
-            </div>
             <div class="form-inner">
                 <div class="input-box">
                     <label for="title">タイトル<span class="required-mark">*</span></label>

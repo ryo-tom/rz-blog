@@ -5,13 +5,15 @@
 @section('content')
     <h1 class="admin-page-title">Category > Edit</h1>
 
-    <form action="{{ route('admin.categories.update', ['category' => $category]) }}" method="POST">
+    <div class="operation-bar">
+        <button class="btn btn-update" data-form-id="categoryUpdateForm">Update</button>
+        @push('scripts')<script src={{ asset('js/admin/operation.js') }}></script>@endpush
+    </div>
+
+    <form id="categoryUpdateForm" action="{{ route('admin.categories.update', ['category' => $category]) }}" method="POST">
         @method('PATCH')
         @csrf
         <div class="form-block">
-            <div class="operation-bar">
-                <button class="btn btn-update">Update</button>
-            </div>
             <div class="form-inner">
                 <div class="input-box">
                     <label for="categoryName">カテゴリ名</label>

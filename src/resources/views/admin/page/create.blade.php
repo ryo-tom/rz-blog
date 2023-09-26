@@ -5,12 +5,14 @@
 @section('content')
     <h1 class="admin-page-title">Page > Create</h1>
 
-    <form action="{{ route('admin.pages.store') }}" method="POST">
+    <div class="operation-bar">
+        <button class="btn btn-store" data-form-id="pageStoreForm">Store</button>
+        @push('scripts')<script src={{ asset('js/admin/operation.js') }}></script>@endpush
+    </div>
+
+    <form id="pageStoreForm" action="{{ route('admin.pages.store') }}" method="POST">
         @csrf
         <div class="form-block">
-            <div class="operation-bar">
-                <button class="btn btn-store">Store</button>
-            </div>
             <div class="form-inner">
                 <div class="input-box">
                     <label for="pageTitle">タイトル<span class="required-mark">*</span></label>

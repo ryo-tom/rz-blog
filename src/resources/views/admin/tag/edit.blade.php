@@ -5,13 +5,15 @@
 @section('content')
     <h1 class="admin-page-title">Tag > Edit</h1>
 
-    <form action="{{ route('admin.tags.update', ['tag' => $tag]) }}" method="POST">
+    <div class="operation-bar">
+        <button class="btn btn-update" data-form-id="tagUpdateForm">Update</button>
+        @push('scripts')<script src={{ asset('js/admin/operation.js') }}></script>@endpush
+    </div>
+
+    <form id="tagUpdateForm" action="{{ route('admin.tags.update', ['tag' => $tag]) }}" method="POST">
         @csrf
         @method('PATCH')
         <div class="form-block">
-            <div class="operation-bar">
-                <button class="btn btn-update">Update</button>
-            </div>
             <div class="form-inner">
                 <div class="input-box">
                     <label for="tagName">タグ名<span class="required-mark">*</span></label>
