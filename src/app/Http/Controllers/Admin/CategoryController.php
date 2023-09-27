@@ -58,7 +58,7 @@ class CategoryController extends Controller
     {
         if ($category->posts->count() > 0) {
             return redirect()
-                ->route('admin.categories.index')
+                ->route('admin.categories.edit', $category)
                 ->with([
                     'action'  => 'error',
                     'message' => 'カテゴリに関連する投稿が存在するため、削除できません。'

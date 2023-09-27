@@ -22,7 +22,6 @@
             <thead class="table-header">
                 <tr class="thead-row">
                     <th class="th-cell">操作</th>
-                    <th class="th-cell">操作</th>
                     <th class="th-cell">id</th>
                     <th class="th-cell">name</th>
                     <th class="th-cell">slug</th>
@@ -36,13 +35,6 @@
                 <tr class="tbody-row">
                     <td class="td-cell">
                         <a href="{{ route('admin.tags.edit', ['tag' => $tag]) }}" class="btn btn-edit">Edit</a>
-                    </td>
-                    <td class="td-cell">
-                        <form action="{{ route('admin.tags.destroy', ['tag' => $tag]) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-delete">Delete</button>
-                        </form>
                     </td>
                     <td class="td-cell">{{ $tag->id }}</td>
                     <td class="td-cell">{{ $tag->name }}</td>

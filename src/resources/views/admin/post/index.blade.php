@@ -22,7 +22,6 @@
             <thead class="table-header">
                 <tr class="thead-row">
                     <th class="th-cell">操作</th>
-                    <th class="th-cell">操作</th>
                     <th class="th-cell">id</th>
                     <th class="th-cell">is_published</th>
                     <th class="th-cell">category</th>
@@ -40,13 +39,6 @@
                 <tr class="tbody-row">
                     <td class="td-cell">
                         <a href="{{ route('admin.posts.edit', ['post' => $post]) }}" class="btn btn-edit">Edit</a>
-                    </td>
-                    <td class="td-cell">
-                        <form action="{{ route('admin.posts.destroy', ['post' => $post]) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-delete">Delete</button>
-                        </form>
                     </td>
                     <td class="td-cell">{{ $post->id }}</td>
                     <td class="td-cell">{{ $post->is_published ? '公開' : '非公開' }}</td>

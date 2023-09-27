@@ -8,7 +8,12 @@
 }
 
 .operation-bar {
+  display: flex;
   padding: 8px 0;
+
+  .btn:first-child {
+    margin-right: 16px;
+  }
 }
 
 .content-block {
