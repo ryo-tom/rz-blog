@@ -7,6 +7,11 @@
 
     <div class="operation-bar">
         <button class="btn btn-update" data-form-id="pageUpdateForm">Update</button>
+        <form action="{{ route('admin.pages.destroy', ['page' => $page]) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button class="btn btn-delete">Delete</button>
+        </form>
         @push('scripts')
             <script src={{ asset('js/admin/operation.js') }}></script>
         @endpush

@@ -22,7 +22,6 @@
             <thead class="table-header">
                 <tr class="thead-row">
                     <th class="th-cell">Edit</th>
-                    <th class="th-cell">Delete</th>
                     <th class="th-cell">id</th>
                     <th class="th-cell">name</th>
                     <th class="th-cell">slug</th>
@@ -36,13 +35,6 @@
                 <tr class="tbody-row">
                     <td class="td-cell">
                         <a href="{{ route('admin.categories.edit', ['category' => $category]) }}" class="btn btn-edit">Edit</a>
-                    </td>
-                    <td class="td-cell">
-                        <form action="{{ route('admin.categories.destroy', ['category' => $category]) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-delete">Delete</button>
-                        </form>
                     </td>
                     <td class="td-cell">{{ $category->id }}</td>
                     <td class="td-cell">{{ $category->name }}</td>

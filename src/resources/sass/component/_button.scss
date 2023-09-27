@@ -38,7 +38,9 @@
   }
 
   &.btn-delete {
-    background-color: var(--color-delete);
-    color: var(--white);
+    color: var(--color-delete);
+    &::before {
+      content: "× ";
+    }
   }
 }
