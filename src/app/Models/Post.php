@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\HasMetaDescription;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -13,7 +14,7 @@ use Illuminate\Support\Str;
 
 class Post extends Model
 {
-    use HasFactory;
+    use HasFactory, HasMetaDescription;
 
     protected $fillable = [
         'user_id',
@@ -94,14 +95,6 @@ class Post extends Model
     {
         return Str::markdown($this->content);
     }
-
-    public function getMetaDescriptionAttribute(): string
-    {
-        $text = strip_tags($this->html_content);
-        $text = preg_replace('/\s+/', ' ', $text);
-        return Str::limit($text, 160);
-    }
-
 
     /*
     |--------------------------------------------------------------------------
