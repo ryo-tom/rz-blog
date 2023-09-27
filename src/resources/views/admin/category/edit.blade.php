@@ -17,6 +17,12 @@
         @endpush
     </div>
 
+    @if (session('action'))
+    <div class="alert alert-{{ session('action') }}">
+        {{ session('message') }}
+    </div>
+    @endif
+
     <form id="categoryUpdateForm" action="{{ route('admin.categories.update', ['category' => $category]) }}" method="POST">
         @method('PATCH')
         @csrf
