@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\HandlesMarkdown;
 use App\Traits\HasMetaDescription;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
@@ -10,11 +11,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Support\Str;
 
 class Post extends Model
 {
-    use HasFactory, HasMetaDescription;
+    use HasFactory, HasMetaDescription, HandlesMarkdown;
 
     protected $fillable = [
         'user_id',
@@ -84,16 +84,6 @@ class Post extends Model
             $tagIds[] = $tag->id;
         }
         return $tagIds;
-    }
-
-    /**
-     * Get post content converted from markdown to html
-     *
-     * @return string $html_content
-     */
-    public function getHtmlContentAttribute(): string
-    {
-        return Str::markdown($this->content);
     }
 
     /*
