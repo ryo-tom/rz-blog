@@ -7,10 +7,10 @@
 
     <div class="operation-bar">
         <button class="btn btn-update" data-form-id="categoryUpdateForm">Update</button>
-        <form action="{{ route('admin.categories.destroy', ['category' => $category]) }}" method="POST">
+        <form id="categoryDeleteForm" action="{{ route('admin.categories.destroy', ['category' => $category]) }}" method="POST">
             @csrf
             @method('DELETE')
-            <button class="btn btn-delete">Delete</button>
+            <button class="btn btn-delete" data-form-id="categoryDeleteForm">Delete</button>
         </form>
         @push('scripts')
             <script src={{ asset('js/admin/operation.js') }}></script>
