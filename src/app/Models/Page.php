@@ -26,4 +26,11 @@ class Page extends Model
     {
         return Str::markdown($this->content);
     }
+
+    public function getMetaDescriptionAttribute(): string
+    {
+        $text = strip_tags($this->html_content);
+        $text = preg_replace('/\s+/', ' ', $text);
+        return Str::limit($text, 160);
+    }
 }

@@ -1,6 +1,10 @@
 @extends('layouts.front')
 
-@section('title', $post->title)
+@section('meta')
+    <title>{{ $post->title }} | {{ config('app.name') }}</title>
+    <meta name="description" content="{{ $post->meta_description }}">
+@endsection
+
 
 @section('content')
     <main class="layout-main">

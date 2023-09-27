@@ -1,6 +1,9 @@
 @extends('layouts.front')
 
-@section('title', config('app.name'))
+@section('meta')
+    <title>{{ config('app.name') }}</title>
+    <meta name="description" content="{{ config('app.name') }}は、LaravelやWeb開発に関する技術メモ兼ポートフォリオのブログサイトです。">
+@endsection
 
 @section('content')
     <main class="layout-main">
