@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [VisitorPostController::class, 'index'])->name('home');
-Route::get('posts/filter', [VisitorPostController::class, 'index'])->name('posts.filter');
+Route::get('posts', [VisitorPostController::class, 'index'])->name('posts.filter');
 Route::get('posts/filter/count', [VisitorPostController::class, 'count'])->name('posts.filter.count');
 Route::get('posts/search', [VisitorPostController::class, 'search'])->name('posts.search'); // Ajax Search
 Route::get('posts/{slug}', [VisitorPostController::class, 'show'])->name('posts.show');
