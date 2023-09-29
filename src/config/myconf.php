@@ -5,4 +5,5 @@ return [
     'my_twitter' => env('MY_TWITTER', 'https://twitter.com/'),
     'my_github' => env('MY_GITHUB', 'https://github.com/'),
     'google_analytics_id' => env('GOOGLE_ANALYTICS_ID'),
+    'gtag_enable' => env('GTAG_ENABLE'),
 ];
