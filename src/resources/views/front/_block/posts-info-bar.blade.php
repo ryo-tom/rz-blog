@@ -1,6 +1,6 @@
 <div class="posts-info-bar">
 
-    @if(isset($filteredPostCount) && Route::is('posts.filter'))
+    @if(isset($filteredPostCount) && request()->query())
     <div class="filter-result">
         {{ $filteredPostCount }} 件
     </div>

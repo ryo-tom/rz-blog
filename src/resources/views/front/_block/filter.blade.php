@@ -1,5 +1,5 @@
 <div id="filterBlock" class="filter-block">
-    <form id="filterForm" action="{{ route('posts.filter') }}" method="GET">
+    <form id="filterForm" action="{{ route('home') }}" method="GET">
         {{-- Filter Header --}}
         <div class="filter-header">
 
