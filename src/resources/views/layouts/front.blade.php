@@ -6,15 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @yield('meta')
     <link rel="canonical" href="{{ Request::url() }}" />
-
-    {{-- Styles --}}
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-
-    {{-- Favicon --}}
     <link rel="shortcut icon" href="{{ asset('/favicon.ico') }}">
-
     @vite('resources/sass/styles-front.scss')
-
     @includeWhen(config('myconf.gtag_enable'), 'front.gtag')
 </head>
 <body>
