@@ -83,6 +83,12 @@ Styles for post content converted Markdown to HTML
     font-size: 1.2rem;
   }
 
+  /* Paragraph
+  -------------------------*/
+  p + p {
+    margin-top: 1rem;
+  }
+
   /* Link
   -------------------------*/
   a {
