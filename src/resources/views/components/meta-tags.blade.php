@@ -7,7 +7,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ Request::url() }}">
 <meta property="og:site_name" content="{{ config('app.name') }}">
-<meta property="og:image" content="{{ asset('images/default-share.png') }}">
+<meta property="og:image" content="{{ asset('images/default-share-wide.png') }}">
 {{-- Twitter Card tags --}}
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="{{ $title ?? config('app.name') }}">
