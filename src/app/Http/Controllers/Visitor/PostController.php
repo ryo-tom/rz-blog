@@ -17,8 +17,9 @@ class PostController extends Controller
         $tagSlugs      = $request->input('tags');
         $tagOption     = $request->input('tag_option');
 
-        $query = Post::with('tags')
-        ->published()
+        $query = Post::with(['tags' => function($tagQuery) {
+            $tagQuery->sorted();
+        }])
         ->filterByCategory($categorySlug)
         ->filterByTags($tagSlugs, $tagOption)
         ->latestPublished();
