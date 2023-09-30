@@ -1,8 +1,7 @@
 @extends('layouts.front')
 
 @section('meta')
-    <title>{{ $page->title }} | {{ config('app.name') }}</title>
-    <meta name="description" content="{{ $page->meta_description }}">
+    <x-meta-tags :title="$page->title . ' | ' . config('app.name')" :description="$page->meta_description" />
 @endsection
 
 @section('content')
