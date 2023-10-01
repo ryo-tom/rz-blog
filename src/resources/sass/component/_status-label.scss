@@ -1,0 +1,19 @@
+@use '../global' as *;
+
+.status-label {
+  border-radius: 4px;
+  padding: 3px 6px;
+  font-size: 0.9rem;
+
+  &.is-public {
+    background-color: var(--transparent-green);
+    border: 1px solid var(--vivid-green);
+    color: var(--vivid-green);
+  }
+
+  &.is-private {
+    background-color: var(--gray);
+    color: var(--dark-gray);
+  }
+}
+

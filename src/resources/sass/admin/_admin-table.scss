@@ -8,7 +8,8 @@
   }
 
   .table-header {
-    background-color: var(--gray);
+    background-color: var(--dark-gray);
+    color: var(--white);
     position: sticky;
     top: 0;
   }
@@ -16,15 +17,36 @@
   .th-cell,
   .td-cell {
     border: 1px solid var(--gray);
-    max-width: 240px;
     overflow: hidden;
+    white-space: normal;
     padding: 8px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 
     &.wrap {
       text-overflow: unset;
       white-space: normal;
+    }
+
+    &.is-narrow {
+      max-width: 64px;
+    }
+
+    &.is-midium {
+      min-width: 240px;
+      max-width: 400px;
+    }
+
+    &.is-wide {
+      min-width: 240px;
+      max-width: 320px;
+    }
+
+    &.is-ellipsis {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &.t-center {
+      text-align: center;
     }
   }
 }

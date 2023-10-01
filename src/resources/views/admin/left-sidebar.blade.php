@@ -1,4 +1,13 @@
 <div class="left-sidebar">
+    <div class="left-side-header">
+        <span class="material-symbols-outlined">
+            account_circle
+        </span>
+        <div class="user-info">
+            {{ Auth::user()->name }}
+        </div>
+    </div>
+    
     <ul class="menu-list">
         <li class="menu-item">
             <a href="{{ route('home') }}" class="menu-link">Front Page</a>
