@@ -5,6 +5,7 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
+                'resources/css/app.css',
                 'resources/sass/styles-front.scss',
                 'resources/sass/styles-admin.scss',
             ],

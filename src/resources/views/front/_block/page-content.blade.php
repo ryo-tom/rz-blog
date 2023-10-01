@@ -9,4 +9,5 @@
 
 @push('scripts')
 <script src="{{ asset('js/externalLinkHandler.js') }}"></script>
+<script src="{{ asset('js/prism.js') }}"></script>
 @endpush
