@@ -41,7 +41,11 @@
                         <a href="{{ route('admin.posts.edit', ['post' => $post]) }}" class="btn btn-edit">Edit</a>
                     </td>
                     <td class="td-cell t-center">{{ $post->id }}</td>
-                    <td class="td-cell t-center">{{ $post->is_published ? '公開' : '非公開' }}</td>
+                    <td class="td-cell t-center">
+                        <span class="status-label {{ $post->is_published ? 'is-public' : 'is-private'}}">
+                            {{ $post->is_published ? '公開' : '非公開' }}
+                        </span>
+                    </td>
                     <td class="td-cell">{{ $post->category->name }}</td>
                     <td class="td-cell wrap">
                         @foreach ($post->tags as $tag)

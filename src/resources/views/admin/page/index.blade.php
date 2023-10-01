@@ -38,7 +38,11 @@
                         <a href="{{ route('admin.pages.edit', ['page' => $page]) }}" class="btn btn-edit">Edit</a>
                     </td>
                     <td class="td-cell t-center">{{ $page->id }}</td>
-                    <td class="td-cell t-center">{{ $page->is_published ? '公開' : '非公開' }}</td>
+                    <td class="td-cell t-center">
+                        <span class="status-label {{ $page->is_published ? 'is-public' : 'is-private'}}">
+                            {{ $page->is_published ? '公開' : '非公開' }}
+                        </span>
+                    </td>
                     <td class="td-cell is-wide">{{ $page->title }}</td>
                     <td class="td-cell is-wide">{{ $page->slug }}</td>
                     <td class="td-cell is-ellipsis is-midium">{{ $page->content }}</td>
