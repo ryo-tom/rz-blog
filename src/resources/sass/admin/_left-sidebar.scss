@@ -1,7 +1,20 @@
 @use '../global' as *;
 
 .left-sidebar {
-  padding-top: 48px;
+  padding-top: 0;
+
+  .left-side-header {
+    color: var(--gray);
+    border-bottom: 1px solid var(--gray);
+    font-size: 0.9rem;
+    padding: 8px 32px;
+    display: flex;
+    align-items: end;
+
+    .user-info {
+      margin-left: 4px;
+    }
+  }
 
   .menu-list {
     .menu-item {
