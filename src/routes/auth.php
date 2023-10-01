@@ -28,7 +28,7 @@ Route::middleware('guest')->group(function () {
         Route::get('login-test/{id}', function ($id) {
             $user = App\Models\User::find($id);
             if (!$user) {
-                return "パラメータ: {$user}が間違っています。";
+                return "パラメータが間違っています。";
             }
             Auth::loginUsingId($id);
             return redirect('admin');
