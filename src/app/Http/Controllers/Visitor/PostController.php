@@ -17,7 +17,8 @@ class PostController extends Controller
         $tagSlugs      = $request->input('tags');
         $tagOption     = $request->input('tag_option');
 
-        $query = Post::with(['tags' => function($tagQuery) {
+        $query = Post::with('category')
+        ->with(['tags' => function($tagQuery) {
             $tagQuery->sorted();
         }])
         ->filterByCategory($categorySlug)
@@ -26,9 +27,7 @@ class PostController extends Controller
 
         $filteredPostCount = $query->count();
 
-        $posts = $query->select('id', 'title', 'slug', 'published_at')
-                    ->simplePaginate(30)
-                    ->withQueryString();
+        $posts = $query->simplePaginate(30)->withQueryString();
 
         return view('front.home', [
             'posts'      => $posts,

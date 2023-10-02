@@ -12,16 +12,23 @@
                 {{ $post->title }}
             </h2>
 
-            {{-- tags --}}
-            <div class="tags-list">
-                @foreach ($post->tags as $tag)
-                <div class="tag-item">
-                    <span class="tag-label ignore-pointer {{ in_array($tag->slug, request()->query('tags') ?? []) ? 'tag-checked' : '' }}">
-                        {{ $tag->name }}
-                    </span>
+            <div class="post-item-footer">
+                {{-- category --}}
+                <span class="post-category">
+                    {{ $post->category->name }}
+                </span>
+                {{-- tags --}}
+                <div class="tags-list">
+                    @foreach ($post->tags as $tag)
+                    <div class="tag-item">
+                        <span class="tag-label ignore-pointer {{ in_array($tag->slug, request()->query('tags') ?? []) ? 'tag-checked' : '' }}">
+                            {{ $tag->name }}
+                        </span>
+                    </div>
+                    @endforeach
                 </div>
-                @endforeach
             </div>
+
         </a>
     </div>
     @endforeach
