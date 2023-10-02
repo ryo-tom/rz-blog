@@ -17,7 +17,8 @@ class PostController extends Controller
         $tagSlugs      = $request->input('tags');
         $tagOption     = $request->input('tag_option');
 
-        $query = Post::with('category')
+        $query = Post::published()
+        ->with('category')
         ->with(['tags' => function($tagQuery) {
             $tagQuery->sorted();
         }])
