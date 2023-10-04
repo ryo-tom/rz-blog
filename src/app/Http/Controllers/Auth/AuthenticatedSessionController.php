@@ -28,7 +28,9 @@ class AuthenticatedSessionController extends Controller
             'password' => ['required'],
         ]);
 
-        if (Auth::attempt($credentials)) {
+        $remember = $request->input('remember');
+
+        if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
 
             return redirect()->intended('admin');
