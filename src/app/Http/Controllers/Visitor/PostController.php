@@ -58,7 +58,7 @@ class PostController extends Controller
                 ->whereInTags($tagSlugs, $tagOption);
 
         $filteredPostCount = $query->count();
-        return response()->json(['filteredPostCount' => $filteredPostCount]);
+        return response()->json(compact('filteredPostCount'));
     }
 
     /** Ajax Search */
@@ -96,7 +96,7 @@ class PostController extends Controller
                              ->limit(30)
                              ->get();
 
-          return response()->json(['posts' => $posts]);
+          return response()->json(compact('posts'));
     }
 
 }
