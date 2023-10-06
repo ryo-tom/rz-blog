@@ -41,7 +41,7 @@ class PostController extends Controller
     public function show(string $slug)
     {
         return view('front.post', [
-            'post' => Post::published()->withSlug($slug)->firstOrFail(),
+            'post' => Post::published()->whereBySlug($slug)->firstOrFail(),
         ]);
     }
 
