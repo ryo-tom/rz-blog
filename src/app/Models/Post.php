@@ -97,7 +97,7 @@ class Post extends Model
             ->where('published_at', '<=', now());
     }
 
-    public function scopeLatestPublished(Builder $query): Builder
+    public function scopeOrderByPublishedAtDesc(Builder $query): Builder
     {
         return $query->orderBy('published_at', 'DESC');
     }

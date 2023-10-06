@@ -24,7 +24,7 @@ class PostController extends Controller
         }])
         ->filterByCategory($categorySlug)
         ->filterByTags($tagSlugs, $tagOption)
-        ->latestPublished();
+        ->orderByPublishedAtDesc();
 
         $filteredPostCount = $query->count();
 
@@ -90,7 +90,7 @@ class PostController extends Controller
               return response()->json(['error' => 'Invalid search scope'], 400);
           }
 
-          $postQuery->latestPublished();
+          $postQuery->orderByPublishedAtDesc();
 
           $posts = $postQuery->select('title', 'slug')
                              ->limit(30)
