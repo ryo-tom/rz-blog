@@ -107,7 +107,7 @@ class Post extends Model
         return $query->where('slug', $slug);
     }
 
-    public function scopeFilterByCategory(Builder $query, ?string $categorySlug): Builder
+    public function scopeWhereByCategory(Builder $query, ?string $categorySlug): Builder
     {
         if (!$categorySlug) {
             return $query;

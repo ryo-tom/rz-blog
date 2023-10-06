@@ -22,7 +22,7 @@ class PostController extends Controller
         ->with(['tags' => function($tagQuery) {
             $tagQuery->sorted();
         }])
-        ->filterByCategory($categorySlug)
+        ->whereByCategory($categorySlug)
         ->filterByTags($tagSlugs, $tagOption)
         ->orderByPublishedAtDesc();
 
@@ -54,7 +54,7 @@ class PostController extends Controller
 
         $query = Post::with('tags')
                 ->published()
-                ->filterByCategory($categorySlug)
+                ->whereByCategory($categorySlug)
                 ->filterByTags($tagSlugs, $tagOption);
 
         $filteredPostCount = $query->count();
