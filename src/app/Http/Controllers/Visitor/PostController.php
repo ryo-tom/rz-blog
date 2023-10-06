@@ -23,7 +23,7 @@ class PostController extends Controller
             $tagQuery->sorted();
         }])
         ->whereByCategory($categorySlug)
-        ->filterByTags($tagSlugs, $tagOption)
+        ->whereInTags($tagSlugs, $tagOption)
         ->orderByPublishedAtDesc();
 
         $filteredPostCount = $query->count();
@@ -55,7 +55,7 @@ class PostController extends Controller
         $query = Post::with('tags')
                 ->published()
                 ->whereByCategory($categorySlug)
-                ->filterByTags($tagSlugs, $tagOption);
+                ->whereInTags($tagSlugs, $tagOption);
 
         $filteredPostCount = $query->count();
         return response()->json(['filteredPostCount' => $filteredPostCount]);

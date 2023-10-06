@@ -118,7 +118,7 @@ class Post extends Model
         });
     }
 
-    public function scopeFilterByTags(Builder $query, ?array $tagSlugs, ?string $tagOption): Builder
+    public function scopeWhereInTags(Builder $query, ?array $tagSlugs, ?string $tagOption): Builder
     {
         if (!$tagSlugs) {
             return $query;
