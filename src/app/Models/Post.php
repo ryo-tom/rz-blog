@@ -97,17 +97,17 @@ class Post extends Model
             ->where('published_at', '<=', now());
     }
 
-    public function scopeLatestPublished(Builder $query): Builder
+    public function scopeOrderByPublishedAtDesc(Builder $query): Builder
     {
         return $query->orderBy('published_at', 'DESC');
     }
 
-    public function scopeWithSlug(Builder $query, string $slug): Builder
+    public function scopeWhereBySlug(Builder $query, string $slug): Builder
     {
         return $query->where('slug', $slug);
     }
 
-    public function scopeFilterByCategory(Builder $query, ?string $categorySlug): Builder
+    public function scopeWhereByCategory(Builder $query, ?string $categorySlug): Builder
     {
         if (!$categorySlug) {
             return $query;
@@ -118,7 +118,7 @@ class Post extends Model
         });
     }
 
-    public function scopeFilterByTags(Builder $query, ?array $tagSlugs, ?string $tagOption): Builder
+    public function scopeWhereInTags(Builder $query, ?array $tagSlugs, ?string $tagOption): Builder
     {
         if (!$tagSlugs) {
             return $query;

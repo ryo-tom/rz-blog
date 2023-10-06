@@ -22,9 +22,9 @@ class PostController extends Controller
         ->with(['tags' => function($tagQuery) {
             $tagQuery->sorted();
         }])
-        ->filterByCategory($categorySlug)
-        ->filterByTags($tagSlugs, $tagOption)
-        ->latestPublished();
+        ->whereByCategory($categorySlug)
+        ->whereInTags($tagSlugs, $tagOption)
+        ->orderByPublishedAtDesc();
 
         $filteredPostCount = $query->count();
 
@@ -41,7 +41,7 @@ class PostController extends Controller
     public function show(string $slug)
     {
         return view('front.post', [
-            'post' => Post::published()->withSlug($slug)->firstOrFail(),
+            'post' => Post::published()->whereBySlug($slug)->firstOrFail(),
         ]);
     }
 
@@ -54,11 +54,11 @@ class PostController extends Controller
 
         $query = Post::with('tags')
                 ->published()
-                ->filterByCategory($categorySlug)
-                ->filterByTags($tagSlugs, $tagOption);
+                ->whereByCategory($categorySlug)
+                ->whereInTags($tagSlugs, $tagOption);
 
         $filteredPostCount = $query->count();
-        return response()->json(['filteredPostCount' => $filteredPostCount]);
+        return response()->json(compact('filteredPostCount'));
     }
 
     /** Ajax Search */
@@ -90,13 +90,13 @@ class PostController extends Controller
               return response()->json(['error' => 'Invalid search scope'], 400);
           }
 
-          $postQuery->latestPublished();
+          $postQuery->orderByPublishedAtDesc();
 
           $posts = $postQuery->select('title', 'slug')
                              ->limit(30)
                              ->get();
 
-          return response()->json(['posts' => $posts]);
+          return response()->json(compact('posts'));
     }
 
 }
